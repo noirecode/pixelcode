@@ -1,0 +1,48 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ci6h3i16nmy0"]
+
+[ext_resource type="FontFile" uid="uid://htstlpxcyiss" path="res://Assets/basis33.ttf" id="1_mp55r"]
+[ext_resource type="Texture2D" uid="uid://p47fykgc2gom" path="res://Assets/Themes/roundredbuttons.png" id="2_8wlrq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_alfqg"]
+texture = ExtResource("2_8wlrq")
+region_rect = Rect2(0, 32, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phrc0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykf5l"]
+texture = ExtResource("2_8wlrq")
+region_rect = Rect2(0, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gtu3d"]
+texture = ExtResource("2_8wlrq")
+region_rect = Rect2(0, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08yx5"]
+texture = ExtResource("2_8wlrq")
+region_rect = Rect2(0, 32, 32, 32)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_mp55r")
+Button/styles/disabled = SubResource("StyleBoxTexture_alfqg")
+Button/styles/focus = SubResource("StyleBoxFlat_phrc0")
+Button/styles/hover = SubResource("StyleBoxTexture_ykf5l")
+Button/styles/normal = SubResource("StyleBoxTexture_gtu3d")
+Button/styles/pressed = SubResource("StyleBoxTexture_08yx5")

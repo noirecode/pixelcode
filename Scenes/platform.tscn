@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpl25ql1rogd2"]
+
+[ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="1_ctgrx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmpa2"]
+atlas = ExtResource("1_ctgrx")
+region = Rect2(108, 126, 18, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17i7o"]
+size = Vector2(72, 40)
+
+[node name="Platform" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(36, 20)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_vmpa2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(36, 20)
+shape = SubResource("RectangleShape2D_17i7o")
+one_way_collision = true

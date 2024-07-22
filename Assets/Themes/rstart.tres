@@ -1,0 +1,48 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cruesesa4586d"]
+
+[ext_resource type="FontFile" uid="uid://htstlpxcyiss" path="res://Assets/basis33.ttf" id="1_w6tgf"]
+[ext_resource type="Texture2D" uid="uid://bp6nyp1pau6a6" path="res://Assets/Pixel UI pack 1.png" id="2_4ofo2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58tyy"]
+texture = ExtResource("2_4ofo2")
+region_rect = Rect2(481, 225, 30, 30)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2riux"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yexm0"]
+texture = ExtResource("2_4ofo2")
+region_rect = Rect2(449, 225, 30, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5afcb"]
+texture = ExtResource("2_4ofo2")
+region_rect = Rect2(449, 225, 30, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s6u5s"]
+texture = ExtResource("2_4ofo2")
+region_rect = Rect2(481, 225, 30, 30)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_w6tgf")
+Button/styles/disabled = SubResource("StyleBoxTexture_58tyy")
+Button/styles/focus = SubResource("StyleBoxFlat_2riux")
+Button/styles/hover = SubResource("StyleBoxTexture_yexm0")
+Button/styles/normal = SubResource("StyleBoxTexture_5afcb")
+Button/styles/pressed = SubResource("StyleBoxTexture_s6u5s")

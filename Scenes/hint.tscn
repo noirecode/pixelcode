@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds8y3tb8bn56c"]
+
+[ext_resource type="Script" path="res://Scenes/hint.gd" id="1_qrthk"]
+[ext_resource type="Texture2D" uid="uid://b2vm2ti7d6tfj" path="res://icon.svg" id="2_iodtx"]
+
+[node name="Hint" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qrthk")
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 72.0
+offset_top = 288.0
+offset_right = 648.0
+offset_bottom = 936.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 27.0
+offset_right = 564.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 40
+text = "text here"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 216.0
+offset_top = 216.0
+offset_right = 360.0
+offset_bottom = 360.0
+texture = ExtResource("2_iodtx")

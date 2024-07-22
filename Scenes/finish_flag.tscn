@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bci7tjxoe75mn"]
+
+[ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="1_ejjnm"]
+[ext_resource type="Script" path="res://Scenes/finish_flag.gd" id="1_fd7fk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wgcy"]
+atlas = ExtResource("1_ejjnm")
+region = Rect2(198, 90, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyijf"]
+atlas = ExtResource("1_ejjnm")
+region = Rect2(216, 90, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6dfu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wgcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyijf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37dpi"]
+atlas = ExtResource("1_ejjnm")
+region = Rect2(198, 108, 18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_is5dt"]
+size = Vector2(72, 144)
+
+[node name="FinishFlag" type="Area2D"]
+script = ExtResource("1_fd7fk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(36, 36)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_6dfu1")
+autoplay = "default"
+frame_progress = 0.2068
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(36, 108)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_37dpi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(36, 72)
+shape = SubResource("RectangleShape2D_is5dt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

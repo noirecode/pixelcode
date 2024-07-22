@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjdqgmx7muml"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_kqxi8"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kqxi8")
+
+[node name="Levels" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 108.0
+offset_right = 462.0
+offset_bottom = 209.0
+columns = 3
+
+[node name="1" type="Button" parent="Levels"]
+layout_mode = 2
+text = "level 1"
+
+[node name="2" type="Button" parent="Levels"]
+layout_mode = 2
+text = "level 2"
+
+[node name="3" type="Button" parent="Levels"]
+layout_mode = 2
+text = "level 3
+"

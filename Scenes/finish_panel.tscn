@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw8ifi3mchnka"]
+
+[ext_resource type="Script" path="res://Scenes/finish_panel.gd" id="1_usyyr"]
+[ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="2_1pum8"]
+[ext_resource type="Theme" uid="uid://dx1ioxxd2ggut" path="res://Assets/Themes/commandsa.tres" id="3_guvvp"]
+[ext_resource type="Texture2D" uid="uid://qbngcr2fnuqb" path="res://Assets/1star.png" id="4_bb30o"]
+[ext_resource type="Texture2D" uid="uid://dy4k5xrkg0wym" path="res://Assets/2stars.png" id="5_stmfl"]
+[ext_resource type="Texture2D" uid="uid://cb15ggtidvukb" path="res://Assets/3stars.png" id="6_5oqyc"]
+
+[node name="Finish_Panel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_usyyr")
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 72.0
+offset_top = 144.0
+offset_right = 648.0
+offset_bottom = 792.0
+theme = ExtResource("2_1pum8")
+
+[node name="Score" type="Label" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 144.0
+offset_right = 288.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 50
+text = "Score:"
+horizontal_alignment = 1
+
+[node name="RETRY" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 216.0
+offset_right = 432.0
+offset_bottom = 330.0
+theme = ExtResource("3_guvvp")
+theme_override_font_sizes/font_size = 50
+text = "Intentar 
+de nuevo"
+
+[node name="HOME" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 345.0
+offset_right = 432.0
+offset_bottom = 417.0
+theme = ExtResource("3_guvvp")
+theme_override_font_sizes/font_size = 50
+text = "Menu"
+
+[node name="NEXT" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 432.0
+offset_right = 432.0
+offset_bottom = 504.0
+theme = ExtResource("3_guvvp")
+theme_override_font_sizes/font_size = 50
+text = "Siguiente"
+
+[node name="1star" type="TextureRect" parent="Panel"]
+visible = false
+custom_minimum_size = Vector2(48, 16)
+layout_mode = 0
+offset_left = 166.704
+offset_top = 119.614
+offset_right = 214.704
+offset_bottom = 135.614
+scale = Vector2(5, 5)
+texture = ExtResource("4_bb30o")
+
+[node name="2stars" type="TextureRect" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 167.338
+offset_top = 120.407
+offset_right = 215.338
+offset_bottom = 136.407
+scale = Vector2(5, 5)
+texture = ExtResource("5_stmfl")
+
+[node name="3stars" type="TextureRect" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 167.338
+offset_top = 120.407
+offset_right = 215.338
+offset_bottom = 136.407
+scale = Vector2(5, 5)
+texture = ExtResource("6_5oqyc")
+
+[connection signal="pressed" from="Panel/RETRY" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/HOME" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Panel/NEXT" to="." method="_on_next_pressed"]
