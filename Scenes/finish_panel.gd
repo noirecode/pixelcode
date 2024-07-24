@@ -29,10 +29,12 @@ var current_scene
 @onready var star1 = $"Panel/1star"
 @onready var star2 = $"Panel/2stars"
 @onready var star3 = $"Panel/3stars"
+@onready var transition = $transition
 
 func _process(_delta):
 	if self.visible:
 		score_num = global.calculate_score(current_scene)
+		global.save_game()
 		match score_num:
 			1:
 				star1.visible = true
@@ -57,6 +59,8 @@ func _on_home_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 func _on_next_pressed():
+	transition.play("fade_out")
+	await transition.animation_finished
 	current_scene = get_tree().current_scene.name
 	if current_scene in levels:
 		get_tree().change_scene_to_file(levels[current_scene].next_scene)

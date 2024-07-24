@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2ku6ali5xjaw"]
+[gd_scene load_steps=9 format=3 uid="uid://b2ku6ali5xjaw"]
 
 [ext_resource type="Script" path="res://Scenes/character_1.gd" id="1_1pg85"]
 [ext_resource type="Texture2D" uid="uid://4ehj62nhpan7" path="res://Assets/char1.png" id="2_7uo1d"]
+[ext_resource type="AudioStream" uid="uid://c2qleoawhleo7" path="res://Assets/Audio/jump.wav" id="3_f50ta"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oylyp"]
 atlas = ExtResource("2_7uo1d")
@@ -86,3 +87,7 @@ target_position = Vector2(51, 116)
 [node name="RayCast2D_DIAG_LD" type="RayCast2D" parent="."]
 position = Vector2(12, 37)
 target_position = Vector2(-94, 114)
+
+[node name="sfx_jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_f50ta")
+bus = &"SFX"

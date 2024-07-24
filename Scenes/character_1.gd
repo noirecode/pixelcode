@@ -13,6 +13,7 @@ var detected_area = null
 @onready var ray_cast_2d_diag_l = $RayCast2D_DIAG_L
 @onready var ray_cast_2d_diag_rd = $RayCast2D_DIAG_RD
 @onready var ray_cast_2d_diag_ld = $RayCast2D_DIAG_LD
+@onready var sfx_jump = $sfx_jump
 
 
 
@@ -103,6 +104,7 @@ func flip(flag):
 
 func saltar(direction=null):
 	sprite_1.play("walk")
+	sfx_jump.play()
 	var target: Vector2
 	while !is_on_floor():
 		await get_tree().create_timer(0.1).timeout

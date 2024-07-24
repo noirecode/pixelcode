@@ -12,6 +12,7 @@ var current_scene
 @onready var master_slider = $Volume/Panel/MarginContainer/VBoxContainer/GridContainer/MasterSlider
 @onready var music_slider = $Volume/Panel/MarginContainer/VBoxContainer/GridContainer/MusicSlider
 @onready var sfx_slider = $Volume/Panel/MarginContainer/VBoxContainer/GridContainer/SFXSlider
+@onready var sfx_button = $sfx_button
 
 @onready var text_edit = $Console/ConsoleBG/TextEdit
 
@@ -53,24 +54,18 @@ var current_scene
 @onready var usar_3 = $"Console/ScrollContainer/Commands/func2_popup/HBoxContainer/usar3"
 @onready var usar_4 = $"Console/ScrollContainer/Commands/func2_popup/HBoxContainer/usar4"
 @onready var usar_5 = $"Console/ScrollContainer/Commands/func2_popup/HBoxContainer/usar5"
+@onready var hint_button = $Options/hint
 
 var level_hint = null
 var no_hint_levels = ["Level5","Level6", "Level8", "Level10", "Level11", "Level12", "Level13"]
-
+var curr_level_has_no_hint = null
 var buttons = []
 
 func check_hints():
-	if get_parent().name in no_hint_levels:
-		var hint_button = $Options/hint
+	if curr_level_has_no_hint:
 		hint_button.visible = false
 	else:
 		level_hint = $"../Hint"
-
-### OPTIONS
-func _on_hint_pressed():
-	level_hint.visible = !level_hint.visible
-	if get_parent().has_method("reset_hint"):
-		get_parent().reset_hint()
 
 ### LOOP + FUNCTION LOGIC BEGINS HERE ##
 var text_index = 0
@@ -291,8 +286,11 @@ func _on_restart_pressed():
 	get_tree().reload_current_scene()
 	
 
+@onready var transition = $transition
 
 func _ready():
+	transition.play("fade_in")
+	curr_level_has_no_hint = get_parent().name in no_hint_levels
 	buttons = [mover_der_button, mover_izq_button, tomar_llave_button, utilizar_llave_button,saltar_arriba_button,saltar_izq_button,saltar_der_button,saltar_abajo_button, rep_2, rep_3, rep_4, rep_5, rep_6, rep_7, rep_8, rep_9,funcion_crear,usar_1,usar_2,usar_3,usar_4,usar_5]
 	buttons_pressed()
 	var buttons_main = [mover_der_button, mover_izq_button, saltar_button, tomar_llave_button, utilizar_llave_button, repetir_button, funcion_crear, funcion_usar]
@@ -321,21 +319,33 @@ func _process(_delta):
 	text_edit.set_caret_column(line_length)
 	if get_parent().panel_up:
 		finish_panel.visible = true
-		#make it pause the scfene or disable the buttons
-	#cant go here must go somewhere else
-	#print(text_edit.get_caret_line())
-		#get_tree().paused = true
-	#func naming
 	
-	
-@onready var volume = $Volume
 
-func _on_volume_pressed():
-	volume.visible = !volume.visible
+### OPTIONS
+
+@onready var volume = $Volume
 
 @onready var MASTER_BUS_ID = AudioServer.get_bus_index("Master")
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
+
+func _on_hint_pressed():
+	sfx_button.play()
+	level_hint.visible = !level_hint.visible
+	if get_parent().has_method("reset_hint"):
+		get_parent().reset_hint()
+	if level_hint.visible:
+		volume.visible = false
+		rating.visible = false
+#settings button:
+func _on_volume_pressed():
+	sfx_button.play()
+	volume.visible = !volume.visible
+	if volume.visible:
+		rating.visible = false
+	if !curr_level_has_no_hint:
+		level_hint.visible = false
+
 
 func _on_master_slider_value_changed(value):
 	global.data.volume_settings.master = linear_to_db(value)
@@ -350,10 +360,20 @@ func _on_music_slider_value_changed(value):
 	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < 0.05)
 	global.save_game()
 
+func _on_sfx_slider_value_changed(value):
+	global.data.volume_settings.sfx = linear_to_db(value)
+	AudioServer.set_bus_volume_db(SFX_BUS_ID, global.data.volume_settings.sfx)
+	AudioServer.set_bus_mute(SFX_BUS_ID, value < 0.05)
+	global.save_game()
 
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
-
-func _on_sfx_slider_value_changed(_value):
-	pass # Replace with function body.
+@onready var rating = $Rating
+func _on_stars_pressed():
+	sfx_button.play()
+	rating.visible = !rating.visible
+	if rating.visible:
+		volume.visible = false
+	if !curr_level_has_no_hint:
+		level_hint.visible = false

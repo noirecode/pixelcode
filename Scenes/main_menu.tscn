@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bjdqgmx7muml"]
+[gd_scene load_steps=40 format=3 uid="uid://bjdqgmx7muml"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_kqxi8"]
 [ext_resource type="Texture2D" uid="uid://x1ngq7pbmdup" path="res://Assets/backgrounds.png" id="2_trctb"]
@@ -646,6 +646,68 @@ sources/3 = SubResource("TileSetAtlasSource_ml0hd")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uhcm"]
 bg_color = Color(0, 0, 0, 0.517647)
 
+[sub_resource type="Animation" id="Animation_0d5pl"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_b8nlm"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jf34e"]
+_data = {
+"fade_in": SubResource("Animation_0d5pl"),
+"fade_out": SubResource("Animation_b8nlm")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -1255,6 +1317,18 @@ offset_bottom = 140.0
 scale = Vector2(0.5, 0.5)
 text = "Alejandra Tonito"
 horizontal_alignment = 1
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jf34e")
+}
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="UI/SETTINGS" to="." method="_on_settings_pressed"]
 [connection signal="gui_input" from="UI/PanelBG" to="." method="_on_panel_bg_gui_input"]

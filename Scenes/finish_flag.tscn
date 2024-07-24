@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bci7tjxoe75mn"]
+[gd_scene load_steps=9 format=3 uid="uid://bci7tjxoe75mn"]
 
 [ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="1_ejjnm"]
 [ext_resource type="Script" path="res://Scenes/finish_flag.gd" id="1_fd7fk"]
+[ext_resource type="AudioStream" uid="uid://dasu84xbkq22g" path="res://Assets/Audio/confirmation_002.ogg" id="3_skppi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wgcy"]
 atlas = ExtResource("1_ejjnm")
@@ -52,5 +53,9 @@ texture = SubResource("AtlasTexture_37dpi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(36, 72)
 shape = SubResource("RectangleShape2D_is5dt")
+
+[node name="level_complete" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_skppi")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

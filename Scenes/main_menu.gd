@@ -17,8 +17,16 @@ func _ready():
 			level.pressed.connect(self.change_level.bind(level.name))
 		else:
 			level.disabled = true
+@onready var transition = $transition
 
+func load_level_score(level_name):
+	if global.data.level_solutions[level_name][2] > 0:
+		var score_level_name = "score_" + level_name #score_Level1
+		#you get the score for the level. now choose which texturerect to show depending on the value
+		pass
 func change_level(level_name):
+	transition.play("fade_out")
+	await transition.animation_finished
 	get_tree().change_scene_to_file("res://Scenes/level_" + level_name +  ".tscn")
 
 @onready var panel_bg = $UI/PanelBG
@@ -52,4 +60,7 @@ func _on_music_slider_value_changed(value):
 
 
 func _on_sfx_slider_value_changed(value):
-	pass # Replace with function body.
+	global.data.volume_settings.sfx = linear_to_db(value)
+	AudioServer.set_bus_volume_db(SFX_BUS_ID, global.data.volume_settings.sfx)
+	AudioServer.set_bus_mute(SFX_BUS_ID, value < 0.05)
+	global.save_game()

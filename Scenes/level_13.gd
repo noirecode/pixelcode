@@ -11,4 +11,3 @@ var active_buttons = [0,1,2,5,6,7]
 
 func _ready():
 	global_audio.play_music_level("farm")
-
