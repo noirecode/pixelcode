@@ -1,26 +1,26 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://c574hkl82frai"]
 
 [ext_resource type="FontFile" uid="uid://htstlpxcyiss" path="res://Assets/basis33.ttf" id="1_qu2vq"]
-[ext_resource type="Texture2D" uid="uid://bp6nyp1pau6a6" path="res://Assets/Pixel UI pack 1.png" id="2_gmm5w"]
+[ext_resource type="Texture2D" uid="uid://c3ucynssobshf" path="res://Assets/Themes/settings_red.png" id="2_1d6jw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0g3t"]
-texture = ExtResource("2_gmm5w")
+texture = ExtResource("2_1d6jw")
 region_rect = Rect2(545, 33, 30, 30)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgpd7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28wkb"]
-texture = ExtResource("2_gmm5w")
-region_rect = Rect2(513, 33, 30, 30)
+texture = ExtResource("2_1d6jw")
+region_rect = Rect2(1, 1, 30, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5oujs"]
-texture = ExtResource("2_gmm5w")
-region_rect = Rect2(513, 33, 30, 30)
+texture = ExtResource("2_1d6jw")
+region_rect = Rect2(1, 1, 30, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tjoa"]
-texture = ExtResource("2_gmm5w")
-region_rect = Rect2(545, 33, 30, 30)
+texture = ExtResource("2_1d6jw")
+region_rect = Rect2(33, 1, 30, 30)
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)

@@ -252,6 +252,7 @@ func _on_run_pressed():
 		print("game saved")
 		print(global.data.level_solutions[current_scene])
 		await character_1.parse_command(instructions)
+		##multiple characters: add them down here in an if=multiple_chars ?
 		print(instructions)
 	running = false
 		#make sure the character is at initial position before running

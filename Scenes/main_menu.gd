@@ -14,16 +14,36 @@ func _ready():
 	for level in $ScrollContainer/VScrollBar/MenuMap/Levels.get_children():
 		if str_to_var(level.name) in range(global.data.unlocked_levels+1):
 			level.disabled = false
+			load_level_score(level.name)
 			level.pressed.connect(self.change_level.bind(level.name))
 		else:
 			level.disabled = true
 @onready var transition = $transition
 
-func load_level_score(level_name):
-	if global.data.level_solutions[level_name][2] > 0:
-		var score_level_name = "score_" + level_name #score_Level1
-		#you get the score for the level. now choose which texturerect to show depending on the value
-		pass
+func load_level_score(level_number):
+	var stars = 0
+	var level_name = "Level"+str(level_number)
+	for score in $scores.get_children():
+		if score.name == level_name:
+			stars = global.data.level_solutions[level_name][2]
+			match stars:
+				1:
+					score.get_node("1star").visible = true
+					score.get_node("2star").visible = false
+					score.get_node("3star").visible = false
+				2:
+					score.get_node("1star").visible = false
+					score.get_node("2star").visible = true
+					score.get_node("3star").visible = false
+				3:
+					score.get_node("1star").visible = false
+					score.get_node("2star").visible = false
+					score.get_node("3star").visible = true
+				_:
+					score.get_node("1star").visible = false
+					score.get_node("2star").visible = false
+					score.get_node("3star").visible = false
+
 func change_level(level_name):
 	transition.play("fade_out")
 	await transition.animation_finished

@@ -4,23 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://4ehj62nhpan7" path="res://Assets/char1.png" id="2_7uo1d"]
 [ext_resource type="AudioStream" uid="uid://c2qleoawhleo7" path="res://Assets/Audio/jump.wav" id="3_f50ta"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oylyp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bix8x"]
 atlas = ExtResource("2_7uo1d")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rp0nw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pkb2"]
 atlas = ExtResource("2_7uo1d")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bmqlo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_so56s"]
 atlas = ExtResource("2_7uo1d")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(18, 0, 18, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s4hvn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oylyp")
+"texture": SubResource("AtlasTexture_bix8x")
 }],
 "loop": true,
 "name": &"default",
@@ -28,10 +28,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rp0nw")
+"texture": SubResource("AtlasTexture_2pkb2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bmqlo")
+"texture": SubResource("AtlasTexture_so56s")
 }],
 "loop": true,
 "name": &"walk",
@@ -47,10 +47,9 @@ script = ExtResource("1_1pg85")
 
 [node name="sprite1" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(32, 40)
+position = Vector2(36, 36)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_s4hvn")
-animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(34, 38)
