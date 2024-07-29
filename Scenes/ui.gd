@@ -409,3 +409,26 @@ func _on_stars_pressed():
 		volume.visible = false
 	if !curr_level_has_no_hint:
 		level_hint.visible = false
+
+# IF BUTTONS
+@onready var si_popup = $Console/ScrollContainer/Commands/si_popup
+@onready var si_loop_button = $Console/ScrollContainer/Commands/siLoop
+@onready var equal_button = $Console/ScrollContainer/Commands/si_popup/HBoxContainer/equalButton
+@onready var color_button = $Console/ScrollContainer/Commands/si_popup/HBoxContainer/colorButton
+@onready var confirm_button = $Console/ScrollContainer/Commands/si_popup/HBoxContainer/confirmButton
+@onready var equal_popup = $Console/ScrollContainer/Commands/equal_popup
+@onready var color_popup = $Console/ScrollContainer/Commands/color_popup
+
+func _on_si_loop_pressed():
+	si_popup.set_position(si_loop_button.get_global_position())
+	si_popup.popup()
+
+## add something so they disappear when unfocused or a button inside of them is selected
+func _on_equal_button_pressed():
+	equal_popup.set_position(si_loop_button.get_global_position())
+	equal_popup.popup()
+
+
+func _on_color_button_pressed():
+	color_popup.set_position(color_button.get_position())
+	color_popup.popup()

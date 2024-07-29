@@ -62,7 +62,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 shadow_color = Color(0, 0, 0, 0)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4bme4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_so8xv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8c3go"]
 
@@ -332,13 +333,13 @@ theme_override_font_sizes/font_size = 30
 text = "si (...)"
 
 [node name="si_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(369, 100)
-visible = true
-theme_override_styles/panel = SubResource("StyleBoxEmpty_4bme4")
+size = Vector2i(364, 60)
+theme_override_styles/panel = SubResource("StyleBoxFlat_so8xv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Console/ScrollContainer/Commands/si_popup"]
-offset_right = 369.0
-offset_bottom = 100.0
+custom_minimum_size = Vector2(300, 60)
+offset_right = 364.0
+offset_bottom = 60.0
 
 [node name="Label" type="Label" parent="Console/ScrollContainer/Commands/si_popup/HBoxContainer"]
 texture_filter = 1
@@ -348,12 +349,14 @@ text = "Si el color "
 
 [node name="equalButton" type="Button" parent="Console/ScrollContainer/Commands/si_popup/HBoxContainer"]
 texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "=="
 
 [node name="colorButton" type="Button" parent="Console/ScrollContainer/Commands/si_popup/HBoxContainer"]
 texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "(...)"
@@ -367,13 +370,13 @@ size_flags_vertical = 4
 theme = ExtResource("12_epkip")
 
 [node name="color_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(268, 100)
+size = Vector2i(100, 155)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8c3go")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Console/ScrollContainer/Commands/color_popup"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Console/ScrollContainer/Commands/color_popup"]
 texture_filter = 1
-offset_right = 268.0
-offset_bottom = 100.0
+offset_right = 100.0
+offset_bottom = 155.0
 
 [node name="rojo" type="Button" parent="Console/ScrollContainer/Commands/color_popup/HBoxContainer"]
 layout_mode = 2
@@ -391,11 +394,12 @@ theme_override_font_sizes/font_size = 40
 text = "azul"
 
 [node name="equal_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
+size = Vector2i(100, 102)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ujbh0")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Console/ScrollContainer/Commands/equal_popup"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Console/ScrollContainer/Commands/equal_popup"]
 offset_right = 100.0
-offset_bottom = 100.0
+offset_bottom = 102.0
 
 [node name="equal" type="Button" parent="Console/ScrollContainer/Commands/equal_popup/HBoxContainer"]
 texture_filter = 1
@@ -777,6 +781,9 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Console/ScrollContainer/Commands/PopupPanel/HBoxContainer/saltar(abajo)" to="." method="_on_jump_down_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/PopupPanel/HBoxContainer/saltar(izq)" to="." method="_on_jump_left_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/PopupPanel/HBoxContainer/saltar(der)" to="." method="_on_jump_right_pressed"]
+[connection signal="pressed" from="Console/ScrollContainer/Commands/siLoop" to="." method="_on_si_loop_pressed"]
+[connection signal="pressed" from="Console/ScrollContainer/Commands/si_popup/HBoxContainer/equalButton" to="." method="_on_equal_button_pressed"]
+[connection signal="pressed" from="Console/ScrollContainer/Commands/si_popup/HBoxContainer/colorButton" to="." method="_on_color_button_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/tomarLlave()" to="." method="_on_pick_up_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/utilizarLlave()" to="." method="_on_utilizar_llave_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/repetir(#)" to="." method="_on_repetir_pressed"]
