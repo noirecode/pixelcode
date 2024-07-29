@@ -1,5 +1,4 @@
 extends Control
-var instructions_list = []
 var running = false
 var current_scene
 
@@ -56,6 +55,14 @@ var current_scene
 @onready var usar_5 = $"Console/ScrollContainer/Commands/func2_popup/HBoxContainer/usar5"
 @onready var hint_button = $Options/hint
 
+
+var instructions_list = []
+var instructions_colors = {
+	"rojo":[],
+	"azul":[],
+	"verde":[]
+}
+var colors = ["rojo","verde","azul"]
 var level_hint = null
 var no_hint_levels = ["Level5","Level6", "Level8", "Level10", "Level11", "Level12", "Level13"]
 var curr_level_has_no_hint = null
@@ -70,6 +77,33 @@ func check_hints():
 ### LOOP + FUNCTION LOGIC BEGINS HERE ##
 var text_index = 0
 
+func if_logic(if_line):
+	var next_line = text_edit.get_line(text_index + 1)
+	var indent_level = text_edit.get_indent_level(text_index + 1)
+	var commands = []
+	#line = si color == "rojo" / "verde" / "azul"
+	for color in colors:
+		if color in if_line:
+			while text_edit.get_indent_level(text_index + 1) == indent_level:
+				var empty = next_line.is_empty() or next_line.ends_with("\t")
+				if next_line.contains("repetir"):
+					text_index += 1
+					commands+= loop_logic(next_line)
+				elif next_line.contains("def func"):
+					def_func_logic(next_line)
+				elif next_line.contains("func") and !next_line.contains("def func"):
+					var func_name = "func" + next_line[-3]
+					if functions.has(func_name):
+						commands += functions[func_name]
+					text_index += 1
+				elif !empty:
+					commands.append(next_line.lstrip("\t"))
+					text_edit += 1
+				else:
+					text_edit += 1
+				next_line = text_edit.get_line(text_index + 1)
+			instructions_colors[color].append(commands)
+	
 func loop_logic(loop_line):
 	var repeats = str_to_var(loop_line.lstrip("\t")[8])
 	var next_line = text_edit.get_line(text_index + 1)
@@ -164,8 +198,8 @@ func buttons_pressed():
 			command = "def func" #+ var_to_str(function_number) + "():"
 		elif current_name.contains("usar"):
 			command = "func" + current_name[-1] + "()"
-		elif current_name.contains("if___"):
-			command = "if "
+		elif current_name.contains("if"):
+			command = "si color == "
 		else:
 			command = button.name
 		button.pressed.connect(self.add_command.bind(command))
@@ -302,9 +336,6 @@ func _ready():
 	text_edit.scroll_past_end_of_file = false
 	text_edit.caret_blink = true
 	text_edit.draw_tabs = true
-	##KEYWORD COLORS
-	#text_edit.add_keyword_color("def", Color(0.78823530673981, 0.9450980424881, 0.419607847929))
-	#text_edit.add_keyword_color("")
 	master_slider.value = db_to_linear(global.data.volume_settings.master)
 	music_slider.value = db_to_linear(global.data.volume_settings.music)
 	current_scene = get_tree().current_scene.name
