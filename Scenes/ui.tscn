@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bgmlveeipn3us"]
+[gd_scene load_steps=32 format=3 uid="uid://bgmlveeipn3us"]
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_wj4kw"]
 [ext_resource type="Theme" uid="uid://c1itte14q2giw" path="res://Assets/Themes/run.tres" id="2_bnycp"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dn2r1dr8eh602" path="res://Assets/down.png" id="9_fobfc"]
 [ext_resource type="Texture2D" uid="uid://cbndlnq7i2hxw" path="res://Assets/left.png" id="10_13pry"]
 [ext_resource type="Texture2D" uid="uid://yvuam5q5opkf" path="res://Assets/right.png" id="11_y04it"]
+[ext_resource type="Theme" uid="uid://d4c8p25n5qgpe" path="res://Assets/Themes/confirm.tres" id="12_epkip"]
 [ext_resource type="FontFile" uid="uid://dd72mqkn8226f" path="res://Assets/Themes/BitPap.ttf" id="12_k7uda"]
 [ext_resource type="Theme" uid="uid://ck8ttdcg0hb14" path="res://Assets/Themes/star_button.tres" id="14_lqupk"]
 [ext_resource type="Theme" uid="uid://dpkqcy1nxxi52" path="res://Assets/Themes/hint_panel.tres" id="18_3vb4p"]
@@ -331,12 +332,12 @@ theme_override_font_sizes/font_size = 30
 text = "si (...)"
 
 [node name="si_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(296, 100)
+size = Vector2i(369, 100)
 visible = true
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4bme4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Console/ScrollContainer/Commands/si_popup"]
-offset_right = 296.0
+offset_right = 369.0
 offset_bottom = 100.0
 
 [node name="Label" type="Label" parent="Console/ScrollContainer/Commands/si_popup/HBoxContainer"]
@@ -356,6 +357,14 @@ texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "(...)"
+
+[node name="confirmButton" type="Button" parent="Console/ScrollContainer/Commands/si_popup/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("12_epkip")
 
 [node name="color_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
 size = Vector2i(268, 100)
