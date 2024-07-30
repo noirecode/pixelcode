@@ -29,7 +29,7 @@ var panel_up = false
 var max_input = 20
 var key_flags = true
 var active_buttons = [0,1,2,3,4]
-
+var active_colors = ["rojo","verde"]
 
 func _ready():
 	global_audio.play_music_level("forest")

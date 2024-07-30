@@ -70,8 +70,15 @@ func reset_level(level, key_flags):
 		level.inside_key = false
 		level.inside_keybox = false
 		level.box_solved = false
-	level.character_1.flip(false)
-	level.character_1.position = level.initial_position
+	if "characters" in level:
+		for character in level.characters:
+			var temp_str = "character_" + str(character+1)
+			var temp_post = "position_" + str(character+1)
+			level[temp_str].flip(false)
+			level[temp_str].position = level[temp_post]
+	else:
+		level.character_1.flip(false)
+		level.character_1.position = level.initial_position
 
 func calculate_score(level_name):
 	if data.level_solutions[level_name][0] <= data.level_solutions[level_name][1][0]:

@@ -7,7 +7,8 @@
 texture = ExtResource("2_fqrlj")
 region_rect = Rect2(481, 193, 29, 30)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itd4p"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvidi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfnay"]
 texture = ExtResource("2_fqrlj")
@@ -41,7 +42,7 @@ Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_ojje7")
 Button/styles/disabled = SubResource("StyleBoxTexture_fbbfp")
-Button/styles/focus = SubResource("StyleBoxFlat_itd4p")
+Button/styles/focus = SubResource("StyleBoxFlat_jvidi")
 Button/styles/hover = SubResource("StyleBoxTexture_pfnay")
 Button/styles/normal = SubResource("StyleBoxTexture_hfawa")
 Button/styles/pressed = SubResource("StyleBoxTexture_7r2dh")

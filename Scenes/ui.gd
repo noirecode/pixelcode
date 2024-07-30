@@ -3,6 +3,8 @@ var running = false
 var current_scene
 
 @onready var character_1 = $"../Character1"
+var character_2 = ""
+var character_3 = ""
 @onready var console_text = $Console/ConsoleBG/ConsoleText
 @onready var popup_panel = $Console/ScrollContainer/Commands/PopupPanel
 
@@ -64,7 +66,7 @@ var instructions_colors = {
 }
 var colors = ["rojo","verde","azul"]
 var level_hint = null
-var no_hint_levels = ["Level5","Level6", "Level8", "Level10", "Level11", "Level12", "Level13"]
+var no_hint_levels = ["Level5","Level6", "Level8", "Level10", "Level11", "Level12", "Level13", "Level14"]
 var curr_level_has_no_hint = null
 var buttons = []
 
@@ -81,28 +83,34 @@ func if_logic(if_line):
 	var next_line = text_edit.get_line(text_index + 1)
 	var indent_level = text_edit.get_indent_level(text_index + 1)
 	var commands = []
+	var color = ""
+	if if_line.contains("rojo"):
+		color = "rojo"
+	elif if_line.contains("azul"):
+		color = "azul"
+	elif if_line.contains("verde"):
+		color = "verde"
 	#line = si color == "rojo" / "verde" / "azul"
-	for color in colors:
-		if color in if_line:
-			while text_edit.get_indent_level(text_index + 1) == indent_level:
-				var empty = next_line.is_empty() or next_line.ends_with("\t")
-				if next_line.contains("repetir"):
-					text_index += 1
-					commands+= loop_logic(next_line)
-				elif next_line.contains("def func"):
-					def_func_logic(next_line)
-				elif next_line.contains("func") and !next_line.contains("def func"):
-					var func_name = "func" + next_line[-3]
-					if functions.has(func_name):
-						commands += functions[func_name]
-					text_index += 1
-				elif !empty:
-					commands.append(next_line.lstrip("\t"))
-					text_edit += 1
-				else:
-					text_edit += 1
-				next_line = text_edit.get_line(text_index + 1)
-			instructions_colors[color].append(commands)
+	while text_edit.get_indent_level(text_index + 1) == indent_level:
+		var empty = next_line.is_empty() or next_line.ends_with("\t")
+		if next_line.contains("repetir"):
+			text_index += 1
+			commands+= loop_logic(next_line)
+		elif next_line.contains("def func"):
+			def_func_logic(next_line)
+		elif next_line.contains("func") and !next_line.contains("def func"):
+			var func_name = "func" + next_line[-3]
+			if functions.has(func_name):
+				commands += functions[func_name]
+			text_index += 1
+		elif !empty:
+			commands.append(next_line.lstrip("\t"))
+			text_index += 1
+		else:
+			text_index += 1
+		next_line = text_edit.get_line(text_index + 1)
+	instructions_colors[color] += commands
+	print(instructions_colors)
 	
 func loop_logic(loop_line):
 	var repeats = str_to_var(loop_line.lstrip("\t")[8])
@@ -159,31 +167,38 @@ func def_func_logic(def_func_line):
 			text_index += 1
 		next_line = text_edit.get_line(text_index + 1)
 	functions[func_name] = func_body
-	print(functions)
+	#print(functions)
 	#return func_body
+
+func add_global_command(command):
+	for color in get_parent().active_colors:
+		instructions_colors[color] += command
 
 func line_to_array():
 	instructions_list =[]
 	var total_lines = text_edit.get_line_count() - 1
-	
 	while text_index in range(total_lines):
 		var curr_line = text_edit.get_line(text_index)
-		
+		var empty = curr_line.is_empty() or curr_line.ends_with("\t")
 		if curr_line.contains("repetir"):
 			instructions_list += loop_logic(curr_line)
+			
+			add_global_command(instructions_list)
 		elif curr_line.contains("def func"):
 			def_func_logic(curr_line)
 		elif curr_line.contains("func") and !curr_line.contains("def func"):
 			var func_name = "func" + curr_line[-3]
 			if functions.has(func_name):
 				instructions_list += functions[func_name]
-		elif curr_line.contains("si"):
-			#if logic
-			pass
-		else: #normal line
+				
+			add_global_command(instructions_list)
+		elif curr_line.contains("si color"):
+			if_logic(curr_line)
+		elif !empty: #normal line
 			instructions_list.append(curr_line)
+			add_global_command(instructions_list)
 		text_index += 1 #move into else?
-	prints("instructions list: ", instructions_list)
+	#prints("instructions list: ", instructions_list)
 	return instructions_list
 
 ### COMMANDS
@@ -198,8 +213,6 @@ func buttons_pressed():
 			command = "def func" #+ var_to_str(function_number) + "():"
 		elif current_name.contains("usar"):
 			command = "func" + current_name[-1] + "()"
-		elif current_name.contains("if"):
-			command = "si color == "
 		else:
 			command = button.name
 		button.pressed.connect(self.add_command.bind(command))
@@ -250,12 +263,12 @@ func add_command(command):
 		var line_number = text_edit.get_caret_line()
 		if line_number < get_parent().max_input:
 			var curr_line = text_edit.get_line(line_number)
-			var requires_indent = curr_line.contains("repetir") or curr_line.contains("def func")
+			var requires_indent = curr_line.contains("repetir") or curr_line.contains("def func") or curr_line.contains("si color")
 			var empty = curr_line.is_empty() or curr_line.ends_with("\t")
 			var indent_level = text_edit.get_indent_level(line_number)/4
 			var indents_to_add = ""
 			
-			prints("indent level: ", indent_level)
+			#prints("indent level: ", indent_level)
 			if indent_level > 5:
 				return
 			
@@ -268,27 +281,52 @@ func add_command(command):
 				
 			text_edit.insert_line_at(line_number,indents_to_add+command)
 			
-			if command.contains("repetir") or command.contains("def func"):
+			if command.contains("repetir") or command.contains("def func") or command.contains("si color"):
 				indents_to_add += "\t"
 				text_edit.insert_line_at(line_number + 1, indents_to_add)
 			text_edit.set_caret_line(line_number+1)
 
+func run_commands():
+	if "active_colors" in get_parent():
+			for color in get_parent().active_colors:
+				match color:
+					"rojo":
+						character_1.parse_command(instructions_colors.rojo)
+					"verde":
+						character_2.parse_command(instructions_colors.verde)
+					"azul":
+						character_3.parse_command(instructions_colors.azul)
+				prints("color active: ", color)
 ### EDIT
 func _on_run_pressed():
 	if not running:
-		print("key_flags" in get_parent())
+		#RESET STARTS HERE
+		if "active_colors" in get_parent():
+			instructions_colors = {
+				"rojo":[],
+				"azul":[],
+				"verde":[]
+			}
+			#pass
+		#print("key_flags" in get_parent())
 		global.reset_level(get_parent(), "key_flags" in get_parent())
 		text_index = 0
+		#RESET ENDS HERE?
+		
 		running = true
+		#save current line count to global data
 		global.data.level_solutions[current_scene][0] = text_edit.get_line_count() - 1
-		var instructions = line_to_array()
 		global.save_game()
-		print("game saved")
-		print(global.data.level_solutions[current_scene])
-		await character_1.parse_command(instructions)
+		
+		var instructions = line_to_array()
+		#print("game saved")
+		#print(global.data.level_solutions[current_scene])
+		
+		await run_commands()
 		##multiple characters: add them down here in an if=multiple_chars ?
-		print(instructions)
+		#print(instructions)
 	running = false
+	print(instructions_colors)
 		#make sure the character is at initial position before running
 	#enviar lista de instrucciones al jugador para ejecutar
 
@@ -302,21 +340,30 @@ func _on_delete_pressed():
 		var caret_position = text_edit.get_caret_column()
 		#text_edit.set_line(curr_line,"")
 		if total_length-1 == curr_line:
-			print("last line. do nothing?")
+			pass
+			#print("last line. do nothing?")
 		elif curr_line == 0 and total_length > 1:
-			print("deleting first line")
+			#print("deleting first line")
 			text_edit.remove_text(curr_line,0,curr_line+1,0)
 			
 		elif total_length > 1:
-			print("deleting any line")
+			#print("deleting any line")
 			if curr_line >=1:
 				prev_line = curr_line-1
 				prev_line_length = text_edit.get_line(prev_line).length()
 			text_edit.remove_text(prev_line,prev_line_length, curr_line, caret_position)
 		#update_console()
 func _on_restart_pressed():
-	character_1.position = get_parent().initial_position
-	character_1.flip(false)
+	var level = get_parent()
+	if "characters" in level:
+		for character in level.characters:
+			var temp_str = "character_" + str(character+1)
+			var temp_post = "position_" + str(character+1)
+			level[temp_str].flip(false)
+			level[temp_str].position = level[temp_post]
+	else:
+		level.character_1.flip(false)
+		level.character_1.position = level.initial_position
 	instructions_list = []
 	get_tree().reload_current_scene()
 	
@@ -325,9 +372,18 @@ func _on_restart_pressed():
 
 func _ready():
 	transition.play("fade_in")
+	## characters
+	if "active_colors" in get_parent():
+		if "azul" in get_parent().active_colors:
+			character_3 = $"../Character3"
+		if "verde" in get_parent().active_colors:
+			character_2 = $"../Character2"
+	
 	curr_level_has_no_hint = get_parent().name in no_hint_levels
 	buttons = [mover_der_button, mover_izq_button, tomar_llave_button, utilizar_llave_button,saltar_arriba_button,saltar_izq_button,saltar_der_button,saltar_abajo_button, rep_2, rep_3, rep_4, rep_5, rep_6, rep_7, rep_8, rep_9,funcion_crear,usar_1,usar_2,usar_3,usar_4,usar_5]
 	buttons_pressed()
+	if_buttons = [rojo,verde,azul,equal,not_equal]
+	if_variables_pressed()
 	var buttons_main = [mover_der_button, mover_izq_button, saltar_button, tomar_llave_button, utilizar_llave_button, repetir_button, funcion_crear, funcion_usar]
 	#print(buttons_main)
 	
@@ -413,22 +469,44 @@ func _on_stars_pressed():
 # IF BUTTONS
 @onready var si_popup = $Console/ScrollContainer/Commands/si_popup
 @onready var si_loop_button = $Console/ScrollContainer/Commands/siLoop
-@onready var equal_button = $Console/ScrollContainer/Commands/si_popup/HBoxContainer/equalButton
-@onready var color_button = $Console/ScrollContainer/Commands/si_popup/HBoxContainer/colorButton
-@onready var confirm_button = $Console/ScrollContainer/Commands/si_popup/HBoxContainer/confirmButton
+@onready var equal_button = $Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer/equalButton
+@onready var color_button = $Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer/colorButton
+@onready var confirm_button = $Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer/ifConfirm
 @onready var equal_popup = $Console/ScrollContainer/Commands/equal_popup
 @onready var color_popup = $Console/ScrollContainer/Commands/color_popup
+@onready var rojo = $Console/ScrollContainer/Commands/color_popup/HBoxContainer/rojo
+@onready var verde = $Console/ScrollContainer/Commands/color_popup/HBoxContainer/verde
+@onready var azul = $Console/ScrollContainer/Commands/color_popup/HBoxContainer/azul
+@onready var equal = $Console/ScrollContainer/Commands/equal_popup/HBoxContainer/equal
+@onready var not_equal = $Console/ScrollContainer/Commands/equal_popup/HBoxContainer/not_equal
+
+var if_buttons = []
+func if_variables_pressed():
+	for button in if_buttons:
+		button.pressed.connect(self.if_button_handler.bind(button.text))
+func if_button_handler(button_name):
+	#print(button_name)
+	if button_name in colors:
+		color_button.text = button_name
+	else:
+		equal_button.text = button_name
 
 func _on_si_loop_pressed():
 	si_popup.set_position(si_loop_button.get_global_position())
 	si_popup.popup()
 
-## add something so they disappear when unfocused or a button inside of them is selected
+## TODO: add something so they disappear when unfocused or a button inside of them is selected
 func _on_equal_button_pressed():
-	equal_popup.set_position(si_loop_button.get_global_position())
+	equal_popup.set_position(si_loop_button.get_global_position()+Vector2(-10,-80))
 	equal_popup.popup()
-
+	color_popup.hide()
 
 func _on_color_button_pressed():
-	color_popup.set_position(color_button.get_position())
+	color_popup.set_position(si_loop_button.get_global_position()+Vector2(60,-130))
 	color_popup.popup()
+	equal_popup.hide()
+
+func _on_if_confirm_pressed():
+	if color_button.text in colors:
+		add_command("si color " + equal_button.text + " " + color_button.text + ":")
+		si_popup.hide()
