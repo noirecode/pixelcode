@@ -1,6 +1,6 @@
 extends Node2D
 
-var initial_position = Vector2(global.tilesize * 0, global.tilesize * 0)
+var position_1 = Vector2(global.tilesize * 0, global.tilesize * 0)
 var wall_initial_position = Vector2(global.tilesize * 6, global.tilesize * 7)
 
 @onready var character_1 = $Character1
@@ -11,6 +11,8 @@ var wall_initial_position = Vector2(global.tilesize * 6, global.tilesize * 7)
 @onready var key_box_1 = $KeyBox1
 @onready var key_box_2 = $KeyBox2
 @onready var key_box_3 = $KeyBox3
+var characters = 1
+var active_colors = ["rojo"]
 
 var curr_key = ""
 var curr_box = ""

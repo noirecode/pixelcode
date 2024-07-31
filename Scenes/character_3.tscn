@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvfbdpnjy8xh8"]
+[gd_scene load_steps=9 format=3 uid="uid://bvfbdpnjy8xh8"]
 
+[ext_resource type="Script" path="res://Scenes/character_3.gd" id="1_k3eth"]
 [ext_resource type="Texture2D" uid="uid://b1q5cwa4vc4v8" path="res://Assets/char3.png" id="1_md0kl"]
 [ext_resource type="AudioStream" uid="uid://c2qleoawhleo7" path="res://Assets/Audio/jump.wav" id="2_wy6i0"]
 
@@ -42,8 +43,9 @@ radius = 34.0
 height = 68.0
 
 [node name="Character3" type="CharacterBody2D"]
+script = ExtResource("1_k3eth")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="sprite1" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(36, 36)
 scale = Vector2(4, 4)

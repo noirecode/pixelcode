@@ -84,6 +84,9 @@ func if_logic(if_line):
 	var indent_level = text_edit.get_indent_level(text_index + 1)
 	var commands = []
 	var color = ""
+	var equal_sign = true
+	if if_line.contains("!="):
+		equal_sign = false
 	if if_line.contains("rojo"):
 		color = "rojo"
 	elif if_line.contains("azul"):
@@ -109,9 +112,21 @@ func if_logic(if_line):
 		else:
 			text_index += 1
 		next_line = text_edit.get_line(text_index + 1)
-	instructions_colors[color] += commands
+	# when the equal is false then we add all of these commands to all the colors EXCEPT the specified one
+	equal_or_not(equal_sign, color, commands)
 	print(instructions_colors)
+
+func handle_if_commands(color, commands):
 	
+	pass
+func equal_or_not(equal_sign, color, commands):
+	if equal_sign:
+		instructions_colors[color] += commands
+	else:
+		for color_aux in get_parent().active_colors:
+			if color_aux != color:
+				instructions_colors[color_aux] += commands
+
 func loop_logic(loop_line):
 	var repeats = str_to_var(loop_line.lstrip("\t")[8])
 	var next_line = text_edit.get_line(text_index + 1)
@@ -130,6 +145,10 @@ func loop_logic(loop_line):
 			if functions.has(func_name):
 				unraveled_commands += functions[func_name]
 			text_index += 1
+		#add if logic here
+		elif next_line.contains("si color"):
+			text_index += 1
+			if_logic(next_line)
 		elif !empty:
 			unraveled_commands.append(next_line.lstrip("\t"))
 			text_index += 1
@@ -140,7 +159,7 @@ func loop_logic(loop_line):
 	while j < repeats:
 		aux_list += unraveled_commands
 		j += 1
-	return aux_list
+	return aux_list 
 
 var functions = {}
 
@@ -175,31 +194,25 @@ func add_global_command(command):
 		instructions_colors[color] += command
 
 func line_to_array():
-	instructions_list =[]
 	var total_lines = text_edit.get_line_count() - 1
 	while text_index in range(total_lines):
 		var curr_line = text_edit.get_line(text_index)
 		var empty = curr_line.is_empty() or curr_line.ends_with("\t")
 		if curr_line.contains("repetir"):
-			instructions_list += loop_logic(curr_line)
-			
-			add_global_command(instructions_list)
+			add_global_command(loop_logic(curr_line))
 		elif curr_line.contains("def func"):
 			def_func_logic(curr_line)
 		elif curr_line.contains("func") and !curr_line.contains("def func"):
 			var func_name = "func" + curr_line[-3]
 			if functions.has(func_name):
-				instructions_list += functions[func_name]
+				add_global_command(functions[func_name])
 				
-			add_global_command(instructions_list)
 		elif curr_line.contains("si color"):
 			if_logic(curr_line)
 		elif !empty: #normal line
-			instructions_list.append(curr_line)
-			add_global_command(instructions_list)
+			add_global_command([curr_line])
 		text_index += 1 #move into else?
 	#prints("instructions list: ", instructions_list)
-	return instructions_list
 
 ### COMMANDS
 func buttons_pressed():
@@ -318,7 +331,7 @@ func _on_run_pressed():
 		global.data.level_solutions[current_scene][0] = text_edit.get_line_count() - 1
 		global.save_game()
 		
-		var instructions = line_to_array()
+		line_to_array()
 		#print("game saved")
 		#print(global.data.level_solutions[current_scene])
 		
@@ -394,6 +407,7 @@ func _ready():
 	text_edit.draw_tabs = true
 	master_slider.value = db_to_linear(global.data.volume_settings.master)
 	music_slider.value = db_to_linear(global.data.volume_settings.music)
+	sfx_slider.value = db_to_linear(global.data.volume_settings.sfx)
 	current_scene = get_tree().current_scene.name
 	
 	for index in get_parent().active_buttons:

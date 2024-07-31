@@ -2,6 +2,9 @@ extends Control
 @onready var MASTER_BUS_ID = AudioServer.get_bus_index("Master")
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
+@onready var master_slider = $UI/PanelBG/Panel/MarginContainer/GridContainer/MasterSlider
+@onready var music_slider = $UI/PanelBG/Panel/MarginContainer/GridContainer/MusicSlider
+@onready var sfx_slider = $UI/PanelBG/Panel/MarginContainer/GridContainer/SFXSlider
 
 func _ready():
 	global.load_game()
@@ -18,6 +21,9 @@ func _ready():
 			level.pressed.connect(self.change_level.bind(level.name))
 		else:
 			level.disabled = true
+	master_slider.value = db_to_linear(global.data.volume_settings.master)
+	music_slider.value = db_to_linear(global.data.volume_settings.music)
+	sfx_slider.value = db_to_linear(global.data.volume_settings.sfx)
 @onready var transition = $transition
 
 func load_level_score(level_number):
@@ -66,21 +72,21 @@ func _on_credits_pressed():
 	credits.visible = true
 
 func _on_master_slider_value_changed(value):
-	global.data.volume_settings.master = linear_to_db(value)
 	AudioServer.set_bus_volume_db(MASTER_BUS_ID, global.data.volume_settings.master)
 	AudioServer.set_bus_mute(MASTER_BUS_ID, value < 0.05)
+	global.data.volume_settings.master = linear_to_db(value)
 	global.save_game()
 
 
 func _on_music_slider_value_changed(value):
-	global.data.volume_settings.music = linear_to_db(value)
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, global.data.volume_settings.music)
 	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < 0.05)
+	global.data.volume_settings.music = linear_to_db(value)
 	global.save_game()
 
 
 func _on_sfx_slider_value_changed(value):
-	global.data.volume_settings.sfx = linear_to_db(value)
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, global.data.volume_settings.sfx)
 	AudioServer.set_bus_mute(SFX_BUS_ID, value < 0.05)
+	global.data.volume_settings.sfx = linear_to_db(value)
 	global.save_game()

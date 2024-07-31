@@ -2,6 +2,8 @@ extends Node2D
 @onready var pages = $Hint/Panel/pages
 @onready var prev = $Hint/Panel/prev
 @onready var next = $Hint/Panel/next
+var characters = 1
+var active_colors = ["rojo"]
 
 var total_pages = 2
 var curr_page = 1
@@ -69,7 +71,7 @@ func reset_hint():
 func _on_exit_pressed():
 	hint.visible = false
 
-var initial_position = Vector2(global.tilesize * 0, global.tilesize * 9)
+var position_1 = Vector2(global.tilesize * 0, global.tilesize * 9)
 
 @onready var character_1 = $Character1
 

@@ -3,7 +3,8 @@ extends Node2D
 @onready var pages = $Hint/Panel/pages
 @onready var exit = $Hint/Panel/exit
 @onready var hint = $Hint
-
+var characters = 1
+var active_colors = ["rojo"]
 
 var total_pages = 3
 var curr_page = 1
@@ -67,7 +68,7 @@ func _on_exit_pressed():
 	hint.visible = false
 
 #####
-var initial_position = Vector2(global.tilesize * 2, global.tilesize * 7)
+var position_1 = Vector2(global.tilesize * 2, global.tilesize * 7)
 var flag_initial_position = Vector2(global.tilesize * 6, global.tilesize * 6)
 var max_input = 10
 var active_buttons = [0,1]

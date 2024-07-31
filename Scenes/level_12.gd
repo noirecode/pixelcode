@@ -1,8 +1,10 @@
 extends Node2D
 
-var initial_position = Vector2(global.tilesize * 0, global.tilesize * 0)
+var position_1 = Vector2(global.tilesize * 0, global.tilesize * 0)
 
 @onready var character_1 = $Character1
+var characters = 1
+var active_colors = ["rojo"]
 
 
 var panel_up = false

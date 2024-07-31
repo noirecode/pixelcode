@@ -2,6 +2,8 @@ extends Node2D
 @onready var pages = $Hint/Panel/pages
 @onready var prev = $Hint/Panel/prev
 @onready var next = $Hint/Panel/next
+var characters = 1
+var active_colors = ["rojo"]
 
 var total_pages = 3
 var curr_page = 1
@@ -34,7 +36,7 @@ func _on_next_pressed():
 func _on_prev_pressed():
 	page_flip(-1)
 	validate_buttons()
-var initial_position = Vector2(global.tilesize * 0, global.tilesize * 9)
+var position_1 = Vector2(global.tilesize * 0, global.tilesize * 9)
 
 @onready var exit = $Hint/Panel/exit
 @onready var hint = $Hint
