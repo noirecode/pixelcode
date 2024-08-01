@@ -116,9 +116,7 @@ func if_logic(if_line):
 	equal_or_not(equal_sign, color, commands)
 	print(instructions_colors)
 
-func handle_if_commands(color, commands):
-	
-	pass
+
 func equal_or_not(equal_sign, color, commands):
 	if equal_sign:
 		instructions_colors[color] += commands
@@ -397,7 +395,7 @@ func _ready():
 	buttons_pressed()
 	if_buttons = [rojo,verde,azul,equal,not_equal]
 	if_variables_pressed()
-	var buttons_main = [mover_der_button, mover_izq_button, saltar_button, tomar_llave_button, utilizar_llave_button, repetir_button, funcion_crear, funcion_usar]
+	var buttons_main = [mover_der_button, mover_izq_button, saltar_button, tomar_llave_button, utilizar_llave_button, repetir_button, funcion_crear, funcion_usar, si_loop_button]
 	#print(buttons_main)
 	
 	# text edit props

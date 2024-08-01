@@ -332,6 +332,7 @@ custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "si (...)"
 
 [node name="si_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
