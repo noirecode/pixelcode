@@ -66,7 +66,7 @@ var instructions_colors = {
 }
 var colors = ["rojo","verde","azul"]
 var level_hint = null
-var no_hint_levels = ["Level5","Level6", "Level8", "Level10", "Level11", "Level12", "Level13", "Level14"]
+var no_hint_levels = ["Level5","Level6", "Level8", "Level10", "Level11", "Level12", "Level13", "Level15", "Level16", "Level17", "Level18"]
 var curr_level_has_no_hint = null
 var buttons = []
 
@@ -332,7 +332,7 @@ func _on_run_pressed():
 		line_to_array()
 		#print("game saved")
 		#print(global.data.level_solutions[current_scene])
-		
+
 		await run_commands()
 		##multiple characters: add them down here in an if=multiple_chars ?
 		#print(instructions)

@@ -87,13 +87,14 @@ func utilizarLlave():
 	var key = get_parent().find_key()
 	if key: 
 		if get_parent().inside_keybox and get_parent().keys[key]:
-			detected_area.visible = false
-			print("key used!")
-			get_parent().keys[key] = false
-			#get_parent().box_solved = true
-			
-			get_parent().boxes[get_parent().curr_box] = true
-			get_parent().all_boxes_solved()
+			if detected_area:
+				detected_area.visible = false
+				print("key used!")
+				get_parent().keys[key] = false
+				#get_parent().box_solved = true
+				
+				get_parent().boxes[get_parent().curr_box] = true
+				get_parent().all_boxes_solved()
 	else: print("no key in hand.")
 
 func get_area(area):

@@ -16,11 +16,11 @@ var levels = {
 	"Level10": {"next_scene": "res://Scenes/level_11.tscn"},
 	"Level11": {"next_scene": "res://Scenes/level_12.tscn"},
 	"Level12": {"next_scene": "res://Scenes/level_13.tscn"},
-	"Level13": {"next_scene": "res://Scenes/main_menu.tscn"},
-	"Level14": {"next_scene": "res://Scenes/main_menu.tscn"},
-	"Level15": {"next_scene": "res://Scenes/main_menu.tscn"},
-	"Level16": {"next_scene": "res://Scenes/main_menu.tscn"},
-	"Level17": {"next_scene": "res://Scenes/main_menu.tscn"},
+	"Level13": {"next_scene": "res://Scenes/level_14.tscn"},
+	"Level14": {"next_scene": "res://Scenes/level_15.tscn"},
+	"Level15": {"next_scene": "res://Scenes/level_16.tscn"},
+	"Level16": {"next_scene": "res://Scenes/level_17.tscn"},
+	"Level17": {"next_scene": "res://Scenes/level_18.tscn"},
 	"Level18": {"next_scene": "res://Scenes/main_menu.tscn"}
 }
 

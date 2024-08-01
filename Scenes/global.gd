@@ -23,11 +23,11 @@ var data = {
 		"Level12" = [0, [14,15,17],0, false],
 		"Level13" = [0, [12,15,17],0, false],
 		
-		"Level14" = [0, [11,15,20],1, false],
-		"Level15" = [0, [11,15,20],1, false],
-		"Level16" = [0, [11,15,20],1, false],
-		"Level17" = [0, [11,15,20],1, false],
-		"Level18" = [0, [11,15,20],1, false],
+		"Level14" = [0, [4,8,15],1, false],
+		"Level15" = [0, [14,18,20],1, false],
+		"Level16" = [0, [13,15,20],1, false],
+		"Level17" = [0, [7,13,15],1, false],
+		"Level18" = [0, [15,20,25],1, false],
 	}
 }
 var path = "user://save.json"

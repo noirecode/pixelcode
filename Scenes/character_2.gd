@@ -76,12 +76,13 @@ func parse_command(instructions_list):
 func pickUp():
 	if get_parent().inside_key:
 		#get_parent().inside_key = false
-		detected_area.visible = false
-		get_parent().keys[get_parent().curr_key] = true
-		#if get_parent().multiple_keys:
-			#pass
-		#else: get_parent().has_key = true
-		detected_area = null
+		if detected_area:
+			detected_area.visible = false
+			get_parent().keys[get_parent().curr_key] = true
+			#if get_parent().multiple_keys:
+				#pass
+			#else: get_parent().has_key = true
+			detected_area = null
 
 func utilizarLlave():
 	var key = get_parent().find_key()
