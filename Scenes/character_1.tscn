@@ -39,8 +39,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yfucu"]
-radius = 34.0
-height = 68.0
+radius = 30.0
+height = 66.0
 
 [node name="Character1" type="CharacterBody2D"]
 script = ExtResource("1_1pg85")
@@ -81,7 +81,7 @@ target_position = Vector2(-43, -41)
 
 [node name="RayCast2D_DIAG_RD" type="RayCast2D" parent="."]
 position = Vector2(56, 38)
-target_position = Vector2(51, 116)
+target_position = Vector2(82, 114)
 
 [node name="RayCast2D_DIAG_LD" type="RayCast2D" parent="."]
 position = Vector2(12, 37)

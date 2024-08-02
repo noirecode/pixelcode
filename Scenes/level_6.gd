@@ -32,6 +32,7 @@ var boxes = {
 var panel_up = false
 var max_input = 20
 var active_buttons = [0,1,2,3,4,5]
+var flags_entered = 0
 
 var multiple_keys = true 
 

@@ -31,6 +31,7 @@ var panel_up = false
 var max_input = 30
 var key_flags = true
 var active_buttons = [0,1,2,3,4,6,7]
+var flags_entered = 0
 
 func _ready():
 	global_audio.play_music_level("farm")

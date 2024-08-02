@@ -72,6 +72,7 @@ var position_1 = Vector2(global.tilesize *1 , global.tilesize * 6)
 var flag_initial_position = Vector2(global.tilesize * 6, global.tilesize * 4)
 var max_input = 15
 var active_buttons = [0,1,2]
+var flags_entered = 0
 var panel_up = false
 @onready var character_1 = $Character1
 

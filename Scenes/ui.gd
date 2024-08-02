@@ -350,8 +350,12 @@ func _on_delete_pressed():
 		var prev_line_length = 0
 		var caret_position = text_edit.get_caret_column()
 		#text_edit.set_line(curr_line,"")
-		if total_length-1 == curr_line:
-			pass
+		if total_length-1 == curr_line: #if we are at last line
+			#check if length is more than one, if so:
+			#delete previous line
+			#otherwise, if length is one and we are at that, do nothing
+			if total_length >1:
+				text_edit.remove_text(curr_line-1,0,curr_line,0)
 			#print("last line. do nothing?")
 		elif curr_line == 0 and total_length > 1:
 			#print("deleting first line")

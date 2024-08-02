@@ -79,6 +79,7 @@ var position_1 = Vector2(global.tilesize * 0, global.tilesize * 8)
 var panel_up = false
 var max_input = 20
 var active_buttons = [0,1,2,6,7]
+var flags_entered = 0
 
 func _ready():
 	global_audio.play_music_level("farm")

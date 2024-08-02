@@ -9,7 +9,7 @@ var position_2 = Vector2(global.tilesize * 4, global.tilesize * 9)
 var position_3 = Vector2(global.tilesize * 0, global.tilesize * 4)
 var panel_up = false
 var max_input = 25
-var active_buttons = [0,1,2,5,6,7,8]
+var active_buttons = [0,1,2,5,8]
 var active_colors = ["rojo","verde","azul"]
 var flags_entered = 0
 func _ready():

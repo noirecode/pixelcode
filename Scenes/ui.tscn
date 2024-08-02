@@ -248,6 +248,7 @@ theme_override_constants/separation = 20
 texture_filter = 1
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 disabled = true
@@ -256,6 +257,7 @@ text = "moverDer()"
 [node name="moverIzq()" type="Button" parent="Console/ScrollContainer/Commands"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 disabled = true
@@ -265,6 +267,7 @@ text = "moverIzq()"
 texture_filter = 1
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 disabled = true
@@ -330,6 +333,7 @@ expand_icon = true
 [node name="siLoop" type="Button" parent="Console/ScrollContainer/Commands"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 disabled = true
@@ -427,6 +431,7 @@ text = "!="
 [node name="tomarLlave()" type="Button" parent="Console/ScrollContainer/Commands"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 disabled = true
@@ -436,6 +441,7 @@ text = "tomarLlave()"
 texture_filter = 1
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 disabled = true
@@ -444,6 +450,7 @@ text = "utilizarLlave()"
 [node name="repetir(#)" type="Button" parent="Console/ScrollContainer/Commands"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 disabled = true
@@ -528,6 +535,7 @@ text = "9"
 texture_filter = 1
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 disabled = true
@@ -580,6 +588,7 @@ text = "5"
 [node name="funcionUsar" type="Button" parent="Console/ScrollContainer/Commands"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 disabled = true
@@ -776,7 +785,6 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="transition"]
-visible = false
 offset_right = 720.0
 offset_bottom = 1280.0
 color = Color(0, 0, 0, 1)
