@@ -19,6 +19,10 @@ func _input(event: InputEvent):
 	elif event is InputEventScreenDrag and dragging:
 		var drag_vector = event.position - drag_start
 		position = initial_camera_pos - drag_vector
+		if position.y <0:
+			position.y = 0
+		if position.y > 752:
+			position.y = 752
 
 func _unhandled_input(event: InputEvent):
 	_input(event)

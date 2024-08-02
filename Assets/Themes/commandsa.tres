@@ -1,46 +1,31 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dx1ioxxd2ggut"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dx1ioxxd2ggut"]
 
 [ext_resource type="FontFile" uid="uid://dd72mqkn8226f" path="res://Assets/Themes/BitPap.ttf" id="1_al7x1"]
-[ext_resource type="Texture2D" uid="uid://bp6nyp1pau6a6" path="res://Assets/Pixel UI pack 1.png" id="2_s0815"]
+[ext_resource type="Texture2D" uid="uid://d2oeb6carqe30" path="res://Assets/lvl_button.png" id="2_juogl"]
+[ext_resource type="Texture2D" uid="uid://h2onsgy250xo" path="res://Assets/lvl_button_pressed.png" id="2_upp62"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p16ib"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-texture = ExtResource("2_s0815")
-texture_margin_left = 7.0
-texture_margin_top = 7.0
-texture_margin_right = 7.0
-texture_margin_bottom = 7.0
-region_rect = Rect2(177, 129, 62, 30)
+texture = ExtResource("2_upp62")
+region_rect = Rect2(0, 0, 48, 16)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urgbs"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1pgl"]
-texture = ExtResource("2_s0815")
-texture_margin_left = 7.0
-texture_margin_top = 7.0
-texture_margin_right = 7.0
-texture_margin_bottom = 7.0
-region_rect = Rect2(177, 97, 62, 30)
+texture = ExtResource("2_juogl")
+region_rect = Rect2(0, 0, 48, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_irk63"]
-texture = ExtResource("2_s0815")
-texture_margin_left = 7.0
-texture_margin_top = 7.0
-texture_margin_right = 7.0
-texture_margin_bottom = 7.0
-region_rect = Rect2(177, 97, 62, 30)
+texture = ExtResource("2_juogl")
+region_rect = Rect2(0, 0, 48, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpys7"]
-texture = ExtResource("2_s0815")
-texture_margin_left = 7.0
-texture_margin_top = 7.0
-texture_margin_right = 7.0
-texture_margin_bottom = 7.0
-region_rect = Rect2(177, 129, 62, 30)
+texture = ExtResource("2_upp62")
+region_rect = Rect2(0, 0, 48, 16)
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)

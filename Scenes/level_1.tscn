@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cu8nm2gnjt88l" path="res://Assets/grid_tiles.png" id="5_yvb3r"]
 [ext_resource type="PackedScene" uid="uid://bgmlveeipn3us" path="res://Scenes/ui.tscn" id="7_crdnf"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="7_d2er7"]
-[ext_resource type="Theme" uid="uid://dpkqcy1nxxi52" path="res://Assets/Themes/hint_panel.tres" id="8_b3u6w"]
+[ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="8_kcvl3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2b2b"]
 texture = ExtResource("1_lqynq")
@@ -805,7 +805,7 @@ offset_left = 72.0
 offset_top = 216.0
 offset_right = 648.0
 offset_bottom = 1080.0
-theme = ExtResource("8_b3u6w")
+theme = ExtResource("8_kcvl3")
 
 [node name="pages" type="Control" parent="Hint/Panel"]
 anchors_preset = 0

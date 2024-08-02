@@ -742,6 +742,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+step = 20.0
 
 [node name="MenuMap" type="TileMap" parent="ScrollContainer/VScrollBar"]
 texture_filter = 1
@@ -1112,36 +1113,37 @@ offset_bottom = 40.0
 
 [node name="Level1" type="Control" parent="scores"]
 anchors_preset = 0
-offset_left = 48.0
-offset_top = 216.0
-offset_right = 104.0
-offset_bottom = 256.0
+offset_left = 88.0
+offset_top = 280.0
+offset_right = 178.0
+offset_bottom = 370.0
+mouse_filter = 2
 
 [node name="1star" type="TextureRect" parent="scores/Level1"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_top = 144.0
-offset_right = 176.0
-offset_bottom = 208.0
+offset_left = -10.0
+offset_top = 69.0
+offset_right = 106.0
+offset_bottom = 105.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level1"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_top = 144.0
-offset_right = 176.0
-offset_bottom = 208.0
+offset_left = -10.0
+offset_top = 69.0
+offset_right = 106.0
+offset_bottom = 105.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level1"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_top = 144.0
-offset_right = 176.0
-offset_bottom = 208.0
+offset_left = -10.0
+offset_top = 69.0
+offset_right = 106.0
+offset_bottom = 105.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level2" type="Control" parent="scores"]
@@ -1150,35 +1152,33 @@ offset_left = 384.0
 offset_top = 320.0
 offset_right = 424.0
 offset_bottom = 360.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level2"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = -72.0
-offset_top = 144.0
-offset_right = 104.0
-offset_bottom = 208.0
+offset_left = -38.0
+offset_top = 135.0
+offset_right = 78.0
+offset_bottom = 171.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level2"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = -72.0
-offset_top = 144.0
-offset_right = 104.0
-offset_bottom = 208.0
+offset_left = -38.0
+offset_top = 135.0
+offset_right = 78.0
+offset_bottom = 171.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level2"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = -72.0
-offset_top = 144.0
-offset_right = 104.0
-offset_bottom = 208.0
+offset_left = -38.0
+offset_top = 135.0
+offset_right = 78.0
+offset_bottom = 171.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level3" type="Control" parent="scores"]
@@ -1187,35 +1187,33 @@ offset_left = 432.0
 offset_top = 536.0
 offset_right = 488.0
 offset_bottom = 576.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level3"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 56.0
-offset_top = 64.0
-offset_right = 232.0
-offset_bottom = 128.0
+offset_left = 74.0
+offset_top = 55.0
+offset_right = 190.0
+offset_bottom = 91.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level3"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 56.0
-offset_top = 64.0
-offset_right = 232.0
-offset_bottom = 128.0
+offset_left = 74.0
+offset_top = 55.0
+offset_right = 190.0
+offset_bottom = 91.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level3"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 56.0
-offset_top = 64.0
-offset_right = 232.0
-offset_bottom = 128.0
+offset_left = 74.0
+offset_top = 55.0
+offset_right = 190.0
+offset_bottom = 91.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level4" type="Control" parent="scores"]
@@ -1224,35 +1222,33 @@ offset_left = 392.0
 offset_top = 840.0
 offset_right = 432.0
 offset_bottom = 880.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level4"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_top = 80.0
-offset_right = 208.0
-offset_bottom = 144.0
+offset_left = 52.0
+offset_top = 69.0
+offset_right = 168.0
+offset_bottom = 105.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level4"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_top = 80.0
-offset_right = 208.0
-offset_bottom = 144.0
+offset_left = 52.0
+offset_top = 69.0
+offset_right = 168.0
+offset_bottom = 105.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level4"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_top = 80.0
-offset_right = 208.0
-offset_bottom = 144.0
+offset_left = 52.0
+offset_top = 69.0
+offset_right = 168.0
+offset_bottom = 105.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level5" type="Control" parent="scores"]
@@ -1261,35 +1257,33 @@ offset_left = 32.0
 offset_top = 872.0
 offset_right = 72.0
 offset_bottom = 912.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level5"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_top = 88.0
-offset_right = 208.0
-offset_bottom = 152.0
+offset_left = 52.0
+offset_top = 77.0
+offset_right = 168.0
+offset_bottom = 113.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level5"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_top = 88.0
-offset_right = 208.0
-offset_bottom = 152.0
+offset_left = 52.0
+offset_top = 77.0
+offset_right = 168.0
+offset_bottom = 113.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level5"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_top = 88.0
-offset_right = 208.0
-offset_bottom = 152.0
+offset_left = 52.0
+offset_top = 77.0
+offset_right = 168.0
+offset_bottom = 113.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level6" type="Control" parent="scores"]
@@ -1298,35 +1292,33 @@ offset_left = 232.0
 offset_top = 1168.0
 offset_right = 272.0
 offset_bottom = 1208.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level6"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 48.0
-offset_right = 224.0
-offset_bottom = 112.0
+offset_left = 69.0
+offset_top = 37.0
+offset_right = 185.0
+offset_bottom = 73.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level6"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 48.0
-offset_right = 224.0
-offset_bottom = 112.0
+offset_left = 69.0
+offset_top = 37.0
+offset_right = 185.0
+offset_bottom = 73.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level6"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 48.0
-offset_right = 224.0
-offset_bottom = 112.0
+offset_left = 69.0
+offset_top = 37.0
+offset_right = 185.0
+offset_bottom = 73.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level7" type="Control" parent="scores"]
@@ -1335,35 +1327,33 @@ offset_left = 424.0
 offset_top = 1408.0
 offset_right = 464.0
 offset_bottom = 1448.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level7"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 48.0
-offset_right = 216.0
-offset_bottom = 112.0
+offset_left = 57.0
+offset_top = 31.0
+offset_right = 173.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level7"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 48.0
-offset_right = 216.0
-offset_bottom = 112.0
+offset_left = 57.0
+offset_top = 31.0
+offset_right = 173.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level7"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 48.0
-offset_right = 216.0
-offset_bottom = 112.0
+offset_left = 57.0
+offset_top = 31.0
+offset_right = 173.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level8" type="Control" parent="scores"]
@@ -1372,35 +1362,33 @@ offset_left = 168.0
 offset_top = 1616.0
 offset_right = 208.0
 offset_bottom = 1656.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level8"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 48.0
-offset_right = 200.0
-offset_bottom = 112.0
+offset_left = 40.0
+offset_top = 31.0
+offset_right = 156.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level8"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 48.0
-offset_right = 200.0
-offset_bottom = 112.0
+offset_left = 40.0
+offset_top = 31.0
+offset_right = 156.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level8"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 48.0
-offset_right = 200.0
-offset_bottom = 112.0
+offset_left = 40.0
+offset_top = 31.0
+offset_right = 156.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level9" type="Control" parent="scores"]
@@ -1409,35 +1397,33 @@ offset_left = 432.0
 offset_top = 1800.0
 offset_right = 472.0
 offset_bottom = 1840.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level9"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 48.0
-offset_right = 216.0
-offset_bottom = 112.0
+offset_left = 58.0
+offset_top = 31.0
+offset_right = 174.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level9"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 48.0
-offset_right = 216.0
-offset_bottom = 112.0
+offset_left = 58.0
+offset_top = 31.0
+offset_right = 174.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level9"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 48.0
-offset_right = 216.0
-offset_bottom = 112.0
+offset_left = 58.0
+offset_top = 31.0
+offset_right = 174.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level10" type="Control" parent="scores"]
@@ -1446,35 +1432,33 @@ offset_left = 440.0
 offset_top = 2048.0
 offset_right = 480.0
 offset_bottom = 2088.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level10"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_top = 48.0
-offset_right = 208.0
-offset_bottom = 112.0
+offset_left = 50.0
+offset_top = 31.0
+offset_right = 166.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level10"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_top = 48.0
-offset_right = 208.0
-offset_bottom = 112.0
+offset_left = 50.0
+offset_top = 31.0
+offset_right = 166.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level10"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_top = 48.0
-offset_right = 208.0
-offset_bottom = 112.0
+offset_left = 50.0
+offset_top = 31.0
+offset_right = 166.0
+offset_bottom = 67.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level11" type="Control" parent="scores"]
@@ -1483,35 +1467,33 @@ offset_left = 176.0
 offset_top = 2192.0
 offset_right = 216.0
 offset_bottom = 2232.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level11"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = -152.0
-offset_top = 56.0
-offset_right = 24.0
-offset_bottom = 120.0
+offset_left = -129.0
+offset_top = 44.0
+offset_right = -13.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level11"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = -152.0
-offset_top = 56.0
-offset_right = 24.0
-offset_bottom = 120.0
+offset_left = -129.0
+offset_top = 44.0
+offset_right = -13.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level11"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = -152.0
-offset_top = 56.0
-offset_right = 24.0
-offset_bottom = 120.0
+offset_left = -129.0
+offset_top = 44.0
+offset_right = -13.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level12" type="Control" parent="scores"]
@@ -1520,35 +1502,33 @@ offset_left = 176.0
 offset_top = 2528.0
 offset_right = 216.0
 offset_bottom = 2568.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level12"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = -160.0
-offset_top = 56.0
-offset_right = 16.0
-offset_bottom = 120.0
+offset_left = -136.0
+offset_top = 44.0
+offset_right = -20.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level12"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = -160.0
-offset_top = 56.0
-offset_right = 16.0
-offset_bottom = 120.0
+offset_left = -136.0
+offset_top = 44.0
+offset_right = -20.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level12"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = -160.0
-offset_top = 56.0
-offset_right = 16.0
-offset_bottom = 120.0
+offset_left = -136.0
+offset_top = 44.0
+offset_right = -20.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level13" type="Control" parent="scores"]
@@ -1557,35 +1537,33 @@ offset_left = 48.0
 offset_top = 2816.0
 offset_right = 88.0
 offset_bottom = 2856.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level13"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 47.0
+offset_top = 43.0
+offset_right = 163.0
+offset_bottom = 79.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level13"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 47.0
+offset_top = 43.0
+offset_right = 163.0
+offset_bottom = 79.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level13"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 47.0
+offset_top = 43.0
+offset_right = 163.0
+offset_bottom = 79.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level14" type="Control" parent="scores"]
@@ -1594,35 +1572,33 @@ offset_left = 208.0
 offset_top = 3000.0
 offset_right = 248.0
 offset_bottom = 3040.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level14"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 47.0
+offset_top = 43.0
+offset_right = 163.0
+offset_bottom = 79.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level14"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 47.0
+offset_top = 43.0
+offset_right = 163.0
+offset_bottom = 79.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level14"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 47.0
+offset_top = 43.0
+offset_right = 163.0
+offset_bottom = 79.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level15" type="Control" parent="scores"]
@@ -1631,35 +1607,33 @@ offset_left = 408.0
 offset_top = 3144.0
 offset_right = 448.0
 offset_bottom = 3184.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level15"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 45.0
+offset_top = 44.0
+offset_right = 161.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level15"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 45.0
+offset_top = 44.0
+offset_right = 161.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level15"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 45.0
+offset_top = 44.0
+offset_right = 161.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level16" type="Control" parent="scores"]
@@ -1668,35 +1642,33 @@ offset_left = 72.0
 offset_top = 3392.0
 offset_right = 112.0
 offset_bottom = 3432.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level16"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 48.0
-offset_right = 200.0
-offset_bottom = 112.0
+offset_left = 45.0
+offset_top = 36.0
+offset_right = 161.0
+offset_bottom = 72.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level16"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 48.0
-offset_right = 200.0
-offset_bottom = 112.0
+offset_left = 45.0
+offset_top = 36.0
+offset_right = 161.0
+offset_bottom = 72.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level16"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 48.0
-offset_right = 200.0
-offset_bottom = 112.0
+offset_left = 45.0
+offset_top = 36.0
+offset_right = 161.0
+offset_bottom = 72.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level17" type="Control" parent="scores"]
@@ -1705,35 +1677,33 @@ offset_left = 304.0
 offset_top = 3536.0
 offset_right = 344.0
 offset_bottom = 3576.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level17"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 48.0
-offset_right = 224.0
-offset_bottom = 112.0
+offset_left = 69.0
+offset_top = 36.0
+offset_right = 185.0
+offset_bottom = 72.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level17"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 48.0
-offset_right = 224.0
-offset_bottom = 112.0
+offset_left = 69.0
+offset_top = 36.0
+offset_right = 185.0
+offset_bottom = 72.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level17"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 48.0
-offset_right = 224.0
-offset_bottom = 112.0
+offset_left = 69.0
+offset_top = 36.0
+offset_right = 185.0
+offset_bottom = 72.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="Level18" type="Control" parent="scores"]
@@ -1742,35 +1712,33 @@ offset_left = 232.0
 offset_top = 3816.0
 offset_right = 272.0
 offset_bottom = 3856.0
+mouse_filter = 1
 
 [node name="1star" type="TextureRect" parent="scores/Level18"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 56.0
-offset_right = 216.0
-offset_bottom = 120.0
+offset_left = 61.0
+offset_top = 44.0
+offset_right = 177.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("27_p07ig")
 
 [node name="2star" type="TextureRect" parent="scores/Level18"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 56.0
-offset_right = 216.0
-offset_bottom = 120.0
+offset_left = 61.0
+offset_top = 44.0
+offset_right = 177.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("28_q0gfb")
 
 [node name="3star" type="TextureRect" parent="scores/Level18"]
-visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 56.0
-offset_right = 216.0
-offset_bottom = 120.0
+offset_left = 61.0
+offset_top = 44.0
+offset_right = 177.0
+offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("29_6xpd8")
 
 [node name="UI" type="CanvasLayer" parent="."]

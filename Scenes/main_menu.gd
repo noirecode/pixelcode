@@ -13,18 +13,21 @@ func _ready():
 	global_audio.play_music_level("main")
 	for i in range($ScrollContainer/VScrollBar/MenuMap/Levels.get_child_count()):
 		global.levels.append(i+1)
-	
-	for level in $ScrollContainer/VScrollBar/MenuMap/Levels.get_children():
-		if str_to_var(level.name) in range(global.data.unlocked_levels+1):
-			level.disabled = false
-			load_level_score(level.name)
-			level.pressed.connect(self.change_level.bind(level.name))
-		else:
-			level.disabled = true
+	connect_levels($ScrollContainer/VScrollBar/MenuMap/Levels.get_children())
 	master_slider.value = db_to_linear(global.data.volume_settings.master)
 	music_slider.value = db_to_linear(global.data.volume_settings.music)
 	sfx_slider.value = db_to_linear(global.data.volume_settings.sfx)
 @onready var transition = $transition
+
+func connect_levels(container):
+	for level in container:
+		if str_to_var(level.name) in range(global.data.unlocked_levels+1):
+			level.disabled = false
+			level.pressed.connect(self.change_level.bind(level.name))
+			load_level_score(level.name)
+		else:
+			level.disabled = true
+			load_level_score(level.name)
 
 func load_level_score(level_number):
 	var stars = 0
@@ -90,3 +93,4 @@ func _on_sfx_slider_value_changed(value):
 	AudioServer.set_bus_mute(SFX_BUS_ID, value < 0.05)
 	global.data.volume_settings.sfx = linear_to_db(value)
 	global.save_game()
+

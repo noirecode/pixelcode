@@ -100,63 +100,64 @@ horizontal_alignment = 1
 
 [node name="RETRY" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 216.0
-offset_right = 432.0
-offset_bottom = 330.0
+offset_left = 126.341
+offset_top = 224.909
+offset_right = 462.341
+offset_bottom = 336.909
 theme = ExtResource("3_guvvp")
-theme_override_font_sizes/font_size = 50
-text = "Intentar 
-de nuevo"
+theme_override_font_sizes/font_size = 45
+text = "Intentar de nuevo"
 
 [node name="HOME" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 345.0
-offset_right = 432.0
-offset_bottom = 417.0
+offset_left = 126.341
+offset_top = 344.909
+offset_right = 462.341
+offset_bottom = 456.909
 theme = ExtResource("3_guvvp")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "Menu"
 
 [node name="NEXT" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 432.0
-offset_right = 432.0
-offset_bottom = 504.0
+offset_left = 126.341
+offset_top = 465.909
+offset_right = 462.341
+offset_bottom = 577.909
 theme = ExtResource("3_guvvp")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "Siguiente"
 
 [node name="1star" type="TextureRect" parent="Panel"]
 visible = false
-custom_minimum_size = Vector2(48, 16)
+custom_minimum_size = Vector2(17, 15)
 layout_mode = 0
-offset_left = 166.704
-offset_top = 119.614
-offset_right = 214.704
-offset_bottom = 135.614
+offset_left = 152.98
+offset_top = 78.0841
+offset_right = 210.98
+offset_bottom = 96.0841
 scale = Vector2(5, 5)
 texture = ExtResource("4_bb30o")
 
 [node name="2stars" type="TextureRect" parent="Panel"]
 visible = false
+custom_minimum_size = Vector2(17, 15)
 layout_mode = 0
-offset_left = 167.338
-offset_top = 120.407
-offset_right = 215.338
-offset_bottom = 136.407
+offset_left = 153.614
+offset_top = 78.8771
+offset_right = 211.614
+offset_bottom = 96.8771
 scale = Vector2(5, 5)
 texture = ExtResource("5_stmfl")
 
 [node name="3stars" type="TextureRect" parent="Panel"]
 visible = false
+custom_minimum_size = Vector2(17, 15)
 layout_mode = 0
-offset_left = 167.338
-offset_top = 120.407
-offset_right = 215.338
-offset_bottom = 136.407
+offset_left = 153.614
+offset_top = 78.8771
+offset_right = 211.614
+offset_bottom = 96.8771
 scale = Vector2(5, 5)
 texture = ExtResource("6_5oqyc")
 

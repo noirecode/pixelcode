@@ -1,14 +1,10 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://dfqrfq4n7jc1k"]
 
-[ext_resource type="Texture2D" uid="uid://bp6nyp1pau6a6" path="res://Assets/Pixel UI pack 1.png" id="1_wifne"]
+[ext_resource type="Texture2D" uid="uid://ba4dnnweqeclo" path="res://Assets/console_bg.png" id="1_x04bm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0uox8"]
-texture = ExtResource("1_wifne")
-texture_margin_left = 7.0
-texture_margin_top = 7.0
-texture_margin_right = 7.0
-texture_margin_bottom = 7.0
-region_rect = Rect2(144, 0, 48, 48)
+texture = ExtResource("1_x04bm")
+region_rect = Rect2(0, 0, 128, 128)
 
 [resource]
 Panel/styles/panel = SubResource("StyleBoxTexture_0uox8")

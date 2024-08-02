@@ -1,26 +1,27 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ci6h3i16nmy0"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://ci6h3i16nmy0"]
 
 [ext_resource type="FontFile" uid="uid://htstlpxcyiss" path="res://Assets/basis33.ttf" id="1_mp55r"]
-[ext_resource type="Texture2D" uid="uid://wibnr62l8si3" path="res://Assets/Themes/buttonnew.png" id="2_55cqo"]
+[ext_resource type="Texture2D" uid="uid://d2vta47etcayu" path="res://Assets/new_lvl_button_pressed.png" id="2_0fkfp"]
+[ext_resource type="Texture2D" uid="uid://dbha043t14g5e" path="res://Assets/new_lvl_button.png" id="2_2idkv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_alfqg"]
-texture = ExtResource("2_55cqo")
-region_rect = Rect2(16, 0, 16, 16)
+texture = ExtResource("2_0fkfp")
+region_rect = Rect2(0, 0, 18, 18)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phrc0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykf5l"]
-texture = ExtResource("2_55cqo")
-region_rect = Rect2(0, 0, 16, 16)
+texture = ExtResource("2_2idkv")
+region_rect = Rect2(0, 0, 18, 18)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gtu3d"]
-texture = ExtResource("2_55cqo")
-region_rect = Rect2(0, 0, 16, 16)
+texture = ExtResource("2_2idkv")
+region_rect = Rect2(0, 0, 18, 18)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08yx5"]
-texture = ExtResource("2_55cqo")
-region_rect = Rect2(16, 0, 16, 16)
+texture = ExtResource("2_0fkfp")
+region_rect = Rect2(0, 0, 18, 18)
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
