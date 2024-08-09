@@ -1,7 +1,7 @@
-extends Node2D
-@onready var character_1 = $Character1
-@onready var character_2 = $Character2
-@onready var character_3 = $Character3
+extends Control
+@onready var character_1 = $Control/Character1
+@onready var character_2 = $Control/Character2
+@onready var character_3 = $Control/Character3
 
 var characters = 3
 var position_1 = Vector2(global.tilesize * 9, global.tilesize * 9)

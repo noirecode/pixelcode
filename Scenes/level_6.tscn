@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bihxoabhb5yra"]
+[gd_scene load_steps=18 format=3 uid="uid://bihxoabhb5yra"]
 
 [ext_resource type="Script" path="res://Scenes/level_6.gd" id="1_4qj82"]
 [ext_resource type="Texture2D" uid="uid://x1ngq7pbmdup" path="res://Assets/backgrounds.png" id="1_psigs"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bprhrk6k0kxun" path="res://Scenes/key.tscn" id="6_i20o0"]
 [ext_resource type="PackedScene" uid="uid://cubfh7d0hv168" path="res://Scenes/key_box.tscn" id="7_yq11w"]
 [ext_resource type="PackedScene" uid="uid://bq8up7abfprtu" path="res://Scenes/wall.tscn" id="8_ld4ic"]
+[ext_resource type="PackedScene" uid="uid://b0v3q47ijiww8" path="res://Scenes/boundaries.tscn" id="10_mx8g6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efngk"]
 texture = ExtResource("3_i0euh")
@@ -1125,10 +1126,31 @@ sources/1 = SubResource("TileSetAtlasSource_k2e1e")
 sources/2 = SubResource("TileSetAtlasSource_tva81")
 sources/3 = SubResource("TileSetAtlasSource_oac05")
 
-[node name="Level6" type="Node2D"]
+[node name="Level6" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_right = 360.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_4qj82")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -640.0
+offset_right = 720.0
+offset_bottom = 152.0
+grow_vertical = 2
+
+[node name="TileMap" type="TileMap" parent="Control"]
 texture_filter = 1
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_4tn5s")
@@ -1140,35 +1162,39 @@ layer_1/name = "CAVE"
 layer_1/modulate = Color(0.468325, 0.412054, 0.415075, 1)
 layer_1/tile_data = PackedInt32Array(393216, 131072, 6, 393217, 131072, 6, 393218, 131072, 6, 393219, 131072, 6, 393220, 131072, 6, 393221, 131072, 6, 393222, 131072, 6, 393223, 131072, 6, 393224, 131072, 6, 393225, 131072, 6, 458761, 131072, 6, 524297, 131072, 6, 589833, 131072, 6, 589832, 131072, 6, 589831, 131072, 6, 589830, 131072, 6, 589829, 131072, 6, 589828, 131072, 6, 589827, 131072, 6, 589826, 131072, 6, 589825, 131072, 6, 589824, 131072, 6, 524288, 131072, 6, 458752, 131072, 6, 458753, 131072, 6, 458754, 131072, 6, 458755, 131072, 6, 458756, 131072, 6, 458757, 131072, 6, 458758, 131072, 6, 458759, 131072, 6, 458760, 131072, 6, 524296, 131072, 6, 524295, 131072, 6, 524292, 131072, 6, 524291, 131072, 6, 524290, 131072, 6, 524289, 131072, 6, 524293, 131072, 6, 524294, 131072, 6, 327683, 131072, 6, 327680, 131072, 6, 327681, 131072, 6, 327682, 131072, 6, 327684, 131072, 6, 327685, 131072, 6, 327686, 131072, 6, 327687, 131072, 6, 327688, 131072, 6, 327689, 131072, 6)
 layer_2/name = "MAP"
-layer_2/tile_data = PackedInt32Array(655360, 65538, 0, 655369, 196610, 0, 655361, 131074, 0, 655362, 131074, 0, 655363, 131074, 0, 655364, 131074, 0, 655365, 131074, 0, 655366, 131074, 0, 655367, 131074, 0, 655368, 131074, 0, 720895, 458752, 2, 655359, 458752, 2, 589823, 458752, 2, 524287, 458752, 2, 458751, 458752, 2, 393215, 458752, 2, 327679, 458752, 2, 262143, 458752, 2, 196607, 458752, 2, 131071, 458752, 2, 65535, 458752, 2, -1, 458752, 2, -65536, 458752, 2, -65535, 458752, 2, -65534, 458752, 2, -65533, 458752, 2, -65532, 458752, 2, -65531, 458752, 2, -65530, 458752, 2, -65529, 458752, 2, -65528, 458752, 2, -65527, 458752, 2, -65526, 458752, 2, 10, 458752, 2, 65546, 458752, 2, 131082, 458752, 2, 196618, 458752, 2, 262154, 458752, 2, 327690, 458752, 2, 393226, 458752, 2, 458762, 458752, 2, 524298, 458752, 2, 589834, 458752, 2, 655370, 458752, 2, 65536, 0, 0, 65537, 393216, 7, 65538, 65536, 0, 65540, 131072, 0, 65541, 131072, 0, 65542, 131072, 0, 65543, 131072, 0, 65544, 131072, 0, 65545, 196608, 0, 65539, 131072, 0, 196609, 196608, 0, 196611, 131072, 0, 196612, 131072, 0, 196613, 131072, 0, 196614, 131072, 0, 196615, 131072, 0, 196616, 131072, 0, 196617, 196608, 0, 196608, 65536, 0, 196610, 393216, 7, 327683, 393216, 7, 327680, 65536, 0, 327681, 131072, 0, 327682, 196608, 0, 327684, 65536, 0, 327685, 131072, 0, 327686, 131072, 0, 327687, 131072, 0, 327688, 131072, 0, 327689, 196608, 0, 458752, 65538, 0, 458753, 196610, 0, 589824, 655362, 6, 393217, 524290, 6, 393216, 524290, 6, 458759, 65538, 0, 458760, 131074, 0, 458761, 196610, 0, 524291, 196610, 0, 524290, 65538, 0, 589825, 524290, 3, 589827, 524290, 3, 589826, 524290, 3, 393224, 589826, 6, 393223, 589826, 6, 393225, 524290, 6)
+layer_2/tile_data = PackedInt32Array(655360, 65538, 0, 655369, 196610, 0, 655361, 131074, 0, 655362, 131074, 0, 655363, 131074, 0, 655364, 131074, 0, 655365, 131074, 0, 655366, 131074, 0, 655367, 131074, 0, 655368, 131074, 0, 65536, 0, 0, 65537, 393216, 7, 65538, 65536, 0, 65540, 131072, 0, 65541, 131072, 0, 65542, 131072, 0, 65543, 131072, 0, 65544, 131072, 0, 65545, 196608, 0, 65539, 131072, 0, 196609, 196608, 0, 196611, 131072, 0, 196612, 131072, 0, 196613, 131072, 0, 196614, 131072, 0, 196615, 131072, 0, 196616, 131072, 0, 196617, 196608, 0, 196608, 65536, 0, 196610, 393216, 7, 327683, 393216, 7, 327680, 65536, 0, 327681, 131072, 0, 327682, 196608, 0, 327684, 65536, 0, 327685, 131072, 0, 327686, 131072, 0, 327687, 131072, 0, 327688, 131072, 0, 327689, 196608, 0, 458752, 65538, 0, 458753, 196610, 0, 589824, 655362, 6, 393217, 524290, 6, 393216, 524290, 6, 458759, 65538, 0, 458760, 131074, 0, 458761, 196610, 0, 524291, 196610, 0, 524290, 65538, 0, 589825, 524290, 3, 589827, 524290, 3, 589826, 524290, 3, 393224, 589826, 6, 393223, 589826, 6, 393225, 524290, 6)
 layer_3/name = "Tiles"
 layer_3/modulate = Color(1, 1, 1, 0.564706)
 layer_3/tile_data = PackedInt32Array(65538, 3, 0, 65545, 131075, 0, 65539, 65539, 0, 65540, 65539, 0, 65541, 65539, 0, 65542, 65539, 0, 65543, 65539, 0, 65544, 65539, 0, 196616, 65539, 0, 196615, 65539, 0, 196614, 65539, 0, 196613, 65539, 0, 196612, 65539, 0, 196611, 3, 0, 196617, 131075, 0, 196609, 131075, 0, 196608, 3, 0, 327680, 3, 0, 327681, 65539, 0, 327682, 131075, 0, 327684, 3, 0, 327689, 131075, 0, 327685, 65539, 0, 327686, 65539, 0, 327687, 65539, 0, 327688, 65539, 0, 458759, 3, 0, 458760, 65539, 0, 458761, 131075, 0, 458752, 3, 0, 524290, 3, 0, 524291, 131075, 0, 458753, 131075, 0, 655369, 131075, 0, 655360, 3, 0, 655361, 65539, 0, 655362, 65539, 0, 655363, 65539, 0, 655364, 65539, 0, 655365, 65539, 0, 655366, 65539, 0, 655367, 65539, 0, 655368, 65539, 0)
 
-[node name="FinishFlag" parent="." instance=ExtResource("2_qj4de")]
+[node name="FinishFlag" parent="Control" instance=ExtResource("2_qj4de")]
 position = Vector2(576, 576)
 
-[node name="Key1" parent="." instance=ExtResource("6_i20o0")]
+[node name="Key1" parent="Control" instance=ExtResource("6_i20o0")]
 position = Vector2(144, 0)
 
-[node name="Key2" parent="." instance=ExtResource("6_i20o0")]
+[node name="Key2" parent="Control" instance=ExtResource("6_i20o0")]
 position = Vector2(216, 144)
 
-[node name="Key3" parent="." instance=ExtResource("6_i20o0")]
+[node name="Key3" parent="Control" instance=ExtResource("6_i20o0")]
 position = Vector2(288, 288)
 
-[node name="KeyBox1" parent="." instance=ExtResource("7_yq11w")]
+[node name="KeyBox1" parent="Control" instance=ExtResource("7_yq11w")]
 position = Vector2(216, 0)
 
-[node name="KeyBox2" parent="." instance=ExtResource("7_yq11w")]
+[node name="KeyBox2" parent="Control" instance=ExtResource("7_yq11w")]
 position = Vector2(288, 144)
 
-[node name="KeyBox3" parent="." instance=ExtResource("7_yq11w")]
+[node name="KeyBox3" parent="Control" instance=ExtResource("7_yq11w")]
 position = Vector2(360, 288)
 
-[node name="Wall" parent="." instance=ExtResource("8_ld4ic")]
+[node name="Wall" parent="Control" instance=ExtResource("8_ld4ic")]
 position = Vector2(432, 504)
 
-[node name="Character1" parent="." instance=ExtResource("4_edkh4")]
+[node name="Boundaries" parent="Control" instance=ExtResource("10_mx8g6")]
+
+[node name="Character1" parent="Control" instance=ExtResource("4_edkh4")]
 
 [node name="UI" parent="." instance=ExtResource("5_tswof")]
+visible = false
+layout_mode = 1

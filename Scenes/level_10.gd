@@ -1,12 +1,12 @@
-extends Node2D
+extends Control
 
 var position_1 = Vector2(global.tilesize * 9, global.tilesize * 2)
 var wall_initial_position = Vector2(global.tilesize * 4, global.tilesize * 7)
 
-@onready var wall = $Wall
-@onready var key_item = $Key
-@onready var key_box = $KeyBox
-@onready var character_1 = $Character1
+@onready var wall = $Control/Wall
+@onready var key_item = $Control/Key
+@onready var key_box = $Control/KeyBox
+@onready var character_1 = $Control/Character1
 var characters = 1
 var active_colors = ["rojo"]
 

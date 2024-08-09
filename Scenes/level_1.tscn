@@ -775,10 +775,32 @@ sources/6 = SubResource("TileSetAtlasSource_e14gi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwtcb"]
 size = Vector2(721.779, 437.658)
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
 script = ExtResource("1_yfygu")
 
-[node name="Map" type="TileMap" parent="."]
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -640.0
+offset_right = 720.0
+offset_bottom = 152.0
+grow_vertical = 2
+
+[node name="Map" type="TileMap" parent="Control"]
 texture_filter = 1
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_bicea")
@@ -792,29 +814,37 @@ layer_2/name = "Tiles"
 layer_2/modulate = Color(1, 1, 1, 0.564706)
 layer_2/tile_data = PackedInt32Array(524288, 6, 1, 524289, 65542, 1, 524290, 65542, 1, 524291, 65542, 1, 524292, 65542, 1, 524293, 65542, 1, 524294, 65542, 1, 524295, 65542, 1, 524296, 65542, 1, 524297, 131078, 1, 589824, 6, 6, 589833, 131078, 6, 655369, 131078, 7, 655360, 6, 7, 655361, 65542, 7, 655362, 65542, 7, 655363, 65542, 7, 655364, 65542, 7, 655365, 65542, 7, 655366, 65542, 7, 655367, 65542, 7, 655368, 65542, 7, 589825, 65542, 6, 589826, 65542, 6, 589827, 65542, 6, 589828, 65542, 6, 589829, 65542, 6, 589830, 65542, 6, 589831, 65542, 6, 589832, 65542, 6, 458752, 6, 6, 458753, 131078, 6, 458761, 131078, 6, 458759, 6, 6, 458760, 65542, 6, 393223, 6, 6, 327687, 6, 6, 393216, 6, 6, 327680, 6, 6, 262144, 6, 6, 196608, 6, 6, 393217, 131078, 6, 327681, 131078, 6, 262145, 131078, 6, 196609, 131078, 6, 327689, 131078, 6, 393225, 131078, 6, 327688, 65542, 6, 393224, 65542, 6, 131072, 6, 1, 262151, 6, 1, 131073, 131078, 1, 262153, 131078, 1, 262152, 65542, 1)
 
-[node name="FinishFlag" parent="." instance=ExtResource("7_d2er7")]
-position = Vector2(432, 432)
-
-[node name="Character1" parent="." instance=ExtResource("2_cy1k4")]
-position = Vector2(144, 504)
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Control"]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D"]
 position = Vector2(360.416, 784.438)
 shape = SubResource("RectangleShape2D_lwtcb")
 
+[node name="FinishFlag" parent="Control" instance=ExtResource("7_d2er7")]
+position = Vector2(432, 432)
+
+[node name="Character1" parent="Control" instance=ExtResource("2_cy1k4")]
+position = Vector2(144, 504)
+
 [node name="UI" parent="." instance=ExtResource("7_crdnf")]
+layout_mode = 1
 
 [node name="Hint" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="Hint"]
 texture_filter = 1
-offset_left = 72.0
-offset_top = 216.0
-offset_right = 648.0
-offset_bottom = 1080.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -432.0
+offset_right = 288.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("8_kcvl3")
 
 [node name="pages" type="Control" parent="Hint/Panel"]

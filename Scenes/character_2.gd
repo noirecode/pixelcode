@@ -14,9 +14,13 @@ var detected_area = null
 @onready var ray_cast_2d_diag_rd = $RayCast2D_DIAG_RD
 @onready var ray_cast_2d_diag_ld = $RayCast2D_DIAG_LD
 @onready var sfx_jump = $sfx_jump
+@onready var sfx_use = $sfx_use
+@onready var sfx_pickup = $sfx_pickup
 
+var level_scene = ''
 
-
+func _ready():
+	level_scene = get_parent().get_parent()
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -74,27 +78,29 @@ func parse_command(instructions_list):
 	sprite_1.play("default")
 
 func pickUp():
-	if get_parent().inside_key:
+	if level_scene.inside_key:
 		#get_parent().inside_key = false
-		if detected_area:
-			detected_area.visible = false
-			get_parent().keys[get_parent().curr_key] = true
-			#if get_parent().multiple_keys:
-				#pass
-			#else: get_parent().has_key = true
-			detected_area = null
+		sfx_pickup.play()
+		detected_area.visible = false
+		level_scene.keys[level_scene.curr_key] = true
+		#if get_parent().multiple_keys:
+			#pass
+		#else: get_parent().has_key = true
+		detected_area = null
 
 func utilizarLlave():
-	var key = get_parent().find_key()
+	var key = level_scene.find_key()
 	if key: 
-		if get_parent().inside_keybox and get_parent().keys[key]:
-			detected_area.visible = false
-			print("key used!")
-			get_parent().keys[key] = false
-			#get_parent().box_solved = true
-			
-			get_parent().boxes[get_parent().curr_box] = true
-			get_parent().all_boxes_solved()
+		if level_scene.inside_keybox and level_scene.keys[key]:
+			if detected_area:
+				sfx_use.play()
+				detected_area.visible = false
+				print("key used!")
+				level_scene.keys[key] = false
+				#get_parent().box_solved = true
+				
+				level_scene.boxes[level_scene.curr_box] = true
+				level_scene.all_boxes_solved()
 	else: print("no key in hand.")
 
 func get_area(area):
@@ -136,9 +142,10 @@ func saltar(direction=null):
 				await mover(Vector2.UP,1, 0.1)
 
 	elif direction == "down":
-		mover(Vector2.DOWN,0.1,0.1)
+		await mover(Vector2.DOWN,0.1,0.1)
 	else:
-		await mover(Vector2.UP,1, 0.1)
+		if !ray_cast_2d_up.is_colliding():
+			await mover(Vector2.UP,1, 0.1)
 	while !is_on_floor():
 		await get_tree().create_timer(0.1).timeout
 

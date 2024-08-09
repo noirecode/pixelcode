@@ -2,7 +2,7 @@ extends Control
 var running = false
 var current_scene
 
-@onready var character_1 = $"../Character1"
+@onready var character_1 = $"../Control/Character1"
 var character_2 = ""
 var character_3 = ""
 @onready var console_text = $Console/ConsoleBG/ConsoleText
@@ -56,7 +56,7 @@ var character_3 = ""
 @onready var usar_4 = $"Console/ScrollContainer/Commands/func2_popup/HBoxContainer/usar4"
 @onready var usar_5 = $"Console/ScrollContainer/Commands/func2_popup/HBoxContainer/usar5"
 @onready var hint_button = $Options/hint
-
+var level_scene = get_parent()
 
 var instructions_list = []
 var instructions_colors = {
@@ -111,7 +111,8 @@ func if_logic(if_line):
 			text_index += 1
 		else:
 			text_index += 1
-		next_line = text_edit.get_line(text_index + 1)
+		if text_index < text_edit.get_line_count():
+			next_line = text_edit.get_line(text_index + 1)
 	# when the equal is false then we add all of these commands to all the colors EXCEPT the specified one
 	equal_or_not(equal_sign, color, commands)
 	print(instructions_colors)
@@ -121,7 +122,7 @@ func equal_or_not(equal_sign, color, commands):
 	if equal_sign:
 		instructions_colors[color] += commands
 	else:
-		for color_aux in get_parent().active_colors:
+		for color_aux in level_scene.active_colors:
 			if color_aux != color:
 				instructions_colors[color_aux] += commands
 
@@ -152,7 +153,8 @@ func loop_logic(loop_line):
 			text_index += 1
 		else:
 			text_index += 1
-		next_line = text_edit.get_line(text_index + 1)
+		if text_index < text_edit.get_line_count():
+			next_line = text_edit.get_line(text_index + 1)
 	var j = 0
 	while j < repeats:
 		aux_list += unraveled_commands
@@ -182,13 +184,14 @@ func def_func_logic(def_func_line):
 			text_index += 1
 		else:
 			text_index += 1
-		next_line = text_edit.get_line(text_index + 1)
+		if text_index < text_edit.get_line_count():
+			next_line = text_edit.get_line(text_index + 1)
 	functions[func_name] = func_body
 	#print(functions)
 	#return func_body
 
 func add_global_command(command):
-	for color in get_parent().active_colors:
+	for color in level_scene.active_colors:
 		instructions_colors[color] += command
 
 func line_to_array():
@@ -272,7 +275,7 @@ func add_command(command):
 			command = command + var_to_str(function_number) + "():"
 		
 		var line_number = text_edit.get_caret_line()
-		if line_number < get_parent().max_input:
+		if line_number < level_scene.max_input:
 			var curr_line = text_edit.get_line(line_number)
 			var requires_indent = curr_line.contains("repetir") or curr_line.contains("def func") or curr_line.contains("si color")
 			var empty = curr_line.is_empty() or curr_line.ends_with("\t")
@@ -298,8 +301,8 @@ func add_command(command):
 			text_edit.set_caret_line(line_number+1)
 
 func run_commands():
-	if "active_colors" in get_parent():
-			for color in get_parent().active_colors:
+	if "active_colors" in level_scene:
+			for color in level_scene.active_colors:
 				match color:
 					"rojo":
 						character_1.parse_command(instructions_colors.rojo)
@@ -312,7 +315,7 @@ func run_commands():
 func _on_run_pressed():
 	if not running:
 		#RESET STARTS HERE
-		if "active_colors" in get_parent():
+		if "active_colors" in level_scene:
 			instructions_colors = {
 				"rojo":[],
 				"azul":[],
@@ -320,7 +323,7 @@ func _on_run_pressed():
 			}
 			#pass
 		#print("key_flags" in get_parent())
-		global.reset_level(get_parent(), "key_flags" in get_parent())
+		global.reset_level(level_scene, "key_flags" in level_scene)
 		text_index = 0
 		#RESET ENDS HERE?
 		
@@ -332,12 +335,13 @@ func _on_run_pressed():
 		line_to_array()
 		#print("game saved")
 		#print(global.data.level_solutions[current_scene])
-
+		print("running commands")
 		await run_commands()
 		##multiple characters: add them down here in an if=multiple_chars ?
 		#print(instructions)
-	running = false
-	print(instructions_colors)
+		running = false
+	#print(instructions_colors)
+	print("run pressed")
 		#make sure the character is at initial position before running
 	#enviar lista de instrucciones al jugador para ejecutar
 
@@ -369,7 +373,7 @@ func _on_delete_pressed():
 			text_edit.remove_text(prev_line,prev_line_length, curr_line, caret_position)
 		#update_console()
 func _on_restart_pressed():
-	var level = get_parent()
+	var level = level_scene
 	if "characters" in level:
 		for character in level.characters:
 			var temp_str = "character_" + str(character+1)
@@ -387,14 +391,15 @@ func _on_restart_pressed():
 
 func _ready():
 	transition.play("fade_in")
+	level_scene = get_parent()
 	## characters
-	if "active_colors" in get_parent():
-		if "azul" in get_parent().active_colors:
-			character_3 = $"../Character3"
-		if "verde" in get_parent().active_colors:
-			character_2 = $"../Character2"
+	if "active_colors" in level_scene:
+		if "azul" in level_scene.active_colors:
+			character_3 = $"../Control/Character3"
+		if "verde" in level_scene.active_colors:
+			character_2 = $"../Control/Character2"
 	
-	curr_level_has_no_hint = get_parent().name in no_hint_levels
+	curr_level_has_no_hint = level_scene.name in no_hint_levels
 	buttons = [mover_der_button, mover_izq_button, tomar_llave_button, utilizar_llave_button,saltar_arriba_button,saltar_izq_button,saltar_der_button,saltar_abajo_button, rep_2, rep_3, rep_4, rep_5, rep_6, rep_7, rep_8, rep_9,funcion_crear,usar_1,usar_2,usar_3,usar_4,usar_5]
 	buttons_pressed()
 	if_buttons = [rojo,verde,azul,equal,not_equal]
@@ -412,7 +417,7 @@ func _ready():
 	sfx_slider.value = db_to_linear(global.data.volume_settings.sfx)
 	current_scene = get_tree().current_scene.name
 	
-	for index in get_parent().active_buttons:
+	for index in level_scene.active_buttons:
 		buttons_main[index].disabled = false
 	check_hints()
 func _process(_delta):
@@ -421,7 +426,7 @@ func _process(_delta):
 	var line_length = text_edit.get_line(line_idx).length()
 	text_edit.set_caret_line(line_idx)
 	text_edit.set_caret_column(line_length)
-	if get_parent().panel_up:
+	if level_scene.panel_up:
 		finish_panel.visible = true
 	
 
@@ -436,8 +441,8 @@ func _process(_delta):
 func _on_hint_pressed():
 	sfx_button.play()
 	level_hint.visible = !level_hint.visible
-	if get_parent().has_method("reset_hint"):
-		get_parent().reset_hint()
+	if level_scene.has_method("reset_hint"):
+		level_scene.reset_hint()
 	if level_hint.visible:
 		volume.visible = false
 		rating.visible = false
@@ -513,7 +518,7 @@ func _on_si_loop_pressed():
 
 ## TODO: add something so they disappear when unfocused or a button inside of them is selected
 func _on_equal_button_pressed():
-	equal_popup.set_position(si_loop_button.get_global_position()+Vector2(-10,-80))
+	equal_popup.set_position(si_loop_button.get_global_position()+Vector2(0,-100))
 	equal_popup.popup()
 	color_popup.hide()
 

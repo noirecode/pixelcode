@@ -1,10 +1,10 @@
-extends Node2D
-@onready var character_1 = $Character1
-@onready var character_2 = $Character2
+extends Control
+@onready var character_1 = $Control/Character1
+@onready var character_2 = $Control/Character2
 
-@onready var wall = $Wall
-@onready var key_item = $Key
-@onready var key_box = $KeyBox
+@onready var wall = $Control/Wall
+@onready var key_item = $Control/Key
+@onready var key_box = $Control/KeyBox
 
 var curr_key = ""
 var curr_box = ""

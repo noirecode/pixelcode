@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 @onready var pages = $Hint/Panel/pages
 @onready var prev = $Hint/Panel/prev
 @onready var next = $Hint/Panel/next
@@ -74,7 +74,7 @@ var max_input = 15
 var active_buttons = [0,1,2]
 var flags_entered = 0
 var panel_up = false
-@onready var character_1 = $Character1
+@onready var character_1 = $Control/Character1
 
 func _ready():
 	global_audio.play_music_level("forest")

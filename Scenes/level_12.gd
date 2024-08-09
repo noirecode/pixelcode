@@ -1,8 +1,8 @@
-extends Node2D
+extends Control
 
 var position_1 = Vector2(global.tilesize * 0, global.tilesize * 0)
 
-@onready var character_1 = $Character1
+@onready var character_1 = $Control/Character1
 var characters = 1
 var active_colors = ["rojo"]
 

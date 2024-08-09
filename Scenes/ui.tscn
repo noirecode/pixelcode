@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bgmlveeipn3us"]
+[gd_scene load_steps=41 format=3 uid="uid://bgmlveeipn3us"]
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_wj4kw"]
 [ext_resource type="Theme" uid="uid://c1itte14q2giw" path="res://Assets/Themes/run.tres" id="2_bnycp"]
@@ -27,7 +27,6 @@
 [ext_resource type="AudioStream" uid="uid://bats1vdai7pbs" path="res://Assets/Audio/select_007.ogg" id="19_q017p"]
 [ext_resource type="Theme" uid="uid://cs625fyi50nkx" path="res://Assets/Themes/selection_blue.tres" id="19_rn5h5"]
 [ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="20_deba8"]
-[ext_resource type="Theme" uid="uid://bf3hohlhyf3kt" path="res://Assets/Themes/block.tres" id="20_ku4qu"]
 [ext_resource type="Theme" uid="uid://c5mchs1j5jknc" path="res://Assets/Themes/slider.tres" id="27_rxi53"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74453"]
@@ -77,7 +76,14 @@ shadow_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8c3go"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujbh0"]
+[sub_resource type="Theme" id="Theme_eui6k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pns41"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+shadow_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_sts8b"]
 
 [sub_resource type="Animation" id="Animation_0d5pl"]
 resource_name = "fade_in"
@@ -148,13 +154,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_wj4kw")
 
 [node name="Console" type="Control" parent="."]
-anchors_preset = 0
-offset_top = 736.0
-offset_right = 712.0
-offset_bottom = 1256.0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -542.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="ConsoleBG" type="Panel" parent="Console"]
 texture_filter = 1
@@ -351,6 +363,7 @@ text = "si (...)"
 [node name="si_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
 canvas_item_default_texture_filter = 0
 size = Vector2i(390, 108)
+visible = true
 theme = ExtResource("12_p2mih")
 
 [node name="MarginContainer" type="MarginContainer" parent="Console/ScrollContainer/Commands/si_popup"]
@@ -379,7 +392,11 @@ texture_filter = 1
 custom_minimum_size = Vector2(63, 63)
 layout_mode = 2
 theme = ExtResource("14_k0288")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
 theme_override_font_sizes/font_size = 30
+text = "=="
 
 [node name="colorButton" type="Button" parent="Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer"]
 texture_filter = 1
@@ -397,17 +414,26 @@ size_flags_vertical = 4
 theme = ExtResource("12_epkip")
 
 [node name="color_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(100, 155)
+size = Vector2i(150, 138)
+visible = true
+transparent = true
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8c3go")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Console/ScrollContainer/Commands/color_popup"]
 texture_filter = 1
-offset_right = 100.0
-offset_bottom = 155.0
+offset_right = 150.0
+offset_bottom = 138.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_eui6k")
+theme_override_constants/separation = 9
 
 [node name="rojo" type="Button" parent="Console/ScrollContainer/Commands/color_popup/HBoxContainer"]
 texture_filter = 1
+custom_minimum_size = Vector2(150, 27)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme = ExtResource("17_353ev")
 theme_override_fonts/font = ExtResource("3_q6q12")
 theme_override_font_sizes/font_size = 40
@@ -415,7 +441,10 @@ text = "rojo"
 
 [node name="verde" type="Button" parent="Console/ScrollContainer/Commands/color_popup/HBoxContainer"]
 texture_filter = 1
+custom_minimum_size = Vector2(150, 27)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("18_yv0bn")
 theme_override_fonts/font = ExtResource("3_q6q12")
 theme_override_font_sizes/font_size = 40
@@ -423,31 +452,48 @@ text = "verde"
 
 [node name="azul" type="Button" parent="Console/ScrollContainer/Commands/color_popup/HBoxContainer"]
 texture_filter = 1
+custom_minimum_size = Vector2(150, 27)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("19_rn5h5")
 theme_override_fonts/font = ExtResource("3_q6q12")
 theme_override_font_sizes/font_size = 40
 text = "azul"
 
 [node name="equal_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(144, 144)
-theme_override_styles/panel = SubResource("StyleBoxEmpty_ujbh0")
+size = Vector2i(63, 130)
+transparent = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_pns41")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Console/ScrollContainer/Commands/equal_popup"]
-offset_right = 144.0
-offset_bottom = 144.0
+offset_right = 63.0
+offset_bottom = 130.0
+theme = SubResource("Theme_sts8b")
 
 [node name="equal" type="Button" parent="Console/ScrollContainer/Commands/equal_popup/HBoxContainer"]
 texture_filter = 1
+custom_minimum_size = Vector2(63, 63)
 layout_mode = 2
-theme = ExtResource("20_ku4qu")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("14_k0288")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
 theme_override_font_sizes/font_size = 40
 text = "=="
 
 [node name="not_equal" type="Button" parent="Console/ScrollContainer/Commands/equal_popup/HBoxContainer"]
 texture_filter = 1
+custom_minimum_size = Vector2(63, 63)
 layout_mode = 2
-theme = ExtResource("20_ku4qu")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("14_k0288")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
 theme_override_font_sizes/font_size = 40
 text = "!="
 
@@ -662,10 +708,11 @@ theme_override_font_sizes/font_size = 30
 text = "5"
 
 [node name="Options" type="Control" parent="."]
+layout_mode = 1
 anchors_preset = 0
-offset_left = 548.0
+offset_left = 540.0
 offset_right = 720.0
-offset_bottom = 67.0
+offset_bottom = 18.0
 
 [node name="settings" type="Button" parent="Options"]
 texture_filter = 1
@@ -821,6 +868,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="transition"]
+visible = false
 offset_right = 720.0
 offset_bottom = 1280.0
 color = Color(0, 0, 0, 1)

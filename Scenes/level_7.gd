@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 @onready var pages = $Hint/Panel/pages
 @onready var prev = $Hint/Panel/prev
 @onready var next = $Hint/Panel/next
@@ -73,7 +73,7 @@ func _on_exit_pressed():
 
 var position_1 = Vector2(global.tilesize * 0, global.tilesize * 9)
 
-@onready var character_1 = $Character1
+@onready var character_1 = $Control/Character1
 
 
 var panel_up = false
