@@ -1,0 +1,45 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://5w8adct3hds5"]
+
+[ext_resource type="FontFile" uid="uid://htstlpxcyiss" path="res://Assets/basis33.ttf" id="1_mw42l"]
+[ext_resource type="Texture2D" uid="uid://c4r42dryge1px" path="res://Assets/green.png" id="2_ck0g4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8l27l"]
+texture = ExtResource("2_ck0g4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6se5x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5hy7g"]
+texture = ExtResource("2_ck0g4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lqe5v"]
+texture = ExtResource("2_ck0g4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur7k8"]
+texture = ExtResource("2_ck0g4")
+modulate_color = Color(0.396078, 0.396078, 0.396078, 1)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_mw42l")
+Button/styles/disabled = SubResource("StyleBoxTexture_8l27l")
+Button/styles/focus = SubResource("StyleBoxFlat_6se5x")
+Button/styles/hover = SubResource("StyleBoxTexture_5hy7g")
+Button/styles/normal = SubResource("StyleBoxTexture_lqe5v")
+Button/styles/pressed = SubResource("StyleBoxTexture_ur7k8")

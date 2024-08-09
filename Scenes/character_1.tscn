@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2ku6ali5xjaw"]
+[gd_scene load_steps=11 format=3 uid="uid://b2ku6ali5xjaw"]
 
 [ext_resource type="Script" path="res://Scenes/character_1.gd" id="1_1pg85"]
 [ext_resource type="Texture2D" uid="uid://4ehj62nhpan7" path="res://Assets/char1.png" id="2_7uo1d"]
 [ext_resource type="AudioStream" uid="uid://c2qleoawhleo7" path="res://Assets/Audio/jump.wav" id="3_f50ta"]
+[ext_resource type="AudioStream" uid="uid://blfb5mves6t1p" path="res://Assets/Audio/select_004.ogg" id="4_vsq1u"]
+[ext_resource type="AudioStream" uid="uid://bpc08s3gg45df" path="res://Assets/Audio/question_003.ogg" id="5_d0y4k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bix8x"]
 atlas = ExtResource("2_7uo1d")
@@ -89,4 +91,12 @@ target_position = Vector2(-94, 114)
 
 [node name="sfx_jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_f50ta")
+bus = &"SFX"
+
+[node name="sfx_pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vsq1u")
+bus = &"SFX"
+
+[node name="sfx_use" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_d0y4k")
 bus = &"SFX"

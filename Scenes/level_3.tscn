@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cpso1b1xiyaci"]
+[gd_scene load_steps=17 format=3 uid="uid://cpso1b1xiyaci"]
 
 [ext_resource type="Script" path="res://Scenes/level_3.gd" id="1_edsoc"]
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="1_j3pyj"]
@@ -10,7 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bprhrk6k0kxun" path="res://Scenes/key.tscn" id="6_f15kn"]
 [ext_resource type="PackedScene" uid="uid://cubfh7d0hv168" path="res://Scenes/key_box.tscn" id="7_fdl01"]
 [ext_resource type="PackedScene" uid="uid://bq8up7abfprtu" path="res://Scenes/wall.tscn" id="8_r8q2v"]
-[ext_resource type="Theme" uid="uid://dpkqcy1nxxi52" path="res://Assets/Themes/hint_panel.tres" id="11_0qovj"]
+[ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="11_fvfno"]
+[ext_resource type="Theme" uid="uid://cybdemp05rmy" path="res://Assets/Themes/exit.tres" id="12_yyhkt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mpnbe"]
 texture = ExtResource("1_wlv13")
@@ -808,8 +809,8 @@ texture_filter = 1
 offset_left = 72.0
 offset_top = 216.0
 offset_right = 648.0
-offset_bottom = 864.0
-theme = ExtResource("11_0qovj")
+offset_bottom = 1008.0
+theme = ExtResource("11_fvfno")
 
 [node name="titulo" type="Label" parent="Hint/Panel"]
 layout_mode = 0
@@ -828,9 +829,9 @@ autowrap_mode = 3
 texture_filter = 1
 layout_mode = 0
 offset_left = 72.0
-offset_top = 216.0
+offset_top = 288.0
 offset_right = 576.0
-offset_bottom = 521.0
+offset_bottom = 593.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
 text = "Boti puede abrir puertas recogiendo una llave y usándola para resolver la caja. Utiliza las funciones tomarLlave() y usarLlave() para lograrlo. ¡Nada te puede detener!"
@@ -839,10 +840,10 @@ autowrap_mode = 3
 [node name="exit" type="Button" parent="Hint/Panel"]
 layout_mode = 0
 offset_left = 360.0
-offset_top = 504.0
+offset_top = 648.0
 offset_right = 504.0
-offset_bottom = 576.0
+offset_bottom = 720.0
+theme = ExtResource("12_yyhkt")
 theme_override_font_sizes/font_size = 60
-text = "x"
 
 [connection signal="pressed" from="Hint/Panel/exit" to="." method="_on_exit_pressed"]

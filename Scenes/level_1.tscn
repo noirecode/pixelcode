@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://doyjxw66dkhsv"]
+[gd_scene load_steps=24 format=3 uid="uid://doyjxw66dkhsv"]
 
 [ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="1_lqynq"]
 [ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_yfygu"]
@@ -8,6 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://bgmlveeipn3us" path="res://Scenes/ui.tscn" id="7_crdnf"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="7_d2er7"]
 [ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="8_kcvl3"]
+[ext_resource type="Texture2D" uid="uid://dmn0tg3mc7b6o" path="res://Assets/mov1.png" id="9_h0gqq"]
+[ext_resource type="Theme" uid="uid://dpl5cbv8gogyl" path="res://Assets/Themes/next.tres" id="9_sfcw6"]
+[ext_resource type="Theme" uid="uid://sgwoikhg754s" path="res://Assets/Themes/back.tres" id="10_tb54l"]
+[ext_resource type="Texture2D" uid="uid://ct7swiwimabhx" path="res://Assets/mov2.png" id="10_vuftu"]
+[ext_resource type="Texture2D" uid="uid://chb2ukuxe2iae" path="res://Assets/button_run.png" id="11_bo6jy"]
+[ext_resource type="Theme" uid="uid://cybdemp05rmy" path="res://Assets/Themes/exit.tres" id="11_odely"]
+[ext_resource type="Texture2D" uid="uid://bwhk61qxc617m" path="res://Assets/mov3.png" id="11_q4hp5"]
+[ext_resource type="Texture2D" uid="uid://bhapt1rrh4vq8" path="res://Assets/button_redo.png" id="12_58vuw"]
+[ext_resource type="Texture2D" uid="uid://dbirjs74o2ri0" path="res://Assets/mov4.png" id="12_vriaf"]
+[ext_resource type="Texture2D" uid="uid://c75gcs3udyu02" path="res://Assets/button_delete.png" id="13_12pvh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2b2b"]
 texture = ExtResource("1_lqynq")
@@ -876,9 +886,9 @@ autowrap_mode = 3
 [node name="func" type="Label" parent="Hint/Panel/pages/page2"]
 layout_mode = 0
 offset_left = 72.0
-offset_top = 288.0
+offset_top = 432.0
 offset_right = 504.0
-offset_bottom = 360.0
+offset_bottom = 504.0
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
@@ -886,14 +896,46 @@ text = "moverDer()"
 
 [node name="func2" type="Label" parent="Hint/Panel/pages/page2"]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 504.0
-offset_right = 504.0
-offset_bottom = 576.0
+offset_left = 360.0
+offset_top = 432.0
+offset_right = 792.0
+offset_bottom = 504.0
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
 text = "moverIzq()"
+
+[node name="TextureRect" type="TextureRect" parent="Hint/Panel/pages/page2"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 288.0
+offset_right = 260.0
+offset_bottom = 422.0
+texture = ExtResource("9_h0gqq")
+
+[node name="TextureRect2" type="TextureRect" parent="Hint/Panel/pages/page2"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 477.0
+offset_right = 260.0
+offset_bottom = 612.0
+texture = ExtResource("10_vuftu")
+
+[node name="TextureRect3" type="TextureRect" parent="Hint/Panel/pages/page2"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 288.0
+offset_right = 548.0
+offset_bottom = 422.0
+texture = ExtResource("11_q4hp5")
+
+[node name="TextureRect4" type="TextureRect" parent="Hint/Panel/pages/page2"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 480.0
+offset_right = 548.0
+offset_bottom = 615.0
+texture = ExtResource("12_vriaf")
 
 [node name="page3" type="Control" parent="Hint/Panel/pages"]
 visible = false
@@ -917,6 +959,69 @@ text = "Cuando estés seguro de las instrucciones que hayas escrito, presiona Pl
 horizontal_alignment = 3
 autowrap_mode = 3
 
+[node name="content2" type="Label" parent="Hint/Panel/pages/page3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 228.0
+offset_top = 331.0
+offset_right = 516.0
+offset_bottom = 403.0
+theme_override_constants/outline_size = 2
+theme_override_constants/line_spacing = -1
+theme_override_font_sizes/font_size = 40
+text = "Ejecutar código"
+autowrap_mode = 3
+
+[node name="content3" type="Label" parent="Hint/Panel/pages/page3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 230.0
+offset_top = 474.0
+offset_right = 518.0
+offset_bottom = 546.0
+theme_override_constants/outline_size = 2
+theme_override_constants/line_spacing = -1
+theme_override_font_sizes/font_size = 40
+text = "Borrar línea"
+autowrap_mode = 3
+
+[node name="content4" type="Label" parent="Hint/Panel/pages/page3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 229.0
+offset_top = 619.0
+offset_right = 517.0
+offset_bottom = 691.0
+theme_override_constants/outline_size = 2
+theme_override_constants/line_spacing = -1
+theme_override_font_sizes/font_size = 40
+text = "Reiniciar nivel"
+autowrap_mode = 3
+
+[node name="but1" type="TextureRect" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 315.0
+offset_right = 216.0
+offset_bottom = 387.0
+texture = ExtResource("11_bo6jy")
+
+[node name="but2" type="TextureRect" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 603.0
+offset_right = 216.0
+offset_bottom = 675.0
+texture = ExtResource("12_58vuw")
+
+[node name="but3" type="TextureRect" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 459.0
+offset_right = 216.0
+offset_bottom = 531.0
+texture = ExtResource("13_12pvh")
+
 [node name="next" type="Button" parent="Hint/Panel"]
 texture_filter = 1
 layout_mode = 0
@@ -924,8 +1029,8 @@ offset_left = 360.0
 offset_top = 720.0
 offset_right = 504.0
 offset_bottom = 792.0
+theme = ExtResource("9_sfcw6")
 theme_override_font_sizes/font_size = 60
-text = ">"
 
 [node name="prev" type="Button" parent="Hint/Panel"]
 visible = false
@@ -935,8 +1040,8 @@ offset_left = 72.0
 offset_top = 720.0
 offset_right = 216.0
 offset_bottom = 792.0
+theme = ExtResource("10_tb54l")
 theme_override_font_sizes/font_size = 60
-text = "<"
 
 [node name="exit" type="Button" parent="Hint/Panel"]
 visible = false
@@ -945,8 +1050,8 @@ offset_left = 360.0
 offset_top = 720.0
 offset_right = 504.0
 offset_bottom = 792.0
+theme = ExtResource("11_odely")
 theme_override_font_sizes/font_size = 60
-text = "x"
 
 [connection signal="pressed" from="Hint/Panel/next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Hint/Panel/prev" to="." method="_on_prev_pressed"]

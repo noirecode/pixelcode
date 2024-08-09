@@ -5,9 +5,11 @@ extends Control
 @onready var master_slider = $UI/PanelBG/Panel/MarginContainer/GridContainer/MasterSlider
 @onready var music_slider = $UI/PanelBG/Panel/MarginContainer/GridContainer/MusicSlider
 @onready var sfx_slider = $UI/PanelBG/Panel/MarginContainer/GridContainer/SFXSlider
+@onready var logo_anim = $logoAnim
 
 func _ready():
 	global.load_game()
+	logo_anim.play("sway")
 	AudioServer.set_bus_volume_db(MASTER_BUS_ID, global.data.volume_settings.music)
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, global.data.volume_settings.music)
 	global_audio.play_music_level("main")
@@ -94,3 +96,6 @@ func _on_sfx_slider_value_changed(value):
 	global.data.volume_settings.sfx = linear_to_db(value)
 	global.save_game()
 
+
+func _on_logo_anim_animation_finished(anim_name):
+	logo_anim.play("sway")

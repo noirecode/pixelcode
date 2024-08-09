@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw8ifi3mchnka"]
+[gd_scene load_steps=11 format=3 uid="uid://dw8ifi3mchnka"]
 
 [ext_resource type="Script" path="res://Scenes/finish_panel.gd" id="1_usyyr"]
 [ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="2_1pum8"]
 [ext_resource type="Theme" uid="uid://dx1ioxxd2ggut" path="res://Assets/Themes/commandsa.tres" id="3_guvvp"]
+[ext_resource type="FontFile" uid="uid://bg3ypvgu670kh" path="res://Assets/disposabledroid-bb.bold.ttf" id="3_nr6ix"]
 [ext_resource type="Texture2D" uid="uid://qbngcr2fnuqb" path="res://Assets/1star.png" id="4_bb30o"]
 [ext_resource type="Texture2D" uid="uid://dy4k5xrkg0wym" path="res://Assets/2stars.png" id="5_stmfl"]
 [ext_resource type="Texture2D" uid="uid://cb15ggtidvukb" path="res://Assets/3stars.png" id="6_5oqyc"]
@@ -81,83 +82,84 @@ script = ExtResource("1_usyyr")
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 72.0
+offset_left = 108.0
 offset_top = 144.0
-offset_right = 648.0
-offset_bottom = 792.0
+offset_right = 612.0
+offset_bottom = 864.0
 theme = ExtResource("2_1pum8")
 
 [node name="Score" type="Label" parent="Panel"]
-visible = false
+texture_filter = 1
 layout_mode = 0
-offset_left = 144.0
-offset_top = 144.0
-offset_right = 288.0
-offset_bottom = 195.0
-theme_override_font_sizes/font_size = 50
+offset_left = 108.0
+offset_top = 54.0
+offset_right = 396.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("3_nr6ix")
+theme_override_font_sizes/font_size = 80
 text = "Score:"
 horizontal_alignment = 1
 
 [node name="RETRY" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 126.341
-offset_top = 224.909
-offset_right = 462.341
-offset_bottom = 336.909
+offset_left = 72.0
+offset_top = 288.0
+offset_right = 432.0
+offset_bottom = 400.0
 theme = ExtResource("3_guvvp")
 theme_override_font_sizes/font_size = 45
 text = "Intentar de nuevo"
 
 [node name="HOME" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 126.341
-offset_top = 344.909
-offset_right = 462.341
-offset_bottom = 456.909
+offset_left = 72.0
+offset_top = 408.0
+offset_right = 432.0
+offset_bottom = 520.0
 theme = ExtResource("3_guvvp")
 theme_override_font_sizes/font_size = 45
 text = "Menu"
 
 [node name="NEXT" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 126.341
-offset_top = 465.909
-offset_right = 462.341
-offset_bottom = 577.909
+offset_left = 72.0
+offset_top = 529.0
+offset_right = 432.0
+offset_bottom = 641.0
 theme = ExtResource("3_guvvp")
 theme_override_font_sizes/font_size = 45
 text = "Siguiente"
 
 [node name="1star" type="TextureRect" parent="Panel"]
-visible = false
+texture_filter = 1
 custom_minimum_size = Vector2(17, 15)
 layout_mode = 0
-offset_left = 152.98
-offset_top = 78.0841
-offset_right = 210.98
-offset_bottom = 96.0841
+offset_left = 108.0
+offset_top = 144.0
+offset_right = 166.0
+offset_bottom = 162.0
 scale = Vector2(5, 5)
 texture = ExtResource("4_bb30o")
 
 [node name="2stars" type="TextureRect" parent="Panel"]
-visible = false
+texture_filter = 1
 custom_minimum_size = Vector2(17, 15)
 layout_mode = 0
-offset_left = 153.614
-offset_top = 78.8771
-offset_right = 211.614
-offset_bottom = 96.8771
+offset_left = 108.634
+offset_top = 144.793
+offset_right = 166.634
+offset_bottom = 162.793
 scale = Vector2(5, 5)
 texture = ExtResource("5_stmfl")
 
 [node name="3stars" type="TextureRect" parent="Panel"]
-visible = false
+texture_filter = 1
 custom_minimum_size = Vector2(17, 15)
 layout_mode = 0
-offset_left = 153.614
-offset_top = 78.8771
-offset_right = 211.614
-offset_bottom = 96.8771
+offset_left = 108.634
+offset_top = 144.793
+offset_right = 166.634
+offset_bottom = 162.793
 scale = Vector2(5, 5)
 texture = ExtResource("6_5oqyc")
 

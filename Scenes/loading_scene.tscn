@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7271oqjqtogn"]
+
+[ext_resource type="Script" path="res://Scenes/loading_scene.gd" id="1_blm5u"]
+[ext_resource type="Texture2D" uid="uid://bmjhsuxnhybcx" path="res://Assets/logo.png" id="2_5o7h5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ums6u"]
+bg_color = Color(0.109804, 0.301961, 0.247059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sc73"]
+bg_color = Color(0.423529, 0.741176, 0.164706, 1)
+
+[node name="LoadingScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_blm5u")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 864.0
+offset_right = 585.0
+offset_bottom = 882.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ums6u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3sc73")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 360.0
+offset_right = 576.0
+offset_bottom = 432.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 450.0
+offset_right = 600.0
+offset_bottom = 711.0
+texture = ExtResource("2_5o7h5")

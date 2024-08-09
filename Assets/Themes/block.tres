@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bf3hohlhyf3kt"]
+
+[ext_resource type="FontFile" uid="uid://htstlpxcyiss" path="res://Assets/basis33.ttf" id="1_aphu4"]
+[ext_resource type="Texture2D" uid="uid://dawmq6nhk6ln4" path="res://Assets/block.png" id="2_2bkik"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55gvn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vij7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgspl"]
+texture = ExtResource("2_2bkik")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_10m64"]
+texture = ExtResource("2_2bkik")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4i2x7"]
+texture = ExtResource("2_2bkik")
+modulate_color = Color(0.396078, 0.396078, 0.396078, 1)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_aphu4")
+Button/styles/disabled = SubResource("StyleBoxTexture_55gvn")
+Button/styles/focus = SubResource("StyleBoxFlat_6vij7")
+Button/styles/hover = SubResource("StyleBoxTexture_sgspl")
+Button/styles/normal = SubResource("StyleBoxTexture_10m64")
+Button/styles/pressed = SubResource("StyleBoxTexture_4i2x7")

@@ -14,6 +14,8 @@ var detected_area = null
 @onready var ray_cast_2d_diag_rd = $RayCast2D_DIAG_RD
 @onready var ray_cast_2d_diag_ld = $RayCast2D_DIAG_LD
 @onready var sfx_jump = $sfx_jump
+@onready var sfx_use = $sfx_use
+@onready var sfx_pickup = $sfx_pickup
 
 
 
@@ -76,6 +78,7 @@ func parse_command(instructions_list):
 func pickUp():
 	if get_parent().inside_key:
 		#get_parent().inside_key = false
+		sfx_pickup.play()
 		detected_area.visible = false
 		get_parent().keys[get_parent().curr_key] = true
 		#if get_parent().multiple_keys:
@@ -88,6 +91,7 @@ func utilizarLlave():
 	if key: 
 		if get_parent().inside_keybox and get_parent().keys[key]:
 			if detected_area:
+				sfx_use.play()
 				detected_area.visible = false
 				print("key used!")
 				get_parent().keys[key] = false

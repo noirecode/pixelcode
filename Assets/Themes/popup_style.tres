@@ -1,10 +1,9 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://conlaf4bqkndt"]
 
-[ext_resource type="Texture2D" uid="uid://bp6nyp1pau6a6" path="res://Assets/Pixel UI pack 1.png" id="1_rj4vs"]
+[ext_resource type="Texture2D" uid="uid://dawmq6nhk6ln4" path="res://Assets/block.png" id="1_aj5en"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inan5"]
-texture = ExtResource("1_rj4vs")
-region_rect = Rect2(47, 48, 53, 16)
+texture = ExtResource("1_aj5en")
 
 [resource]
 PopupPanel/styles/panel = SubResource("StyleBoxTexture_inan5")

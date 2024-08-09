@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b8878j7c4k74p"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://b8878j7c4k74p"]
 
 [ext_resource type="FontFile" uid="uid://htstlpxcyiss" path="res://Assets/basis33.ttf" id="1_2c1ai"]
 [ext_resource type="Texture2D" uid="uid://yphyro4gjqyh" path="res://Assets/Themes/buttons.png" id="2_d71tv"]
+[ext_resource type="Texture2D" uid="uid://d2oeb6carqe30" path="res://Assets/lvl_button.png" id="3_caobo"]
+[ext_resource type="Texture2D" uid="uid://h2onsgy250xo" path="res://Assets/lvl_button_pressed.png" id="4_b57ic"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oopig"]
 texture = ExtResource("2_d71tv")
@@ -15,12 +17,10 @@ texture = ExtResource("2_d71tv")
 region_rect = Rect2(0, 0, 30, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vq26l"]
-texture = ExtResource("2_d71tv")
-region_rect = Rect2(0, 0, 30, 30)
+texture = ExtResource("3_caobo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_old5x"]
-texture = ExtResource("2_d71tv")
-region_rect = Rect2(0, 30, 30, 30)
+texture = ExtResource("4_b57ic")
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)

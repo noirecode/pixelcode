@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsdh4j0hu4e8u"]
+[gd_scene load_steps=7 format=3 uid="uid://bsdh4j0hu4e8u"]
 
-[ext_resource type="Theme" uid="uid://dpkqcy1nxxi52" path="res://Assets/Themes/hint_panel.tres" id="1_fvcou"]
 [ext_resource type="Script" path="res://Scenes/rating.gd" id="1_x4kjy"]
 [ext_resource type="Texture2D" uid="uid://qbngcr2fnuqb" path="res://Assets/1star.png" id="2_imeyo"]
+[ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="2_uvouh"]
 [ext_resource type="Texture2D" uid="uid://dy4k5xrkg0wym" path="res://Assets/2stars.png" id="3_lslp5"]
+[ext_resource type="FontFile" uid="uid://bg3ypvgu670kh" path="res://Assets/disposabledroid-bb.bold.ttf" id="3_osrro"]
 [ext_resource type="Texture2D" uid="uid://cb15ggtidvukb" path="res://Assets/3stars.png" id="4_r6h5i"]
 
 [node name="Rating" type="CanvasLayer"]
@@ -11,75 +12,79 @@ script = ExtResource("1_x4kjy")
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
-offset_left = 152.0
-offset_top = 240.0
-offset_right = 560.0
-offset_bottom = 552.0
-theme = ExtResource("1_fvcou")
+offset_left = 144.0
+offset_top = 144.0
+offset_right = 576.0
+offset_bottom = 576.0
+theme = ExtResource("2_uvouh")
 
 [node name="Titulo" type="Label" parent="Panel"]
 texture_filter = 1
 layout_mode = 0
-offset_top = 16.0
-offset_right = 408.0
-offset_bottom = 87.0
+offset_top = 57.0
+offset_right = 432.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_osrro")
 theme_override_font_sizes/font_size = 70
-text = "Puntuación"
+text = "Puntuacion"
 horizontal_alignment = 1
 
 [node name="label_1" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 216.0
-offset_right = 237.0
-offset_bottom = 267.0
+offset_left = 48.0
+offset_top = 276.0
+offset_right = 245.0
+offset_bottom = 331.0
+theme_override_fonts/font = ExtResource("3_osrro")
 theme_override_font_sizes/font_size = 40
-text = "00 líneas"
+text = "00 lineas"
 vertical_alignment = 2
 
 [node name="label_2" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 160.0
-offset_right = 237.0
-offset_bottom = 211.0
+offset_left = 48.0
+offset_top = 220.0
+offset_right = 245.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("3_osrro")
 theme_override_font_sizes/font_size = 40
-text = "00 líneas"
+text = "00 lineas"
 vertical_alignment = 2
 
 [node name="label_3" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 104.0
-offset_right = 237.0
-offset_bottom = 155.0
+offset_left = 48.0
+offset_top = 164.0
+offset_right = 245.0
+offset_bottom = 219.0
+theme_override_fonts/font = ExtResource("3_osrro")
 theme_override_font_sizes/font_size = 40
-text = "00 líneas"
+text = "00 lineas"
 vertical_alignment = 2
 
 [node name="star1" type="TextureRect" parent="Panel"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 232.0
-offset_top = 216.0
-offset_right = 376.0
-offset_bottom = 264.0
+offset_left = 240.0
+offset_top = 288.0
+offset_right = 384.0
+offset_bottom = 336.0
 texture = ExtResource("2_imeyo")
 
 [node name="star2" type="TextureRect" parent="Panel"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 232.0
-offset_top = 160.0
-offset_right = 376.0
-offset_bottom = 208.0
+offset_left = 240.0
+offset_top = 232.0
+offset_right = 384.0
+offset_bottom = 280.0
 texture = ExtResource("3_lslp5")
 
 [node name="star3" type="TextureRect" parent="Panel"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 232.0
-offset_top = 104.0
-offset_right = 376.0
-offset_bottom = 152.0
+offset_left = 240.0
+offset_top = 176.0
+offset_right = 384.0
+offset_bottom = 224.0
 texture = ExtResource("4_r6h5i")
