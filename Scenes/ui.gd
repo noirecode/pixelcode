@@ -488,46 +488,63 @@ func _on_stars_pressed():
 		level_hint.visible = false
 
 # IF BUTTONS
-@onready var si_popup = $Console/ScrollContainer/Commands/si_popup
+@onready var si_popup = $si_popup
 @onready var si_loop_button = $Console/ScrollContainer/Commands/siLoop
-@onready var equal_button = $Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer/equalButton
-@onready var color_button = $Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer/colorButton
-@onready var confirm_button = $Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer/ifConfirm
-@onready var equal_popup = $Console/ScrollContainer/Commands/equal_popup
-@onready var color_popup = $Console/ScrollContainer/Commands/color_popup
-@onready var rojo = $Console/ScrollContainer/Commands/color_popup/HBoxContainer/rojo
-@onready var verde = $Console/ScrollContainer/Commands/color_popup/HBoxContainer/verde
-@onready var azul = $Console/ScrollContainer/Commands/color_popup/HBoxContainer/azul
-@onready var equal = $Console/ScrollContainer/Commands/equal_popup/HBoxContainer/equal
-@onready var not_equal = $Console/ScrollContainer/Commands/equal_popup/HBoxContainer/not_equal
-
+@onready var equal_button = $si_popup/MarginContainer/HBoxContainer/equalButton
+@onready var color_button = $si_popup/MarginContainer/HBoxContainer/colorButton
+@onready var confirm_button = $si_popup/MarginContainer/HBoxContainer/ifConfirm
+@onready var equal_popup = $equal_popup
+@onready var color_popup = $color_popup
+@onready var rojo = $color_popup/HBoxContainer/rojo
+@onready var verde = $color_popup/HBoxContainer/verde
+@onready var azul = $color_popup/HBoxContainer/azul
+@onready var equal = $equal_popup/HBoxContainer/equal
+@onready var not_equal = $equal_popup/HBoxContainer/not_equal
+var short_colors = ["R", "V", "A"]
 var if_buttons = []
 func if_variables_pressed():
 	for button in if_buttons:
 		button.pressed.connect(self.if_button_handler.bind(button.text))
 func if_button_handler(button_name):
-	#print(button_name)
-	if button_name in colors:
+	print(button_name)
+	if button_name in short_colors:
 		color_button.text = button_name
+		color_popup.visible = false
 	else:
 		equal_button.text = button_name
+		equal_popup.visible = false
 
 func _on_si_loop_pressed():
-	si_popup.set_position(si_loop_button.get_global_position())
-	si_popup.popup()
+	si_popup.set_position(si_loop_button.get_global_position()+Vector2(-250,-50))
+	si_popup.visible = true
 
 ## TODO: add something so they disappear when unfocused or a button inside of them is selected
 func _on_equal_button_pressed():
-	equal_popup.set_position(si_loop_button.get_global_position()+Vector2(0,-100))
-	equal_popup.popup()
-	color_popup.hide()
+	equal_popup.set_position(equal_button.get_global_position()+Vector2(0,0))
+	equal_popup.visible = !equal_popup.visible
+	color_popup.visible = false
 
 func _on_color_button_pressed():
-	color_popup.set_position(si_loop_button.get_global_position()+Vector2(60,-130))
-	color_popup.popup()
-	equal_popup.hide()
+	color_popup.set_position(color_button.get_global_position()+Vector2(0,0))
+	color_popup.visible = !color_popup.visible
+	equal_popup.visible = false
 
 func _on_if_confirm_pressed():
-	if color_button.text in colors:
-		add_command("si color " + equal_button.text + " " + color_button.text + ":")
-		si_popup.hide()
+	if color_button.text in short_colors:
+		var full_color = ''
+		match color_button.text:
+			"R":
+				full_color = "rojo"
+			"V":
+				full_color = "verde"
+			"A":
+				full_color = "azul"
+		add_command("si color " + equal_button.text + " " + full_color + ":")
+		si_popup.visible = false
+
+
+func _on_si_popup_focus_exited():
+	print("popup lost focus")
+	si_popup.visible = false
+	color_popup.visible = false
+	equal_popup.visible = false

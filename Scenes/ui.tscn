@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bgmlveeipn3us"]
+[gd_scene load_steps=38 format=3 uid="uid://bgmlveeipn3us"]
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_wj4kw"]
 [ext_resource type="Theme" uid="uid://c1itte14q2giw" path="res://Assets/Themes/run.tres" id="2_bnycp"]
@@ -17,10 +17,8 @@
 [ext_resource type="Theme" uid="uid://72ye8tmsfdc" path="res://Assets/Themes/arrow_right.tres" id="12_afgbw"]
 [ext_resource type="Theme" uid="uid://d4c8p25n5qgpe" path="res://Assets/Themes/confirm.tres" id="12_epkip"]
 [ext_resource type="FontFile" uid="uid://dd72mqkn8226f" path="res://Assets/Themes/BitPap.ttf" id="12_k7uda"]
-[ext_resource type="Theme" uid="uid://conlaf4bqkndt" path="res://Assets/Themes/popup_style.tres" id="12_p2mih"]
 [ext_resource type="Theme" uid="uid://vs352wmccial" path="res://Assets/Themes/equal.tres" id="14_k0288"]
 [ext_resource type="Theme" uid="uid://ck8ttdcg0hb14" path="res://Assets/Themes/star_button.tres" id="14_lqupk"]
-[ext_resource type="Theme" uid="uid://b8f7s1x61vjxc" path="res://Assets/Themes/color.tres" id="15_t8ftn"]
 [ext_resource type="Theme" uid="uid://471315j4pitd" path="res://Assets/Themes/selection_red.tres" id="17_353ev"]
 [ext_resource type="PackedScene" uid="uid://bsdh4j0hu4e8u" path="res://Scenes/rating.tscn" id="18_oc4yq"]
 [ext_resource type="Theme" uid="uid://5w8adct3hds5" path="res://Assets/Themes/selection_green.tres" id="18_yv0bn"]
@@ -74,14 +72,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 shadow_color = Color(0, 0, 0, 0)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8c3go"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_worhc"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_eui6k"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pns41"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(0.8, 0.8, 0.8, 0)
-shadow_color = Color(1, 1, 1, 0)
 
 [sub_resource type="Theme" id="Theme_sts8b"]
 
@@ -360,143 +354,6 @@ theme_override_font_sizes/font_size = 30
 disabled = true
 text = "si (...)"
 
-[node name="si_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-canvas_item_default_texture_filter = 0
-size = Vector2i(390, 108)
-visible = true
-theme = ExtResource("12_p2mih")
-
-[node name="MarginContainer" type="MarginContainer" parent="Console/ScrollContainer/Commands/si_popup"]
-offset_right = 390.0
-offset_bottom = 108.0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Console/ScrollContainer/Commands/si_popup/MarginContainer"]
-custom_minimum_size = Vector2(300, 63)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_q6q12")
-theme_override_font_sizes/font_size = 30
-text = "Si color "
-
-[node name="equalButton" type="Button" parent="Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(63, 63)
-layout_mode = 2
-theme = ExtResource("14_k0288")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 13
-theme_override_fonts/font = ExtResource("3_q6q12")
-theme_override_font_sizes/font_size = 30
-text = "=="
-
-[node name="colorButton" type="Button" parent="Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(63, 63)
-layout_mode = 2
-theme = ExtResource("15_t8ftn")
-theme_override_font_sizes/font_size = 30
-
-[node name="ifConfirm" type="Button" parent="Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(63, 63)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("12_epkip")
-
-[node name="color_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(150, 138)
-visible = true
-transparent = true
-theme_override_styles/panel = SubResource("StyleBoxEmpty_8c3go")
-
-[node name="HBoxContainer" type="VBoxContainer" parent="Console/ScrollContainer/Commands/color_popup"]
-texture_filter = 1
-offset_right = 150.0
-offset_bottom = 138.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource("Theme_eui6k")
-theme_override_constants/separation = 9
-
-[node name="rojo" type="Button" parent="Console/ScrollContainer/Commands/color_popup/HBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(150, 27)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme = ExtResource("17_353ev")
-theme_override_fonts/font = ExtResource("3_q6q12")
-theme_override_font_sizes/font_size = 40
-text = "rojo"
-
-[node name="verde" type="Button" parent="Console/ScrollContainer/Commands/color_popup/HBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(150, 27)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("18_yv0bn")
-theme_override_fonts/font = ExtResource("3_q6q12")
-theme_override_font_sizes/font_size = 40
-text = "verde"
-
-[node name="azul" type="Button" parent="Console/ScrollContainer/Commands/color_popup/HBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(150, 27)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("19_rn5h5")
-theme_override_fonts/font = ExtResource("3_q6q12")
-theme_override_font_sizes/font_size = 40
-text = "azul"
-
-[node name="equal_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(63, 130)
-transparent = true
-theme_override_styles/panel = SubResource("StyleBoxFlat_pns41")
-
-[node name="HBoxContainer" type="VBoxContainer" parent="Console/ScrollContainer/Commands/equal_popup"]
-offset_right = 63.0
-offset_bottom = 130.0
-theme = SubResource("Theme_sts8b")
-
-[node name="equal" type="Button" parent="Console/ScrollContainer/Commands/equal_popup/HBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(63, 63)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("14_k0288")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 13
-theme_override_fonts/font = ExtResource("3_q6q12")
-theme_override_font_sizes/font_size = 40
-text = "=="
-
-[node name="not_equal" type="Button" parent="Console/ScrollContainer/Commands/equal_popup/HBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(63, 63)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("14_k0288")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 13
-theme_override_fonts/font = ExtResource("3_q6q12")
-theme_override_font_sizes/font_size = 40
-text = "!="
-
 [node name="tomarLlave()" type="Button" parent="Console/ScrollContainer/Commands"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
@@ -707,6 +564,156 @@ theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "5"
 
+[node name="si_popup" type="Panel" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+offset_right = 360.0
+offset_bottom = 108.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_worhc")
+
+[node name="MarginContainer" type="MarginContainer" parent="si_popup"]
+offset_right = 348.0
+offset_bottom = 108.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="si_popup/MarginContainer"]
+custom_minimum_size = Vector2(300, 63)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="si_popup/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q6q12")
+theme_override_font_sizes/font_size = 30
+text = "Si color "
+
+[node name="equalButton" type="Button" parent="si_popup/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(63, 63)
+layout_mode = 2
+theme = ExtResource("14_k0288")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
+theme_override_font_sizes/font_size = 30
+text = "=="
+
+[node name="colorButton" type="Button" parent="si_popup/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(63, 63)
+layout_mode = 2
+theme = ExtResource("14_k0288")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
+theme_override_font_sizes/font_size = 30
+text = "..."
+
+[node name="ifConfirm" type="Button" parent="si_popup/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(63, 63)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("12_epkip")
+
+[node name="color_popup" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="color_popup"]
+texture_filter = 1
+offset_right = 64.0
+offset_bottom = 210.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_eui6k")
+theme_override_constants/separation = 9
+
+[node name="rojo" type="Button" parent="color_popup/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("17_353ev")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
+theme_override_font_sizes/font_size = 40
+text = "R"
+
+[node name="verde" type="Button" parent="color_popup/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("18_yv0bn")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
+theme_override_font_sizes/font_size = 40
+text = "V"
+
+[node name="azul" type="Button" parent="color_popup/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("19_rn5h5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
+theme_override_font_sizes/font_size = 40
+text = "A"
+
+[node name="equal_popup" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 348.0
+offset_bottom = 103.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="equal_popup"]
+offset_right = 63.0
+offset_bottom = 130.0
+theme = SubResource("Theme_sts8b")
+
+[node name="equal" type="Button" parent="equal_popup/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(63, 63)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("14_k0288")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
+theme_override_font_sizes/font_size = 40
+text = "=="
+
+[node name="not_equal" type="Button" parent="equal_popup/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(63, 63)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("14_k0288")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_q6q12")
+theme_override_font_sizes/font_size = 40
+text = "!="
+
 [node name="Options" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 0
@@ -885,14 +892,15 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Console/ScrollContainer/Commands/PopupPanel/HBoxContainer/saltar(izq)" to="." method="_on_jump_left_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/PopupPanel/HBoxContainer/saltar(der)" to="." method="_on_jump_right_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/siLoop" to="." method="_on_si_loop_pressed"]
-[connection signal="pressed" from="Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer/equalButton" to="." method="_on_equal_button_pressed"]
-[connection signal="pressed" from="Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer/colorButton" to="." method="_on_color_button_pressed"]
-[connection signal="pressed" from="Console/ScrollContainer/Commands/si_popup/MarginContainer/HBoxContainer/ifConfirm" to="." method="_on_if_confirm_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/tomarLlave()" to="." method="_on_pick_up_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/utilizarLlave()" to="." method="_on_utilizar_llave_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/repetir(#)" to="." method="_on_repetir_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/funcionCrear" to="." method="_on_funcion_crear_pressed"]
 [connection signal="pressed" from="Console/ScrollContainer/Commands/funcionUsar" to="." method="_on_funcion_usar_pressed"]
+[connection signal="focus_exited" from="si_popup" to="." method="_on_si_popup_focus_exited"]
+[connection signal="pressed" from="si_popup/MarginContainer/HBoxContainer/equalButton" to="." method="_on_equal_button_pressed"]
+[connection signal="pressed" from="si_popup/MarginContainer/HBoxContainer/colorButton" to="." method="_on_color_button_pressed"]
+[connection signal="pressed" from="si_popup/MarginContainer/HBoxContainer/ifConfirm" to="." method="_on_if_confirm_pressed"]
 [connection signal="pressed" from="Options/settings" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="Options/hint" to="." method="_on_hint_pressed"]
 [connection signal="pressed" from="Options/stars" to="." method="_on_stars_pressed"]
