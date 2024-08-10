@@ -909,7 +909,7 @@ theme_override_colors/font_color = Color(0.423529, 0.658824, 0.137255, 1)
 theme_override_colors/font_outline_color = Color(0.423529, 0.658824, 0.137255, 1)
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 40
-text = "# Bienvenido al mundo de CODEPIXEL"
+text = "# Bienvenido al mundo de PixelCode"
 horizontal_alignment = 1
 autowrap_mode = 3
 
