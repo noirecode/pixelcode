@@ -1,13 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://clinkmbq8sww4"]
+[gd_scene load_steps=14 format=3 uid="uid://clinkmbq8sww4"]
 
 [ext_resource type="TileSet" uid="uid://bjtphgbwnhelx" path="res://Assets/bgtiles.tres" id="1_gfr2r"]
 [ext_resource type="Script" path="res://Scenes/level_14.gd" id="1_wufql"]
+[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_5g2yj"]
 [ext_resource type="TileSet" uid="uid://5txfr7411rug" path="res://Assets/maptiles.tres" id="2_sqi0y"]
 [ext_resource type="PackedScene" uid="uid://bgmlveeipn3us" path="res://Scenes/ui.tscn" id="3_xqkd5"]
 [ext_resource type="PackedScene" uid="uid://b0v3q47ijiww8" path="res://Scenes/boundaries.tscn" id="4_bq4ds"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="4_ta2hg"]
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="5_m0tke"]
 [ext_resource type="PackedScene" uid="uid://rfxd6a0f3352" path="res://Scenes/character_2.tscn" id="6_elj5k"]
+[ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="9_umtpg"]
+[ext_resource type="Theme" uid="uid://dpl5cbv8gogyl" path="res://Assets/Themes/next.tres" id="10_opuho"]
+[ext_resource type="Theme" uid="uid://sgwoikhg754s" path="res://Assets/Themes/back.tres" id="11_aoha2"]
+[ext_resource type="Theme" uid="uid://cybdemp05rmy" path="res://Assets/Themes/exit.tres" id="12_o8cgg"]
 
 [node name="Level14" type="Control"]
 clip_contents = true
@@ -21,6 +26,18 @@ offset_right = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wufql")
+
+[node name="tilingBG" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("2_5g2yj")
+stretch_mode = 1
 
 [node name="Control" type="Control" parent="."]
 clip_contents = true
@@ -72,3 +89,265 @@ position = Vector2(0, 288)
 [node name="UI" parent="." instance=ExtResource("3_xqkd5")]
 layout_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Hint" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="Hint"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -468.0
+offset_right = 288.0
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_umtpg")
+
+[node name="pages" type="Control" parent="Hint/Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="page1" type="Control" parent="Hint/Panel/pages"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="titulo" type="Label" parent="Hint/Panel/pages/page1"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 576.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0.423529, 0.658824, 0.137255, 1)
+theme_override_colors/font_outline_color = Color(0.423529, 0.658824, 0.137255, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 60
+text = "# condicionales"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="Hint/Panel/pages/page1"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 170.0
+offset_right = 558.0
+offset_bottom = 651.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "El condicional \"si\" (o “if” en inglés) se usa para tomar decisiones en un programa. Si una condición es verdadera, el código dentro del “si\" se ejecuta. Si es falsa, ese bloque de código se salta. 
+
+Por ejemplo, \"si el color del personaje es verde, haz que salte hacia la derecha\"."
+autowrap_mode = 3
+
+[node name="page2" type="Control" parent="Hint/Panel/pages"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="titulo2" type="Label" parent="Hint/Panel/pages/page2"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 576.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0.423529, 0.658824, 0.137255, 1)
+theme_override_colors/font_outline_color = Color(0.423529, 0.658824, 0.137255, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 60
+text = "# condicionales"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="Hint/Panel/pages/page2"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 170.0
+offset_right = 546.0
+offset_bottom = 739.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "La sentencia condicional se puede utilizar de dos formas: 
+
+Si el color de un personaje es el especificado, ese personaje ejecuta el bloque de código.
+
+Si es color de un personaje NO es el especificado, solo ese personaje no ejecutará el bloque de código."
+autowrap_mode = 3
+
+[node name="page3" type="Control" parent="Hint/Panel/pages"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="titulo3" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 576.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0.423529, 0.658824, 0.137255, 1)
+theme_override_colors/font_outline_color = Color(0.423529, 0.658824, 0.137255, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 60
+text = "# condicionales"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 152.0
+offset_right = 216.0
+offset_bottom = 193.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "Ejemplos:
+"
+autowrap_mode = 3
+
+[node name="text2" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 314.0
+offset_right = 558.0
+offset_bottom = 531.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 35
+text = "El comando especificado dentro del condicional solo será aplicado para el personaje cuyo color sea verde.
+"
+autowrap_mode = 3
+
+[node name="text3" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 584.0
+offset_right = 558.0
+offset_bottom = 801.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 35
+text = "El comando especificado dentro del condicional solo será aplicado para los personajes cuyo color NO sea rojo.
+"
+autowrap_mode = 3
+
+[node name="ifcolortext" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 224.0
+offset_right = 414.0
+offset_bottom = 265.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "si       ==      :"
+autowrap_mode = 3
+
+[node name="condtext" type="Label" parent="Hint/Panel/pages/page3/ifcolortext"]
+layout_mode = 0
+offset_left = 54.0
+offset_right = 144.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(1, 0.784314, 0.145098, 1)
+theme_override_colors/font_outline_color = Color(1, 0.784314, 0.145098, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "color"
+autowrap_mode = 3
+
+[node name="colortext" type="Label" parent="Hint/Panel/pages/page3/ifcolortext"]
+layout_mode = 0
+offset_left = 216.0
+offset_right = 306.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.423529, 0.658824, 0.137255, 1)
+theme_override_colors/font_outline_color = Color(0.423529, 0.658824, 0.137255, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "verde"
+autowrap_mode = 3
+
+[node name="functext" type="Label" parent="Hint/Panel/pages/page3/ifcolortext"]
+layout_mode = 0
+offset_top = 36.0
+offset_right = 306.0
+offset_bottom = 77.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = " >   moverDer()"
+autowrap_mode = 3
+
+[node name="ifcolortext2" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 494.0
+offset_right = 414.0
+offset_bottom = 535.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "si       !=      :"
+autowrap_mode = 3
+
+[node name="condtext" type="Label" parent="Hint/Panel/pages/page3/ifcolortext2"]
+layout_mode = 0
+offset_left = 54.0
+offset_right = 144.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(1, 0.784314, 0.145098, 1)
+theme_override_colors/font_outline_color = Color(1, 0.784314, 0.145098, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "color"
+autowrap_mode = 3
+
+[node name="colortext" type="Label" parent="Hint/Panel/pages/page3/ifcolortext2"]
+layout_mode = 0
+offset_left = 216.0
+offset_right = 306.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.788235, 0.203922, 0.14902, 1)
+theme_override_colors/font_outline_color = Color(0.788235, 0.203922, 0.14902, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "rojo"
+autowrap_mode = 3
+
+[node name="functext" type="Label" parent="Hint/Panel/pages/page3/ifcolortext2"]
+layout_mode = 0
+offset_top = 36.0
+offset_right = 306.0
+offset_bottom = 77.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = " >   saltar(der)"
+autowrap_mode = 3
+
+[node name="next" type="Button" parent="Hint/Panel"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 792.0
+offset_right = 504.0
+offset_bottom = 864.0
+theme = ExtResource("10_opuho")
+theme_override_font_sizes/font_size = 60
+
+[node name="prev" type="Button" parent="Hint/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 72.0
+offset_top = 792.0
+offset_right = 216.0
+offset_bottom = 864.0
+theme = ExtResource("11_aoha2")
+theme_override_font_sizes/font_size = 60
+
+[node name="exit" type="Button" parent="Hint/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 360.0
+offset_top = 792.0
+offset_right = 504.0
+offset_bottom = 864.0
+theme = ExtResource("12_o8cgg")
+theme_override_font_sizes/font_size = 60
+
+[connection signal="pressed" from="Hint/Panel/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Hint/Panel/prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Hint/Panel/exit" to="." method="_on_exit_pressed"]

@@ -1,14 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://rfxd6a0f3352"]
+[gd_scene load_steps=13 format=3 uid="uid://rfxd6a0f3352"]
 
 [ext_resource type="Script" path="res://Scenes/character_2.gd" id="1_fh06t"]
 [ext_resource type="Texture2D" uid="uid://dk3j75u0k7kbd" path="res://Assets/char2.png" id="1_jcb6v"]
+[ext_resource type="Texture2D" uid="uid://cv6oh6n0q0pvi" path="res://Assets/char2-idle.png" id="2_e5sgs"]
 [ext_resource type="AudioStream" uid="uid://c2qleoawhleo7" path="res://Assets/Audio/jump.wav" id="2_ghsah"]
 [ext_resource type="AudioStream" uid="uid://blfb5mves6t1p" path="res://Assets/Audio/select_004.ogg" id="4_s2nhb"]
 [ext_resource type="AudioStream" uid="uid://bpc08s3gg45df" path="res://Assets/Audio/question_003.ogg" id="5_fjmb3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_85xtp"]
-atlas = ExtResource("1_jcb6v")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaptb"]
+atlas = ExtResource("2_e5sgs")
 region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2yod"]
+atlas = ExtResource("2_e5sgs")
+region = Rect2(18, 0, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqi54"]
 atlas = ExtResource("1_jcb6v")
@@ -22,11 +27,14 @@ region = Rect2(18, 0, 18, 18)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_85xtp")
+"texture": SubResource("AtlasTexture_xaptb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2yod")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -52,6 +60,9 @@ texture_filter = 1
 position = Vector2(36, 36)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_3ydkd")
+autoplay = "default"
+frame = 1
+frame_progress = 0.795902
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(34, 38)

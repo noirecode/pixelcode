@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bud4iowbjy6dr"]
+[gd_scene load_steps=11 format=3 uid="uid://bud4iowbjy6dr"]
 
 [ext_resource type="Script" path="res://Scenes/level_17.gd" id="1_0kl18"]
 [ext_resource type="TileSet" uid="uid://bjtphgbwnhelx" path="res://Assets/bgtiles.tres" id="1_1t60s"]
+[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_6oose"]
 [ext_resource type="TileSet" uid="uid://5txfr7411rug" path="res://Assets/maptiles.tres" id="2_yve7e"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="3_ac67x"]
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="4_a81i4"]
@@ -22,6 +23,19 @@ offset_right = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0kl18")
+
+[node name="tilingBG" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("2_6oose")
+stretch_mode = 1
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1

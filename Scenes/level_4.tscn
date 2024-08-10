@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ml5ggreirjb7"]
+[gd_scene load_steps=18 format=3 uid="uid://ml5ggreirjb7"]
 
 [ext_resource type="PackedScene" uid="uid://bgmlveeipn3us" path="res://Scenes/ui.tscn" id="1_d013u"]
 [ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="1_jb2q6"]
 [ext_resource type="Script" path="res://Scenes/level_4.gd" id="1_u2ev2"]
+[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_k8scv"]
 [ext_resource type="Texture2D" uid="uid://x1ngq7pbmdup" path="res://Assets/backgrounds.png" id="2_unoav"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="3_71iqc"]
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="4_s0p24"]
@@ -783,6 +784,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u2ev2")
 
+[node name="tilingBG" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("2_k8scv")
+stretch_mode = 1
+
 [node name="Control" type="Control" parent="."]
 clip_contents = true
 layout_mode = 1
@@ -862,11 +876,11 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 50.0
 offset_top = 142.0
-offset_right = 554.0
+offset_right = 558.0
 offset_bottom = 447.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
-text = "Utiliza el bucle `repetir` para que Boti ejecute una misma función varias veces de manera sencilla.
+text = "Utiliza el comando `repetir` para que Boti ejecute una misma función varias veces de manera sencilla.
 
 Considera el siguiente bloque de instrucciones:
 "
@@ -1047,7 +1061,7 @@ autowrap_mode = 3
 
 [node name="moveDer" type="Label" parent="Hint/Panel/pages/page1/rep"]
 layout_mode = 0
-offset_left = 55.0
+offset_left = 8.0
 offset_top = 42.0
 offset_right = 261.0
 offset_bottom = 84.0
@@ -1055,14 +1069,15 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
-text = "moverDer"
+text = " >   moverDer"
 autowrap_mode = 3
 
 [node name="symb4" type="Label" parent="Hint/Panel/pages/page1/rep/moveDer"]
 layout_mode = 0
-offset_left = 136.0
-offset_right = 208.0
-offset_bottom = 42.0
+offset_left = 225.0
+offset_top = -1.0
+offset_right = 297.0
+offset_bottom = 41.0
 theme_override_colors/font_color = Color(0.619608, 0.545098, 0.572549, 1)
 theme_override_colors/font_outline_color = Color(0.619608, 0.545098, 0.572549, 1)
 theme_override_constants/outline_size = 1
@@ -1090,13 +1105,15 @@ horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="Hint/Panel/pages/page2"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 214.0
-offset_right = 543.0
-offset_bottom = 695.0
+offset_left = 54.0
+offset_top = 152.0
+offset_right = 546.0
+offset_bottom = 765.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
-text = "En los lenguajes de programación formales, los bucles o loops son una estructura de control en programación que permite repetir un bloque de código varias veces, son esenciales para automatizar tareas repetitivas y procesar conjuntos de datos."
+text = "Para definir los diferentes bloques de un código, se utilizan las sangrías, es decir, los espacios en blanco al inicio de una línea marcados por una flecha.
+
+ Después del encabezado “repetir” la sangría se genera automáticamente, y todas las instrucciones que estén en el mismo nivel de sangría pertenecen al mismo bloque de código."
 autowrap_mode = 3
 
 [node name="page3" type="Control" parent="Hint/Panel/pages"]
@@ -1120,14 +1137,174 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Hint/Panel/pages/page3"]
 layout_mode = 0
 offset_left = 72.0
-offset_top = 144.0
+offset_top = 152.0
 offset_right = 564.0
-offset_bottom = 757.0
+offset_bottom = 448.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
-text = "Para definir qué parte del código pertenece a un bucle, se utiliza la indentación, que son los espacios en blanco al inicio de una línea. Estas indentaciones indican a qué bloque de código pertenecen las instrucciones.
+text = "Para eliminar la sangría de una línea, simplemente presiona el botón “borrar”.
 
-Al utilizar el bucle `repetir` la indentación se produce automaticamente en la siguiente línea."
+¡Recuerda definir tus bloques adecuadamente!
+"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 692.0
+offset_right = 564.0
+offset_bottom = 777.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "Ejemplo: Dos bloques de repetición separados."
+autowrap_mode = 3
+
+[node name="rep" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 440.0
+offset_right = 594.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(0.811765, 0.235294, 0.541176, 1)
+theme_override_colors/font_outline_color = Color(0.811765, 0.235294, 0.541176, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "repetir"
+autowrap_mode = 3
+
+[node name="5" type="Label" parent="Hint/Panel/pages/page3/rep"]
+layout_mode = 0
+offset_left = 137.0
+offset_right = 209.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.980392, 0.694118, 0.235294, 1)
+theme_override_colors/font_outline_color = Color(0.980392, 0.694118, 0.235294, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "5"
+autowrap_mode = 3
+
+[node name="symb2" type="Label" parent="Hint/Panel/pages/page3/rep"]
+layout_mode = 0
+offset_left = 154.0
+offset_right = 200.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = ":"
+autowrap_mode = 3
+
+[node name="moveDer" type="Label" parent="Hint/Panel/pages/page3/rep"]
+layout_mode = 0
+offset_top = 36.0
+offset_right = 253.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = " >   moverDer"
+autowrap_mode = 3
+
+[node name="symb4" type="Label" parent="Hint/Panel/pages/page3/rep/moveDer"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = -1.0
+offset_right = 297.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.619608, 0.545098, 0.572549, 1)
+theme_override_colors/font_outline_color = Color(0.619608, 0.545098, 0.572549, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "()"
+autowrap_mode = 3
+
+[node name="saltarArr" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 530.0
+offset_right = 325.0
+offset_bottom = 572.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = " saltar"
+autowrap_mode = 3
+
+[node name="symb4" type="Label" parent="Hint/Panel/pages/page3/saltarArr"]
+layout_mode = 0
+offset_left = 126.0
+offset_right = 276.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.619608, 0.545098, 0.572549, 1)
+theme_override_colors/font_outline_color = Color(0.619608, 0.545098, 0.572549, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "(arriba)"
+autowrap_mode = 3
+
+[node name="rep2" type="Label" parent="Hint/Panel/pages/page3"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 584.0
+offset_right = 594.0
+offset_bottom = 669.0
+theme_override_colors/font_color = Color(0.811765, 0.235294, 0.541176, 1)
+theme_override_colors/font_outline_color = Color(0.811765, 0.235294, 0.541176, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "repetir"
+autowrap_mode = 3
+
+[node name="5" type="Label" parent="Hint/Panel/pages/page3/rep2"]
+layout_mode = 0
+offset_left = 137.0
+offset_right = 209.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.980392, 0.694118, 0.235294, 1)
+theme_override_colors/font_outline_color = Color(0.980392, 0.694118, 0.235294, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "2"
+autowrap_mode = 3
+
+[node name="moveDer2" type="Label" parent="Hint/Panel/pages/page3/rep2"]
+layout_mode = 0
+offset_top = 36.0
+offset_right = 253.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = " >   saltar"
+autowrap_mode = 3
+
+[node name="symb4" type="Label" parent="Hint/Panel/pages/page3/rep2/moveDer2"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 283.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.619608, 0.545098, 0.572549, 1)
+theme_override_colors/font_outline_color = Color(0.619608, 0.545098, 0.572549, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "(der)"
+autowrap_mode = 3
+
+[node name="symb2" type="Label" parent="Hint/Panel/pages/page3/rep2"]
+layout_mode = 0
+offset_left = 154.0
+offset_right = 200.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = ":"
 autowrap_mode = 3
 
 [node name="next" type="Button" parent="Hint/Panel"]

@@ -1,15 +1,17 @@
-[gd_scene load_steps=24 format=3 uid="uid://doyjxw66dkhsv"]
+[gd_scene load_steps=29 format=3 uid="uid://doyjxw66dkhsv"]
 
 [ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="1_lqynq"]
 [ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_yfygu"]
 [ext_resource type="Texture2D" uid="uid://x1ngq7pbmdup" path="res://Assets/backgrounds.png" id="2_1sj2i"]
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="2_cy1k4"]
+[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_e4w7r"]
 [ext_resource type="Texture2D" uid="uid://cu8nm2gnjt88l" path="res://Assets/grid_tiles.png" id="5_yvb3r"]
 [ext_resource type="PackedScene" uid="uid://bgmlveeipn3us" path="res://Scenes/ui.tscn" id="7_crdnf"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="7_d2er7"]
 [ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="8_kcvl3"]
 [ext_resource type="Texture2D" uid="uid://dmn0tg3mc7b6o" path="res://Assets/mov1.png" id="9_h0gqq"]
 [ext_resource type="Theme" uid="uid://dpl5cbv8gogyl" path="res://Assets/Themes/next.tres" id="9_sfcw6"]
+[ext_resource type="Texture2D" uid="uid://bobkoxjbixaan" path="res://Assets/char1_idle.png" id="10_bikk3"]
 [ext_resource type="Theme" uid="uid://sgwoikhg754s" path="res://Assets/Themes/back.tres" id="10_tb54l"]
 [ext_resource type="Texture2D" uid="uid://ct7swiwimabhx" path="res://Assets/mov2.png" id="10_vuftu"]
 [ext_resource type="Texture2D" uid="uid://chb2ukuxe2iae" path="res://Assets/button_run.png" id="11_bo6jy"]
@@ -775,6 +777,28 @@ sources/6 = SubResource("TileSetAtlasSource_e14gi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwtcb"]
 size = Vector2(721.779, 437.658)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgmss"]
+atlas = ExtResource("10_bikk3")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl1qa"]
+atlas = ExtResource("10_bikk3")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oco1a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgmss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl1qa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="Level1" type="Control"]
 clip_contents = true
 custom_minimum_size = Vector2(720, 1280)
@@ -788,6 +812,19 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 script = ExtResource("1_yfygu")
+
+[node name="tilingBG" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("2_e4w7r")
+stretch_mode = 1
 
 [node name="Control" type="Control" parent="."]
 clip_contents = true
@@ -887,9 +924,16 @@ theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 0
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
-text = "En este juego, deberás ayudar a Boti a atravesar un mundo de fantasía en busca de una espada legendaria. Para lograrlo, tendrás que hablarle a Boti en el único lenguaje que conoce: algoritmos y funciones."
+text = "Ayuda Boti a completar los diferentes desafíos que se encuentran en su camino. Para lograrlo, tendrás que hablarle en el único lenguaje que conoce: algoritmos y funciones."
 horizontal_alignment = 3
 autowrap_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hint/Panel/pages/page1"]
+position = Vector2(144, 656)
+scale = Vector2(6.5625, 6.61805)
+sprite_frames = SubResource("SpriteFrames_oco1a")
+autoplay = "default"
+frame_progress = 0.914441
 
 [node name="page2" type="Control" parent="Hint/Panel/pages"]
 visible = false
@@ -985,7 +1029,7 @@ offset_bottom = 233.0
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
-text = "Cuando estés seguro de las instrucciones que hayas escrito, presiona Play para ejecutar tu código."
+text = "Cuando estés seguro de las instrucciones que hayas escrito, presiona Ejecutar para ejecutar tu código."
 horizontal_alignment = 3
 autowrap_mode = 3
 

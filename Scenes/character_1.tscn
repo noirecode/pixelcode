@@ -1,14 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2ku6ali5xjaw"]
+[gd_scene load_steps=13 format=3 uid="uid://b2ku6ali5xjaw"]
 
 [ext_resource type="Script" path="res://Scenes/character_1.gd" id="1_1pg85"]
+[ext_resource type="Texture2D" uid="uid://bobkoxjbixaan" path="res://Assets/char1_idle.png" id="2_1ln0t"]
 [ext_resource type="Texture2D" uid="uid://4ehj62nhpan7" path="res://Assets/char1.png" id="2_7uo1d"]
 [ext_resource type="AudioStream" uid="uid://c2qleoawhleo7" path="res://Assets/Audio/jump.wav" id="3_f50ta"]
 [ext_resource type="AudioStream" uid="uid://blfb5mves6t1p" path="res://Assets/Audio/select_004.ogg" id="4_vsq1u"]
 [ext_resource type="AudioStream" uid="uid://bpc08s3gg45df" path="res://Assets/Audio/question_003.ogg" id="5_d0y4k"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bix8x"]
-atlas = ExtResource("2_7uo1d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_so4pv"]
+atlas = ExtResource("2_1ln0t")
 region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwgx3"]
+atlas = ExtResource("2_1ln0t")
+region = Rect2(18, 0, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2pkb2"]
 atlas = ExtResource("2_7uo1d")
@@ -22,11 +27,14 @@ region = Rect2(18, 0, 18, 18)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bix8x")
+"texture": SubResource("AtlasTexture_so4pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwgx3")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -41,7 +49,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yfucu"]
-radius = 30.0
+radius = 22.0
 height = 66.0
 
 [node name="Character1" type="CharacterBody2D"]
@@ -52,6 +60,7 @@ texture_filter = 1
 position = Vector2(36, 36)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_s4hvn")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(29, 39)

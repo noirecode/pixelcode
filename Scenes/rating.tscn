@@ -7,15 +7,32 @@
 [ext_resource type="FontFile" uid="uid://bg3ypvgu670kh" path="res://Assets/disposabledroid-bb.bold.ttf" id="3_osrro"]
 [ext_resource type="Texture2D" uid="uid://cb15ggtidvukb" path="res://Assets/3stars.png" id="4_r6h5i"]
 
-[node name="Rating" type="CanvasLayer"]
+[node name="Rating" type="Control"]
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 script = ExtResource("1_x4kjy")
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
-offset_left = 144.0
-offset_top = 144.0
-offset_right = 576.0
-offset_bottom = 576.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -216.0
+offset_right = 216.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_uvouh")
 
 [node name="Titulo" type="Label" parent="Panel"]

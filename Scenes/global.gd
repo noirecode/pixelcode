@@ -1,5 +1,4 @@
 extends Node
-var levels = []
 var data = {
 	"volume_settings": {
 		"master" = 1,

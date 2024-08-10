@@ -5,7 +5,7 @@ extends Control
 var characters = 1
 var active_colors = ["rojo"]
 
-var total_pages = 3
+var total_pages = 2
 var curr_page = 1
 
 func page_flip(number):

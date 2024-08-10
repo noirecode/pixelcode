@@ -6,16 +6,34 @@ extends Control
 @onready var music_slider = $UI/PanelBG/Panel/MarginContainer/GridContainer/MusicSlider
 @onready var sfx_slider = $UI/PanelBG/Panel/MarginContainer/GridContainer/SFXSlider
 @onready var logo_anim = $logoAnim
+@onready var tutorial = $LevelScrolls/VertBox/Tutorial
+@onready var bucles = $LevelScrolls/VertBox/Bucles
+@onready var funciones = $LevelScrolls/VertBox/Funciones
+@onready var condicionales = $LevelScrolls/VertBox/Condicionales
+var level_panels = []
+var level_buttons = []
+var level_scores = []
 
+func get_level_buttons():
+	for panel_obj in level_panels:
+		for child in panel_obj.get_children():
+			if str_to_var(child.name) in range(19):
+				level_buttons.append(child)
+func get_level_scores():
+	for panel_obj in level_panels:
+		for child in panel_obj.get_children():
+			if child.name.contains("Level"):
+				level_scores.append(child)
 func _ready():
 	global.load_game()
+	level_panels = [tutorial, bucles, funciones, condicionales]
+	get_level_buttons()
+	get_level_scores()
 	logo_anim.play("sway")
 	AudioServer.set_bus_volume_db(MASTER_BUS_ID, global.data.volume_settings.music)
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, global.data.volume_settings.music)
 	global_audio.play_music_level("main")
-	for i in range($ScrollContainer/VScrollBar/MenuMap/Levels.get_child_count()):
-		global.levels.append(i+1)
-	connect_levels($ScrollContainer/VScrollBar/MenuMap/Levels.get_children())
+	connect_levels(level_buttons)
 	master_slider.value = db_to_linear(global.data.volume_settings.master)
 	music_slider.value = db_to_linear(global.data.volume_settings.music)
 	sfx_slider.value = db_to_linear(global.data.volume_settings.sfx)
@@ -34,7 +52,7 @@ func connect_levels(container):
 func load_level_score(level_number):
 	var stars = 0
 	var level_name = "Level"+str(level_number)
-	for score in $scores.get_children():
+	for score in level_scores:
 		if score.name == level_name:
 			stars = global.data.level_solutions[level_name][2]
 			match stars:
@@ -42,18 +60,22 @@ func load_level_score(level_number):
 					score.get_node("1star").visible = true
 					score.get_node("2star").visible = false
 					score.get_node("3star").visible = false
+					score.get_node("Panel").visible = true
 				2:
 					score.get_node("1star").visible = false
 					score.get_node("2star").visible = true
 					score.get_node("3star").visible = false
+					score.get_node("Panel").visible = true
 				3:
 					score.get_node("1star").visible = false
 					score.get_node("2star").visible = false
 					score.get_node("3star").visible = true
+					score.get_node("Panel").visible = true
 				_:
 					score.get_node("1star").visible = false
 					score.get_node("2star").visible = false
 					score.get_node("3star").visible = false
+					score.get_node("Panel").visible = false
 
 func change_level(level_name):
 	transition.play("fade_out")
@@ -97,5 +119,5 @@ func _on_sfx_slider_value_changed(value):
 	global.save_game()
 
 
-func _on_logo_anim_animation_finished(anim_name):
+func _on_logo_anim_animation_finished(_anim_name):
 	logo_anim.play("sway")

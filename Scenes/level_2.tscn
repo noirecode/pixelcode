@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://brktq82yl5olu"]
+[gd_scene load_steps=18 format=3 uid="uid://brktq82yl5olu"]
 
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="1_dd8b1"]
 [ext_resource type="Script" path="res://Scenes/level_2.gd" id="1_dx6iu"]
 [ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="1_jw33k"]
 [ext_resource type="Texture2D" uid="uid://x1ngq7pbmdup" path="res://Assets/backgrounds.png" id="2_8vca5"]
 [ext_resource type="PackedScene" uid="uid://bgmlveeipn3us" path="res://Scenes/ui.tscn" id="2_e0ifm"]
+[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_sf1w5"]
 [ext_resource type="Texture2D" uid="uid://cu8nm2gnjt88l" path="res://Assets/grid_tiles.png" id="4_y5njj"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="5_hennf"]
 [ext_resource type="PackedScene" uid="uid://b0v3q47ijiww8" path="res://Scenes/boundaries.tscn" id="7_bbpal"]
@@ -786,6 +787,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dx6iu")
 
+[node name="tilingBG" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("2_sf1w5")
+stretch_mode = 1
+
 [node name="Control" type="Control" parent="."]
 clip_contents = true
 layout_mode = 1
@@ -865,15 +879,15 @@ horizontal_alignment = 1
 
 [node name="text" type="Label" parent="Hint/Panel/pages/page1"]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 144.0
-offset_right = 576.0
-offset_bottom = 720.0
+offset_left = 54.0
+offset_top = 152.0
+offset_right = 558.0
+offset_bottom = 809.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
-text = "Usa la función `saltar` para ayudar a Boti a superar los pequeños obstáculos en su camino. Boti puede saltar en cuatro direcciones diferentes: derecha, izquierda, arriba y abajo. 
+text = "Usa la función `saltar` para superar los pequeños obstáculos en el camino. Boti puede saltar en cuatro direcciones diferentes: derecha, izquierda, arriba y abajo. 
 
-Utiliza esta nueva función para alcanzar la meta. ¡Buena suerte!"
+Estas direcciones se denominan \"parámetros\". Los parámetros se utilizan para proporcionar información a una función, permitiendo que sea más flexible y reutilizable. "
 autowrap_mode = 3
 
 [node name="page2" type="Control" parent="Hint/Panel/pages"]
@@ -891,48 +905,20 @@ theme_override_colors/font_color = Color(0.423529, 0.658824, 0.137255, 1)
 theme_override_colors/font_outline_color = Color(0.423529, 0.658824, 0.137255, 1)
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 60
-text = "# nota"
+text = "# saltar()"
 horizontal_alignment = 1
 
 [node name="text" type="Label" parent="Hint/Panel/pages/page2"]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 144.0
+offset_left = 54.0
+offset_top = 151.0
 offset_right = 576.0
-offset_bottom = 757.0
+offset_bottom = 808.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
-text = "Estas direcciones se denominan \"parámetros\". Los parámetros se utilizan para proporcionar información a una función, permitiendo que sea más flexible y reutilizable. 
-En lugar de tener cuatro funciones distintas para cada dirección de salto, se tiene una sola función que recibe un parámetro indicando la dirección a la que debe saltar."
-autowrap_mode = 3
+text = "En lugar de tener cuatro funciones distintas para cada dirección de salto, se tiene una sola función que recibe un parámetro indicando la dirección a la que debe saltar.
 
-[node name="page3" type="Control" parent="Hint/Panel/pages"]
-visible = false
-anchors_preset = 0
-offset_right = 576.0
-offset_bottom = 864.0
-
-[node name="titulo" type="Label" parent="Hint/Panel/pages/page3"]
-layout_mode = 0
-offset_top = 72.0
-offset_right = 576.0
-offset_bottom = 144.0
-theme_override_colors/font_color = Color(0.423529, 0.658824, 0.137255, 1)
-theme_override_colors/font_outline_color = Color(0.423529, 0.658824, 0.137255, 1)
-theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 60
-text = "# nota"
-horizontal_alignment = 1
-
-[node name="text" type="Label" parent="Hint/Panel/pages/page3"]
-layout_mode = 0
-offset_left = 72.0
-offset_top = 216.0
-offset_right = 576.0
-offset_bottom = 609.0
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 40
-text = "De manera similar, las funciones moverDer() y moverIzq() podrían simplificarse a una sola función que tome como parámetro la dirección derecha o izquierda."
+De manera similar, las funciones moverDer() y moverIzq() podrían simplificarse a una sola función mover() que tome como parámetro la dirección derecha o izquierda."
 autowrap_mode = 3
 
 [node name="next" type="Button" parent="Hint/Panel"]

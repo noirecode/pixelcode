@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://romta67hu124"]
+[gd_scene load_steps=13 format=3 uid="uid://romta67hu124"]
 
 [ext_resource type="Script" path="res://Scenes/level_9.gd" id="1_ejcji"]
 [ext_resource type="TileSet" uid="uid://bjtphgbwnhelx" path="res://Assets/bgtiles.tres" id="1_n4ek0"]
 [ext_resource type="TileSet" uid="uid://5txfr7411rug" path="res://Assets/maptiles.tres" id="2_awd84"]
+[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_tnqjk"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="3_bfe3p"]
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="4_r4nce"]
 [ext_resource type="PackedScene" uid="uid://b0v3q47ijiww8" path="res://Scenes/boundaries.tscn" id="4_rlbnc"]
@@ -26,6 +27,19 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 script = ExtResource("1_ejcji")
+
+[node name="tilingBG" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("2_tnqjk")
+stretch_mode = 1
 
 [node name="Control" type="Control" parent="."]
 clip_contents = true
@@ -115,7 +129,8 @@ offset_right = 553.0
 offset_bottom = 679.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 35
-text = "Has estado usando funciones todo este tiempo, como moverDer(), moverIzq(), y tomarLlave(), las cuales ya han sido definidas previamente, con una serie de instrucciones necesarias para ejecutar sus tareas específicas. Ahora, serás capaz de crear tus propias funciones."
+text = "Has estado usando funciones todo este tiempo, como moverDer(), moverIzq(), y tomarLlave(), las cuales ya han sido definidas previamente, con una serie de instrucciones necesarias para ejecutar sus tareas específicas.
+Ahora, serás capaz de crear tus propias funciones."
 autowrap_mode = 3
 
 [node name="text2" type="Label" parent="Hint/Panel/pages/page1"]
@@ -128,7 +143,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 35
 text = "Para definir una función, utiliza          ():
 
-Todas las líneas indentadas debajo de esta línea formarán parte de la función. "
+Luego para usar la función que has definido, utiliza      ()."
 autowrap_mode = 3
 
 [node name="def" type="Label" parent="Hint/Panel/pages/page1"]
@@ -150,6 +165,19 @@ offset_left = 232.0
 offset_top = 634.0
 offset_right = 349.0
 offset_bottom = 686.0
+theme_override_colors/font_color = Color(0.207843, 0.560784, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0.207843, 0.560784, 0.690196, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+text = "func1"
+autowrap_mode = 3
+
+[node name="func2" type="Label" parent="Hint/Panel/pages/page1"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 750.0
+offset_right = 502.0
+offset_bottom = 802.0
 theme_override_colors/font_color = Color(0.207843, 0.560784, 0.690196, 1)
 theme_override_colors/font_outline_color = Color(0.207843, 0.560784, 0.690196, 1)
 theme_override_constants/outline_size = 2
@@ -222,14 +250,13 @@ text = "():"
 
 [node name="Label2" type="Label" parent="Hint/Panel/pages/page2/Label"]
 layout_mode = 0
-offset_left = 47.0
 offset_top = 103.0
 offset_right = 240.0
 offset_bottom = 232.0
 theme_override_font_sizes/font_size = 40
-text = "moverDer()
-saltar(der)
-moverDer()"
+text = " >   moverDer()
+ >   saltar(der)
+ >   moverDer()"
 
 [node name="Label2" type="Label" parent="Hint/Panel/pages/page2"]
 layout_mode = 0

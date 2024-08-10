@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cpso1b1xiyaci"]
+[gd_scene load_steps=19 format=3 uid="uid://cpso1b1xiyaci"]
 
 [ext_resource type="Script" path="res://Scenes/level_3.gd" id="1_edsoc"]
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="1_j3pyj"]
 [ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="1_wlv13"]
+[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_2xkmh"]
 [ext_resource type="Texture2D" uid="uid://x1ngq7pbmdup" path="res://Assets/backgrounds.png" id="2_e256t"]
 [ext_resource type="PackedScene" uid="uid://bgmlveeipn3us" path="res://Scenes/ui.tscn" id="2_xfblf"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="3_glkys"]
@@ -782,6 +783,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_edsoc")
 
+[node name="tilingBG" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("2_2xkmh")
+stretch_mode = 1
+
 [node name="Control" type="Control" parent="."]
 clip_contents = true
 layout_mode = 1
@@ -860,13 +874,13 @@ autowrap_mode = 3
 [node name="texto" type="Label" parent="Hint/Panel"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 72.0
-offset_top = 288.0
-offset_right = 576.0
-offset_bottom = 593.0
+offset_left = 54.0
+offset_top = 242.0
+offset_right = 558.0
+offset_bottom = 547.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
-text = "Boti puede abrir puertas recogiendo una llave y usándola para resolver la caja. Utiliza las funciones tomarLlave() y usarLlave() para lograrlo. ¡Nada te puede detener!"
+text = "Puedes despejar el camino recogiendo la llave y usándola para abrir la caja. Utiliza las funciones tomarLlave() y usarLlave() para lograrlo."
 autowrap_mode = 3
 
 [node name="exit" type="Button" parent="Hint/Panel"]

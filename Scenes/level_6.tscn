@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bihxoabhb5yra"]
+[gd_scene load_steps=19 format=3 uid="uid://bihxoabhb5yra"]
 
 [ext_resource type="Script" path="res://Scenes/level_6.gd" id="1_4qj82"]
 [ext_resource type="Texture2D" uid="uid://x1ngq7pbmdup" path="res://Assets/backgrounds.png" id="1_psigs"]
+[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_dblyk"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="2_qj4de"]
 [ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="3_i0euh"]
 [ext_resource type="Texture2D" uid="uid://dwddlbf5pyfkn" path="res://Assets/maptiles2.png" id="4_5gsky"]
@@ -1139,6 +1140,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4qj82")
 
+[node name="tilingBG" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("2_dblyk")
+stretch_mode = 1
+
 [node name="Control" type="Control" parent="."]
 clip_contents = true
 layout_mode = 1
@@ -1196,5 +1210,4 @@ position = Vector2(432, 504)
 [node name="Character1" parent="Control" instance=ExtResource("4_edkh4")]
 
 [node name="UI" parent="." instance=ExtResource("5_tswof")]
-visible = false
 layout_mode = 1

@@ -573,6 +573,7 @@ offset_bottom = 108.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_worhc")
 
 [node name="MarginContainer" type="MarginContainer" parent="si_popup"]
+layout_mode = 0
 offset_right = 348.0
 offset_bottom = 108.0
 theme_override_constants/margin_left = 20
@@ -630,6 +631,7 @@ anchors_preset = 0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="color_popup"]
 texture_filter = 1
+layout_mode = 0
 offset_right = 64.0
 offset_bottom = 210.0
 size_flags_horizontal = 4
@@ -684,6 +686,7 @@ offset_right = 348.0
 offset_bottom = 103.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="equal_popup"]
+layout_mode = 0
 offset_right = 63.0
 offset_bottom = 130.0
 theme = SubResource("Theme_sts8b")
@@ -724,19 +727,19 @@ offset_bottom = 18.0
 [node name="settings" type="Button" parent="Options"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 60.0
-offset_top = 16.0
-offset_right = 156.0
-offset_bottom = 112.0
+offset_left = 54.0
+offset_top = 18.0
+offset_right = 150.0
+offset_bottom = 114.0
 theme = ExtResource("2_t51ww")
 
 [node name="hint" type="Button" parent="Options"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -52.0
-offset_top = 16.0
-offset_right = 44.0
-offset_bottom = 112.0
+offset_left = -162.0
+offset_top = 18.0
+offset_right = -66.0
+offset_bottom = 114.0
 theme = ExtResource("3_34ouk")
 text = "
 "
@@ -744,10 +747,10 @@ text = "
 [node name="stars" type="Button" parent="Options"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -164.0
-offset_top = 16.0
-offset_right = -68.0
-offset_bottom = 112.0
+offset_left = -54.0
+offset_top = 18.0
+offset_right = 42.0
+offset_bottom = 114.0
 theme = ExtResource("14_lqupk")
 
 [node name="Finish_Panel" parent="." instance=ExtResource("3_vpoh3")]
@@ -756,19 +759,29 @@ layout_mode = 1
 
 [node name="Volume" type="Control" parent="."]
 visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("20_deba8")
 
 [node name="Panel" type="Panel" parent="Volume"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 144.0
-offset_top = 144.0
-offset_right = 576.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -252.0
+offset_right = 216.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("20_deba8")
 
 [node name="MarginContainer" type="MarginContainer" parent="Volume/Panel"]
@@ -864,6 +877,7 @@ text = "Menu Principal"
 
 [node name="Rating" parent="." instance=ExtResource("18_oc4yq")]
 visible = false
+layout_mode = 1
 
 [node name="sfx_button" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_q017p")
@@ -876,8 +890,13 @@ libraries = {
 
 [node name="ColorRect" type="ColorRect" parent="transition"]
 visible = false
-offset_right = 720.0
-offset_bottom = 1280.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
 [connection signal="gui_input" from="Console/ConsoleBG/TextEdit" to="." method="_on_text_edit_gui_input"]

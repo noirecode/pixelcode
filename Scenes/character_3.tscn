@@ -1,12 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvfbdpnjy8xh8"]
+[gd_scene load_steps=11 format=3 uid="uid://bvfbdpnjy8xh8"]
 
 [ext_resource type="Script" path="res://Scenes/character_3.gd" id="1_k3eth"]
 [ext_resource type="Texture2D" uid="uid://b1q5cwa4vc4v8" path="res://Assets/char3.png" id="1_md0kl"]
+[ext_resource type="Texture2D" uid="uid://bnoicfme8tf7r" path="res://Assets/char3-idle.png" id="2_i62qm"]
 [ext_resource type="AudioStream" uid="uid://c2qleoawhleo7" path="res://Assets/Audio/jump.wav" id="2_wy6i0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6iu27"]
-atlas = ExtResource("1_md0kl")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j565"]
+atlas = ExtResource("2_i62qm")
 region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpo7e"]
+atlas = ExtResource("2_i62qm")
+region = Rect2(18, 0, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymy3n"]
 atlas = ExtResource("1_md0kl")
@@ -20,11 +25,14 @@ region = Rect2(18, 0, 18, 18)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6iu27")
+"texture": SubResource("AtlasTexture_1j565")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpo7e")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -50,7 +58,7 @@ texture_filter = 1
 position = Vector2(36, 36)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_lflv4")
-animation = &"walk"
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(34, 38)
