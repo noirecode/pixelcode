@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://bjtphgbwnhelx" path="res://Assets/bgtiles.tres" id="1_0hjce"]
 [ext_resource type="Script" path="res://Scenes/level_11.gd" id="1_a74ii"]
 [ext_resource type="TileSet" uid="uid://5txfr7411rug" path="res://Assets/maptiles.tres" id="2_7sbjp"]
-[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_cb8o8"]
+[ext_resource type="Texture2D" uid="uid://dg5sqo4p577la" path="res://Assets/bgtileblack.png" id="2_j8eiy"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="3_owbna"]
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="4_4l4s6"]
 [ext_resource type="PackedScene" uid="uid://b0v3q47ijiww8" path="res://Scenes/boundaries.tscn" id="4_j74kb"]
@@ -25,7 +25,6 @@ size_flags_vertical = 3
 script = ExtResource("1_a74ii")
 
 [node name="tilingBG" type="TextureRect" parent="."]
-visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -34,7 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(6, 6)
-texture = ExtResource("2_cb8o8")
+texture = ExtResource("2_j8eiy")
 stretch_mode = 1
 
 [node name="Control" type="Control" parent="."]

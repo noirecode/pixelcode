@@ -166,7 +166,7 @@ grow_vertical = 0
 texture_filter = 1
 layout_mode = 0
 offset_top = 32.0
-offset_right = 528.0
+offset_right = 504.0
 offset_bottom = 544.0
 theme = ExtResource("2_il3fi")
 
@@ -218,9 +218,11 @@ gutters_draw_line_numbers = true
 
 [node name="Edit" type="Control" parent="Console"]
 anchors_preset = 0
-offset_left = 520.0
-offset_right = 720.0
-offset_bottom = 97.0
+offset_left = 450.0
+offset_top = -72.0
+offset_right = 650.0
+offset_bottom = 25.0
+scale = Vector2(1.4, 1.4)
 
 [node name="run" type="Button" parent="Console/Edit"]
 texture_filter = 1
@@ -251,8 +253,8 @@ theme = ExtResource("4_7agmj")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Console"]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 104.0
+offset_left = 504.0
+offset_top = 72.0
 offset_right = 720.0
 offset_bottom = 544.0
 horizontal_scroll_mode = 0
@@ -265,7 +267,7 @@ theme_override_constants/separation = 0
 
 [node name="moverDer()" type="Button" parent="Console/ScrollContainer/Commands"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("5_rhb01")
@@ -274,7 +276,7 @@ disabled = true
 text = "moverDer()"
 
 [node name="moverIzq()" type="Button" parent="Console/ScrollContainer/Commands"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("5_rhb01")
@@ -284,7 +286,7 @@ text = "moverIzq()"
 
 [node name="saltar()" type="Button" parent="Console/ScrollContainer/Commands"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("5_rhb01")
@@ -346,7 +348,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="siLoop" type="Button" parent="Console/ScrollContainer/Commands"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("5_rhb01")
@@ -355,7 +357,7 @@ disabled = true
 text = "si (...)"
 
 [node name="tomarLlave()" type="Button" parent="Console/ScrollContainer/Commands"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("5_rhb01")
@@ -365,7 +367,7 @@ text = "tomarLlave()"
 
 [node name="utilizarLlave()" type="Button" parent="Console/ScrollContainer/Commands"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("5_rhb01")
@@ -374,7 +376,7 @@ disabled = true
 text = "utilizarLlave()"
 
 [node name="repetir(#)" type="Button" parent="Console/ScrollContainer/Commands"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("5_rhb01")
@@ -383,19 +385,19 @@ disabled = true
 text = "repetir(#)"
 
 [node name="repetir_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(356, 53)
+size = Vector2i(516, 68)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Console/ScrollContainer/Commands/repetir_popup"]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 30)
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 352.0
-offset_bottom = 49.0
+offset_right = 512.0
+offset_bottom = 64.0
 
 [node name="reps_2" type="Button" parent="Console/ScrollContainer/Commands/repetir_popup/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
@@ -403,7 +405,7 @@ text = "2"
 
 [node name="reps_3" type="Button" parent="Console/ScrollContainer/Commands/repetir_popup/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
@@ -411,7 +413,7 @@ text = "3"
 
 [node name="reps_4" type="Button" parent="Console/ScrollContainer/Commands/repetir_popup/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
@@ -419,7 +421,7 @@ text = "4"
 
 [node name="reps_5" type="Button" parent="Console/ScrollContainer/Commands/repetir_popup/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
@@ -427,7 +429,7 @@ text = "5"
 
 [node name="reps_6" type="Button" parent="Console/ScrollContainer/Commands/repetir_popup/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
@@ -435,7 +437,7 @@ text = "6"
 
 [node name="reps_7" type="Button" parent="Console/ScrollContainer/Commands/repetir_popup/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
@@ -443,7 +445,7 @@ text = "7"
 
 [node name="reps_8" type="Button" parent="Console/ScrollContainer/Commands/repetir_popup/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
@@ -451,7 +453,7 @@ text = "8"
 
 [node name="reps_9" type="Button" parent="Console/ScrollContainer/Commands/repetir_popup/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
@@ -459,7 +461,7 @@ text = "9"
 
 [node name="funcionCrear" type="Button" parent="Console/ScrollContainer/Commands"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("5_rhb01")
@@ -468,51 +470,51 @@ disabled = true
 text = "def func#():  ..."
 
 [node name="func1_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(224, 53)
+size = Vector2i(324, 68)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Console/ScrollContainer/Commands/func1_popup"]
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 220.0
-offset_bottom = 49.0
+offset_right = 320.0
+offset_bottom = 64.0
 
 [node name="crear1" type="Button" parent="Console/ScrollContainer/Commands/func1_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "1"
 
 [node name="crear2" type="Button" parent="Console/ScrollContainer/Commands/func1_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "2"
 
 [node name="crear3" type="Button" parent="Console/ScrollContainer/Commands/func1_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "3"
 
 [node name="crear4" type="Button" parent="Console/ScrollContainer/Commands/func1_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "4"
 
 [node name="crear5" type="Button" parent="Console/ScrollContainer/Commands/func1_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "5"
 
 [node name="funcionUsar" type="Button" parent="Console/ScrollContainer/Commands"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("5_rhb01")
@@ -521,44 +523,44 @@ disabled = true
 text = "func#()"
 
 [node name="func2_popup" type="PopupPanel" parent="Console/ScrollContainer/Commands"]
-size = Vector2i(224, 53)
+size = Vector2i(324, 68)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Console/ScrollContainer/Commands/func2_popup"]
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 220.0
-offset_bottom = 49.0
+offset_right = 320.0
+offset_bottom = 64.0
 
 [node name="usar1" type="Button" parent="Console/ScrollContainer/Commands/func2_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "1"
 
 [node name="usar2" type="Button" parent="Console/ScrollContainer/Commands/func2_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "2"
 
 [node name="usar3" type="Button" parent="Console/ScrollContainer/Commands/func2_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "3"
 
 [node name="usar4" type="Button" parent="Console/ScrollContainer/Commands/func2_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30
 text = "4"
 
 [node name="usar5" type="Button" parent="Console/ScrollContainer/Commands/func2_popup/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme = ExtResource("5_rhb01")
 theme_override_font_sizes/font_size = 30

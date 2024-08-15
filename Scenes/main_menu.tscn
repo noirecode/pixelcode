@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_kqxi8"]
 [ext_resource type="Theme" uid="uid://cbvupvjis1y2h" path="res://Assets/Themes/bg_tut.tres" id="2_c7r75"]
 [ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_xvce4"]
+[ext_resource type="Texture2D" uid="uid://bir8v3wyjvslm" path="res://logo.png" id="3_tc2kd"]
 [ext_resource type="Theme" uid="uid://ci6h3i16nmy0" path="res://Assets/Themes/level_button.tres" id="7_kri2x"]
 [ext_resource type="Texture2D" uid="uid://k2etqj4water" path="res://Assets/Themes/1b.png" id="8_2oy37"]
 [ext_resource type="FontFile" uid="uid://bg3ypvgu670kh" path="res://Assets/disposabledroid-bb.bold.ttf" id="9_kmsli"]
@@ -30,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://qbngcr2fnuqb" path="res://Assets/1star.png" id="27_p07ig"]
 [ext_resource type="Texture2D" uid="uid://dy4k5xrkg0wym" path="res://Assets/2stars.png" id="28_q0gfb"]
 [ext_resource type="Texture2D" uid="uid://cb15ggtidvukb" path="res://Assets/3stars.png" id="29_6xpd8"]
-[ext_resource type="Texture2D" uid="uid://bmjhsuxnhybcx" path="res://Assets/logo.png" id="29_hcj6w"]
 [ext_resource type="Theme" uid="uid://dfqrfq4n7jc1k" path="res://Assets/Themes/panel.tres" id="29_vxkuq"]
 [ext_resource type="FontFile" uid="uid://dd72mqkn8226f" path="res://Assets/Themes/BitPap.ttf" id="30_lgjot"]
 [ext_resource type="Theme" uid="uid://bhsmccpti7gw" path="res://Assets/Themes/panel_big.tres" id="31_j3tjp"]
@@ -183,7 +183,7 @@ theme_override_constants/separation = 150
 texture_filter = 1
 position = Vector2(368, -152)
 rotation = 0.00034675
-texture = ExtResource("29_hcj6w")
+texture = ExtResource("3_tc2kd")
 
 [node name="Tutorial" type="Panel" parent="LevelScrolls/VertBox"]
 texture_filter = 1
@@ -1511,7 +1511,7 @@ value = 1.0
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("30_lgjot")
-text = "Music"
+text = "Musica"
 
 [node name="MusicSlider" type="HSlider" parent="UI/PanelBG/Panel/MarginContainer/GridContainer"]
 layout_mode = 2

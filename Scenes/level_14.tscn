@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bjtphgbwnhelx" path="res://Assets/bgtiles.tres" id="1_gfr2r"]
 [ext_resource type="Script" path="res://Scenes/level_14.gd" id="1_wufql"]
-[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_5g2yj"]
+[ext_resource type="Texture2D" uid="uid://dg5sqo4p577la" path="res://Assets/bgtileblack.png" id="2_shex2"]
 [ext_resource type="TileSet" uid="uid://5txfr7411rug" path="res://Assets/maptiles.tres" id="2_sqi0y"]
 [ext_resource type="PackedScene" uid="uid://bgmlveeipn3us" path="res://Scenes/ui.tscn" id="3_xqkd5"]
 [ext_resource type="PackedScene" uid="uid://b0v3q47ijiww8" path="res://Scenes/boundaries.tscn" id="4_bq4ds"]
@@ -36,7 +36,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(6, 6)
-texture = ExtResource("2_5g2yj")
+texture = ExtResource("2_shex2")
 stretch_mode = 1
 
 [node name="Control" type="Control" parent="."]

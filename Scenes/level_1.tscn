@@ -1,10 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://doyjxw66dkhsv"]
+[gd_scene load_steps=30 format=3 uid="uid://doyjxw66dkhsv"]
 
 [ext_resource type="Texture2D" uid="uid://b2itl8f0d1l4f" path="res://Assets/maptiles_normal.png" id="1_lqynq"]
 [ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_yfygu"]
 [ext_resource type="Texture2D" uid="uid://x1ngq7pbmdup" path="res://Assets/backgrounds.png" id="2_1sj2i"]
 [ext_resource type="PackedScene" uid="uid://b2ku6ali5xjaw" path="res://Scenes/character_1.tscn" id="2_cy1k4"]
-[ext_resource type="Texture2D" uid="uid://bhaow51qllpcp" path="res://Assets/bg_tile.png" id="2_e4w7r"]
+[ext_resource type="Texture2D" uid="uid://dg5sqo4p577la" path="res://Assets/bgtileblack.png" id="2_lbc7i"]
 [ext_resource type="Texture2D" uid="uid://cu8nm2gnjt88l" path="res://Assets/grid_tiles.png" id="5_yvb3r"]
 [ext_resource type="PackedScene" uid="uid://bgmlveeipn3us" path="res://Scenes/ui.tscn" id="7_crdnf"]
 [ext_resource type="PackedScene" uid="uid://bci7tjxoe75mn" path="res://Scenes/finish_flag.tscn" id="7_d2er7"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bhapt1rrh4vq8" path="res://Assets/button_redo.png" id="12_58vuw"]
 [ext_resource type="Texture2D" uid="uid://dbirjs74o2ri0" path="res://Assets/mov4.png" id="12_vriaf"]
 [ext_resource type="Texture2D" uid="uid://c75gcs3udyu02" path="res://Assets/button_delete.png" id="13_12pvh"]
+[ext_resource type="Texture2D" uid="uid://pecnvjn5rddd" path="res://Assets/outline.png" id="18_brqcu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2b2b"]
 texture = ExtResource("1_lqynq")
@@ -814,7 +815,6 @@ size_flags_vertical = 3
 script = ExtResource("1_yfygu")
 
 [node name="tilingBG" type="TextureRect" parent="."]
-visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -823,7 +823,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(6, 6)
-texture = ExtResource("2_e4w7r")
+texture = ExtResource("2_lbc7i")
 stretch_mode = 1
 
 [node name="Control" type="Control" parent="."]
@@ -846,7 +846,7 @@ format = 2
 layer_0/name = "BG"
 layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 196611, 1, 0, 196612, 1, 0, 262148, 1, 0, 262149, 1, 0, 327685, 65537, 1, 327686, 131073, 1, 393222, 131073, 2, 393223, 196609, 2, 196608, 1, 0, 262144, 1, 0, 327680, 1, 1, 393216, 1, 2, 458752, 1, 3, 196609, 1, 0, 262145, 1, 0, 327681, 65537, 1, 393217, 65537, 2, 458753, 1, 3, 524289, 1, 3, 196610, 1, 0, 262146, 1, 0, 327682, 131073, 1, 393218, 131073, 2, 458754, 1, 3, 524290, 1, 3, 262147, 1, 0, 327683, 196609, 1, 393219, 196609, 2, 458755, 1, 3, 524291, 1, 3, 327684, 1, 1, 393220, 1, 2, 458756, 1, 3, 524292, 1, 3, 196613, 1, 0, 393221, 65537, 2, 458757, 1, 3, 524293, 1, 3, 196614, 1, 0, 262150, 1, 0, 458758, 1, 3, 524294, 1, 3, 196615, 1, 0, 262151, 1, 0, 327687, 196609, 1, 458759, 1, 3, 524295, 1, 3, 196616, 1, 0, 262152, 1, 0, 327688, 1, 1, 393224, 1, 2, 458760, 1, 3, 524296, 1, 3, 196617, 1, 0, 262153, 1, 0, 327689, 65537, 1, 393225, 65537, 2, 458761, 1, 3)
 layer_1/name = "Map"
-layer_1/tile_data = PackedInt32Array(524289, 131072, 1, 524290, 131072, 1, 524291, 131072, 1, 524292, 131072, 1, 524293, 131072, 1, 524294, 131072, 1, 524295, 131072, 1, 524296, 131072, 1, 524297, 196608, 1, 589824, 65536, 6, 589825, 131072, 6, 589826, 131072, 6, 589827, 131072, 6, 589828, 131072, 6, 589829, 131072, 6, 589830, 131072, 6, 589831, 131072, 6, 589832, 131072, 6, 589833, 196608, 6, 458752, 65536, 6, 393216, 65536, 6, 327680, 65536, 6, 262144, 65536, 6, 196608, 65536, 6, 458753, 196608, 6, 393217, 196608, 6, 327681, 196608, 6, 262145, 196608, 6, 196609, 196608, 6, 131072, 65536, 1, 131073, 196608, 1, 458759, 65536, 6, 393223, 65536, 6, 327687, 65536, 6, 458761, 196608, 6, 393225, 196608, 6, 327689, 196608, 6, 262151, 65536, 1, 262153, 196608, 1, 262152, 131072, 1, 327688, 131072, 6, 393224, 131072, 6, 458760, 131072, 6, 196616, 1114112, 6, 131080, 1114112, 4, 131079, 1114112, 2, 131081, 1245184, 2, 7, 1114112, 0, 9, 1245184, 0, 8, 1179648, 0, 65543, 1114112, 1, 65544, 1179648, 1, 65545, 1245184, 1, 65537, 327680, 6, 65536, 327680, 6, 196615, 262144, 6, 196617, 524288, 6, 458754, 262144, 6, 0, 851968, 7, 1, 917504, 7, 2, 983040, 7, 4, 851968, 7, 5, 917504, 7, 6, 983040, 7, 655369, 196608, 7, 655360, 65536, 7, 655361, 131072, 7, 655362, 131072, 7, 655363, 131072, 7, 655364, 131072, 7, 655365, 131072, 7, 655366, 131072, 7, 655367, 131072, 7, 655368, 131072, 7, 524288, 65536, 1)
+layer_1/tile_data = PackedInt32Array(524289, 131072, 1, 524290, 131072, 1, 524291, 131072, 1, 524292, 131072, 1, 524293, 131072, 1, 524294, 131072, 1, 524295, 131072, 1, 524296, 131072, 1, 524297, 196608, 1, 589824, 65536, 6, 589825, 131072, 6, 589826, 131072, 6, 589827, 131072, 6, 589828, 131072, 6, 589829, 131072, 6, 589830, 131072, 6, 589831, 131072, 6, 589832, 131072, 6, 589833, 196608, 6, 458752, 65536, 6, 393216, 65536, 6, 327680, 65536, 6, 262144, 65536, 6, 196608, 65536, 6, 458753, 196608, 6, 393217, 196608, 6, 327681, 196608, 6, 262145, 196608, 6, 196609, 196608, 6, 131072, 65536, 1, 131073, 196608, 1, 458759, 65536, 6, 393223, 65536, 6, 327687, 65536, 6, 458761, 196608, 6, 393225, 196608, 6, 327689, 196608, 6, 262151, 65536, 1, 262153, 196608, 1, 262152, 131072, 1, 327688, 131072, 6, 393224, 131072, 6, 458760, 131072, 6, 196616, 1114112, 6, 131080, 1114112, 4, 131079, 1114112, 2, 131081, 1245184, 2, 7, 1114112, 0, 9, 1245184, 0, 8, 1179648, 0, 65543, 1114112, 1, 65544, 1179648, 1, 65545, 1245184, 1, 65537, 327680, 6, 65536, 327680, 6, 196615, 262144, 6, 196617, 524288, 6, 458754, 262144, 6, 0, 851968, 7, 1, 917504, 7, 2, 983040, 7, 4, 851968, 7, 5, 917504, 7, 6, 983040, 7, 655369, 196608, 7, 655360, 65536, 7, 655361, 131072, 7, 655362, 131072, 7, 655363, 131072, 7, 655364, 131072, 7, 655365, 131072, 7, 655366, 131072, 7, 655367, 131072, 7, 655368, 131072, 7, 524288, 65536, 1, 720905, 196608, 6, 786441, 196608, 6, 851977, 196608, 6, 917513, 196608, 6, 720896, 65536, 6, 786432, 65536, 6, 851968, 65536, 6, 917504, 65536, 6, 720897, 131072, 6, 786433, 131072, 6, 786434, 131072, 6, 786435, 131072, 6, 720899, 131072, 6, 720898, 131072, 6, 720900, 131072, 6, 786436, 131072, 6, 786437, 131072, 6, 720901, 131072, 6, 786438, 131072, 6, 786439, 131072, 6, 720903, 131072, 6, 720902, 131072, 6, 720904, 131072, 6, 786440, 131072, 6, 851969, 131072, 6, 851970, 131072, 6, 851971, 131072, 6, 851972, 131072, 6, 851973, 131072, 6, 851974, 131072, 6, 851975, 131072, 6, 851976, 131072, 6, 917512, 131072, 6, 917511, 131072, 6, 917510, 131072, 6, 917509, 131072, 6, 917508, 131072, 6, 917507, 131072, 6, 917506, 131072, 6, 917505, 131072, 6, 983041, 131072, 6, 983042, 131072, 6, 983043, 131072, 6, 983044, 131072, 6, 983045, 131072, 6, 983046, 131072, 6, 983047, 131072, 6, 983048, 131072, 6, 983049, 196608, 6, 983040, 65536, 6)
 layer_2/name = "Tiles"
 layer_2/modulate = Color(1, 1, 1, 0.564706)
 layer_2/tile_data = PackedInt32Array(524288, 6, 1, 524289, 65542, 1, 524290, 65542, 1, 524291, 65542, 1, 524292, 65542, 1, 524293, 65542, 1, 524294, 65542, 1, 524295, 65542, 1, 524296, 65542, 1, 524297, 131078, 1, 589824, 6, 6, 589833, 131078, 6, 655369, 131078, 7, 655360, 6, 7, 655361, 65542, 7, 655362, 65542, 7, 655363, 65542, 7, 655364, 65542, 7, 655365, 65542, 7, 655366, 65542, 7, 655367, 65542, 7, 655368, 65542, 7, 589825, 65542, 6, 589826, 65542, 6, 589827, 65542, 6, 589828, 65542, 6, 589829, 65542, 6, 589830, 65542, 6, 589831, 65542, 6, 589832, 65542, 6, 458752, 6, 6, 458753, 131078, 6, 458761, 131078, 6, 458759, 6, 6, 458760, 65542, 6, 393223, 6, 6, 327687, 6, 6, 393216, 6, 6, 327680, 6, 6, 262144, 6, 6, 196608, 6, 6, 393217, 131078, 6, 327681, 131078, 6, 262145, 131078, 6, 196609, 131078, 6, 327689, 131078, 6, 393225, 131078, 6, 327688, 65542, 6, 393224, 65542, 6, 131072, 6, 1, 262151, 6, 1, 131073, 131078, 1, 262153, 131078, 1, 262152, 65542, 1)
@@ -918,14 +918,13 @@ texture_filter = 1
 layout_mode = 0
 offset_left = 72.0
 offset_top = 216.0
-offset_right = 504.0
+offset_right = 552.0
 offset_bottom = 720.0
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 0
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
-text = "Ayuda Boti a completar los diferentes desafíos que se encuentran en su camino. Para lograrlo, tendrás que hablarle en el único lenguaje que conoce: algoritmos y funciones."
-horizontal_alignment = 3
+text = "Ayuda Boti a completar los diferentes desafíos que se encuentran en su camino. Para lograrlo, tendrás guiarlo usando las diferentes instrucciones disponibles en el menú de comandos."
 autowrap_mode = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hint/Panel/pages/page1"]
@@ -948,21 +947,22 @@ texture_filter = 1
 layout_mode = 0
 offset_left = 72.0
 offset_top = 72.0
-offset_right = 504.0
+offset_right = 558.0
 offset_bottom = 233.0
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
-text = "Para mover a Boti a la izquierda o a la derecha, usa las siguientes funciones:"
-horizontal_alignment = 3
+text = "Para mover a Boti a la izquierda o a la derecha, usa las siguientes instrucciones:"
 autowrap_mode = 3
 
 [node name="func" type="Label" parent="Hint/Panel/pages/page2"]
 layout_mode = 0
 offset_left = 72.0
-offset_top = 432.0
+offset_top = 296.0
 offset_right = 504.0
-offset_bottom = 504.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(0.980392, 0.694118, 0.235294, 1)
+theme_override_colors/font_outline_color = Color(0.980392, 0.694118, 0.235294, 1)
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
@@ -970,10 +970,12 @@ text = "moverDer()"
 
 [node name="func2" type="Label" parent="Hint/Panel/pages/page2"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 432.0
-offset_right = 792.0
-offset_bottom = 504.0
+offset_left = 306.0
+offset_top = 296.0
+offset_right = 738.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(0.980392, 0.694118, 0.235294, 1)
+theme_override_colors/font_outline_color = Color(0.980392, 0.694118, 0.235294, 1)
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
@@ -982,9 +984,9 @@ text = "moverIzq()"
 [node name="TextureRect" type="TextureRect" parent="Hint/Panel/pages/page2"]
 layout_mode = 0
 offset_left = 72.0
-offset_top = 288.0
+offset_top = 332.0
 offset_right = 260.0
-offset_bottom = 422.0
+offset_bottom = 466.0
 texture = ExtResource("9_h0gqq")
 
 [node name="TextureRect2" type="TextureRect" parent="Hint/Panel/pages/page2"]
@@ -997,17 +999,17 @@ texture = ExtResource("10_vuftu")
 
 [node name="TextureRect3" type="TextureRect" parent="Hint/Panel/pages/page2"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 288.0
-offset_right = 548.0
-offset_bottom = 422.0
+offset_left = 306.0
+offset_top = 332.0
+offset_right = 494.0
+offset_bottom = 466.0
 texture = ExtResource("11_q4hp5")
 
 [node name="TextureRect4" type="TextureRect" parent="Hint/Panel/pages/page2"]
 layout_mode = 0
-offset_left = 360.0
+offset_left = 306.0
 offset_top = 480.0
-offset_right = 548.0
+offset_right = 494.0
 offset_bottom = 615.0
 texture = ExtResource("12_vriaf")
 
@@ -1029,17 +1031,17 @@ offset_bottom = 233.0
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
-text = "Cuando estés seguro de las instrucciones que hayas escrito, presiona Ejecutar para ejecutar tu código."
+text = "Cuando estés seguro de lo que hayas escrito, utiliza el botón \"Ejecutar código\" para que Boti siga tus instrucciones."
 horizontal_alignment = 3
 autowrap_mode = 3
 
 [node name="content2" type="Label" parent="Hint/Panel/pages/page3"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 228.0
-offset_top = 331.0
-offset_right = 516.0
-offset_bottom = 403.0
+offset_left = 198.0
+offset_top = 404.0
+offset_right = 486.0
+offset_bottom = 476.0
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
@@ -1049,10 +1051,10 @@ autowrap_mode = 3
 [node name="content3" type="Label" parent="Hint/Panel/pages/page3"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 230.0
-offset_top = 474.0
-offset_right = 518.0
-offset_bottom = 546.0
+offset_left = 198.0
+offset_top = 494.0
+offset_right = 486.0
+offset_bottom = 566.0
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
@@ -1062,10 +1064,10 @@ autowrap_mode = 3
 [node name="content4" type="Label" parent="Hint/Panel/pages/page3"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 229.0
-offset_top = 619.0
-offset_right = 517.0
-offset_bottom = 691.0
+offset_left = 198.0
+offset_top = 584.0
+offset_right = 486.0
+offset_bottom = 656.0
 theme_override_constants/outline_size = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
@@ -1074,27 +1076,37 @@ autowrap_mode = 3
 
 [node name="but1" type="TextureRect" parent="Hint/Panel/pages/page3"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 315.0
-offset_right = 216.0
-offset_bottom = 387.0
+offset_left = 108.0
+offset_top = 386.0
+offset_right = 180.0
+offset_bottom = 458.0
 texture = ExtResource("11_bo6jy")
 
 [node name="but2" type="TextureRect" parent="Hint/Panel/pages/page3"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 603.0
-offset_right = 216.0
-offset_bottom = 675.0
+offset_left = 108.0
+offset_top = 566.0
+offset_right = 180.0
+offset_bottom = 638.0
 texture = ExtResource("12_58vuw")
 
 [node name="but3" type="TextureRect" parent="Hint/Panel/pages/page3"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 459.0
-offset_right = 216.0
-offset_bottom = 531.0
+offset_left = 108.0
+offset_top = 477.0
+offset_right = 180.0
+offset_bottom = 549.0
 texture = ExtResource("13_12pvh")
+
+[node name="outline" type="TextureRect" parent="Hint/Panel/pages/page3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 54.0
+offset_top = 350.0
+offset_right = 172.0
+offset_bottom = 432.0
+scale = Vector2(4, 4)
+texture = ExtResource("18_brqcu")
 
 [node name="next" type="Button" parent="Hint/Panel"]
 texture_filter = 1
