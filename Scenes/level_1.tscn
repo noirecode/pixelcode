@@ -924,7 +924,7 @@ theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 0
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 40
-text = "Ayuda Boti a completar los diferentes desafíos que se encuentran en su camino. Para lograrlo, tendrás guiarlo usando las diferentes instrucciones disponibles en el menú de comandos."
+text = "Ayuda a Boti a completar los diferentes desafíos que se encuentran en su camino. Para lograrlo, tendrás guiarlo usando las diferentes instrucciones disponibles en el menú de comandos."
 autowrap_mode = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hint/Panel/pages/page1"]
