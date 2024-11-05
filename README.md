@@ -1,2 +1,2 @@
-# codepixel-game
+# pixelcode
  educational game made with godot
